@@ -17,7 +17,7 @@ public class ExerciseController {
 	ExerciseService service;
 	
 	// index 페이지
-	@RequestMapping("/index")
+	@RequestMapping("/")
 	public String viewIndex() {
 		return "index";
 	}

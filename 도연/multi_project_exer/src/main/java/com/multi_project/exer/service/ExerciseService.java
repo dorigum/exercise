@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.multi_project.exer.dao.exerciseDAO;
+import com.multi_project.exer.dao.IExerciseDAO;
 import com.multi_project.exer.model.ExerciseVO;
 
 @Service
 public class ExerciseService implements IExerciseService {
 	@Autowired
 	@Qualifier("IExerciseDAO")
-	exerciseDAO dao;
+	IExerciseDAO dao;
 	
 	@Override
 	public ArrayList<ExerciseVO> exerciseList() {

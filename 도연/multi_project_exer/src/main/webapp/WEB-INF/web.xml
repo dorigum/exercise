@@ -29,8 +29,8 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-	<!-- 한글설정 -->
+
+<!-- 한글설정 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>
@@ -54,5 +54,5 @@
 	</filter-mapping>
 
 	<!-- 한글설정 END -->
-
+	
 </web-app>
