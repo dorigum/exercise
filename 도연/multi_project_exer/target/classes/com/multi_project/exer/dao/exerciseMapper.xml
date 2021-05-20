@@ -33,7 +33,7 @@
   	
   	<!-- 운동 기록 수정 --> <!-- 날짜는 수정 못하도록???????? -->
   	<update id="updateExercise" parameterType="com.multi_project.exer.model.ExerciseVO">
-  		UPDATE DayExerciese
+  		UPDATE DayExercise
   		SET year=#{year}, month=#{month}, exdate=#{exdate},
   			day=#{day}, exNo=#{exNo}, weight=#{weight}, count=#{count}
   			WHERE dayNo=#{dayNo}
