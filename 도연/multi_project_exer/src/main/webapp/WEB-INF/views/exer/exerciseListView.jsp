@@ -10,10 +10,10 @@
 	<body>
 		<h3>전체 운동 기록 조회</h3>
 		<table border="1">
-			<tr><th>운동날짜</th><th>년</th><th>월</th><th>일</th>
+			<tr><th>운동기록번호</th><th>년</th><th>월</th><th>일</th>
 				<th>요일</th><th>운동번호</th><th>무게</th><th>날짜</th></tr>
 				
-			<c:forEach items="${exerciseList }" var="exercise">
+			<c:forEach items="${exerciseList }" var="DayExercise">
 				<tr>
 					<td><a href="<c:url value='/exer/exerciseDetailView/${DayExercise.dayNo }'/>">${DayExercise.dayNo }</a></td>
 					<td>${DayExercise.year }</td>
@@ -21,7 +21,7 @@
 					<td>${DayExercise.exdate }</td>
 					<td>${DayExercise.day }</td>
 					<td>${DayExercise.exNo }</td>
-					<td>${DayExercise.weigth }</td>
+					<td>${DayExercise.weight }</td>
 					<td>${DayExercise.count }</td>
 				</tr>
 			</c:forEach>

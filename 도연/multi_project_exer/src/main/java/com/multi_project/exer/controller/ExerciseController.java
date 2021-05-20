@@ -38,31 +38,31 @@ public class ExerciseController {
 	
 	// 운동 기록 : DB 저장
 	@RequestMapping("/exer/insert")
-	public String insertExercise(ExerciseVO exercise) {
-		service.insertExercise(exercise);
+	public String insertExercise(ExerciseVO DayExercise) {
+		service.insertExercise(DayExercise);
 		return "redirect:./exerciseListView";
 	}
 	
 	// 운동 상세 기록 조회
 	@RequestMapping("/exer/exerciseDetailView/{dayNo}")
 	public String detailViewExercise(@PathVariable String dayNo, Model model) {
-		ExerciseVO exercise = service.exerciseDetailView(dayNo);
-		model.addAttribute("exercise", exercise);
+		ExerciseVO DayExercise = service.exerciseDetailView(dayNo);
+		model.addAttribute("DayExercise", DayExercise);
 		return "exer/exerciseDetailView";
 	}
 	
 	// 운동 기록 수정화면으로 이동
 	@RequestMapping("/exer/updateForm/{dayNo}")
 	public String updateExerciseForm(@PathVariable String dayNo, Model model) {
-		ExerciseVO exercise = service.exerciseDetailView(dayNo);
-		model.addAttribute("exercise", exercise);
+		ExerciseVO DayExercise = service.exerciseDetailView(dayNo);
+		model.addAttribute("DayExercise", DayExercise);
 		return "exer/exerciseUpdateForm";
 	}
 	
 	// 운동 기록 수정
 	@RequestMapping("/exer/update")
-	public String updateExercise(ExerciseVO exercise) {
-		service.updateExercise(exercise);
+	public String updateExercise(ExerciseVO DayExercise) {
+		service.updateExercise(DayExercise);
 		return "redirect:./exerciseListView";
 	}
 	
