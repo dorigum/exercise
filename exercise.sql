@@ -1,7 +1,7 @@
 CREATE TABLE MEMBER (
     Id VARCHAR2(20) NOT NULL PRIMARY KEY,
     Pwd VARCHAR2(20),
-    Name NUMBER(20),
+    Name VARCHAR2(20),
     eMail VARCHAR2(40),
     Age NUMBER(5),
     Gender VARCHAR2(5),
