@@ -11,15 +11,19 @@ CREATE TABLE MEMBER (
 );
 
 CREATE TABLE FOOD (
-    FCode VARCHAR2(30) NOT NULL PRIMARY KEY,
+    FCode VARCHAR2(30) NOT NULL Primary key,
     FName VARCHAR2(30),
-    Kcal Number(10,3)
+    Kcal Number(10,3),
+    unit VARCHAR2(30),
+    unit_per_gram VARCHAR2(30)
 );
 
 CREATE TABLE calandar (
     id VARCHAR2(20),
     FCode VARCHAR2(30),
     eDate DATE,
+    eAmt Number(10,3),
+    eTime VARCHAR2(20),
     CONSTRAINT FK_calander_member FOREIGN KEY (id) REFERENCES member (id),
     CONSTRAINT FK_calander_food FOREIGN KEY (FCode) REFERENCES food (FCode)
 );
