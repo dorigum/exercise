@@ -79,18 +79,4 @@ public class ExerciseController {
 	public String viewExerManageForm() {
 		return "exer/exerManage";
 	}
-	
-	
-	
-	
-	
-	
-	
-	// 운동 종류 조회
-	@RequestMapping("/exer/exerInfoListView")
-	public String viewExerInfoList(Model model) {
-		ArrayList<ExerInfoVO> exerInfoList = service.exerInfoList();
-		model.addAttribute("exerInfoList", exerInfoList);
-		return "exer/exerInfoListView";
-	}
 }

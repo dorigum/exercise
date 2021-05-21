@@ -12,10 +12,4 @@ public interface IExerciseDAO {
 	public void deleteExercise(String dayNo);
 	public ExerciseVO exerciseDetailView(String dayNo);
 	
-	
-	
-	// 운동 종류 조회 테스트
-	public ArrayList<ExerInfoVO> exerInfoList();
-	public ExerciseVO exerInfoDetailView(String exNo);
-	
 }
