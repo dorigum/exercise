@@ -12,10 +12,11 @@ CREATE TABLE MEMBER (
 
 CREATE TABLE FOOD (
     FCode VARCHAR2(30) NOT NULL Primary key,
-    FName VARCHAR2(30),
+    FName VARCHAR2(30) NOT NULL,
+    F_category VARCHAR2(30),
+    servings Number (10,3),
     Kcal Number(10,3),
-    unit VARCHAR2(30),
-    unit_per_gram VARCHAR2(30)
+    Kcal_per_100 Number(10,3)
 );
 
 CREATE TABLE calandar (
