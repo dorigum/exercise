@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.multi_project.exer.model.ExerInfoVO;
 import com.multi_project.exer.model.ExerciseVO;
 import com.multi_project.exer.service.ExerciseService;
 
@@ -71,5 +72,25 @@ public class ExerciseController {
 	public String deleteExercise(@PathVariable String dayNo) {
 		service.deleteExercise(dayNo);
 		return "redirect:/exer/exerciseListView";
+	}
+	
+	// 운동 관리 화면으로 이동
+	@RequestMapping("/exer/exerManage")
+	public String viewExerManageForm() {
+		return "exer/exerManage";
+	}
+	
+	
+	
+	
+	
+	
+	
+	// 운동 종류 조회
+	@RequestMapping("/exer/exerInfoListView")
+	public String viewExerInfoList(Model model) {
+		ArrayList<ExerInfoVO> exerInfoList = service.exerInfoList();
+		model.addAttribute("exerInfoList", exerInfoList);
+		return "exer/exerInfoListView";
 	}
 }

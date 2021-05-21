@@ -2,6 +2,7 @@ package com.multi_project.exer.dao;
 
 import java.util.ArrayList;
 
+import com.multi_project.exer.model.ExerInfoVO;
 import com.multi_project.exer.model.ExerciseVO;
 
 public interface IExerciseDAO {
@@ -10,5 +11,11 @@ public interface IExerciseDAO {
 	public void updateExercise(ExerciseVO DayExercise);
 	public void deleteExercise(String dayNo);
 	public ExerciseVO exerciseDetailView(String dayNo);
+	
+	
+	
+	// 운동 종류 조회 테스트
+	public ArrayList<ExerInfoVO> exerInfoList();
+	public ExerciseVO exerInfoDetailView(String exNo);
 	
 }
