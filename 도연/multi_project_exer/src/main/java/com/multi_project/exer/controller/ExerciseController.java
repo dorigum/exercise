@@ -79,4 +79,16 @@ public class ExerciseController {
 	public String viewExerManageForm() {
 		return "exer/exerManage";
 	}
+	
+	// 운동 관리 화면으로 이동2222222
+	@RequestMapping("/exer/exerManage2")
+	public String viewExerManageForm2() {
+		return "exer/exerManage2";
+	}
+	
+	// 아이디 출력 테스트
+	@RequestMapping("/jsp/top")
+	public String IdTest() {
+		return "/jsp/top";
+	}
 }

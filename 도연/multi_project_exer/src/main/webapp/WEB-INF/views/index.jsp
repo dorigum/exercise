@@ -57,6 +57,8 @@
 		<a href="exer/exerciseListView">운동 기록 조회</a><br><br>
 		<a href="exer/exerciseNewForm">운동 기록</a><br><br>
 		<a href="exer/exerManage">운동 관리</a><br><br>
+		<a href="exer/exerManage2">운동 관리2</a><br><br>
+		<a href="jsp/top">테스트용</a><br><br>
 
 		<!-- 날짜 및 요일 -->
 		<%= cal.get(Calendar.YEAR) %>년

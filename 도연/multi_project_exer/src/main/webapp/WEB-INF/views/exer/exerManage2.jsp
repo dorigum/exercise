@@ -12,12 +12,12 @@
 	String uid = "exercise";
 	String pwd = "1234";
 	String url = "jdbc:oracle:thin:@localhost:1521:XE";
-	String sql = "select * from DayExercise";%>
+	String sql = "select * from test where id='bbb'";%>
 <!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>JDBC를 이용한 데이터베이스 테이블 만들기</title>
+	<title>운동 관리 페이지_테이블</title>
 		<%
 			Calendar cal = Calendar.getInstance();
 			String[] arr = {"일", "월", "화", "수", "목", "금", "토"};
@@ -72,26 +72,22 @@
 	%>
 	<table border="1">
 		<tr>
-			<td>번호</td>
-			<td>년</td>
-			<td>월</td>
-			<td>일</td>
-			<td>요일</td>
-			<td>운동번호</td>
-			<td>무게</td>
-			<td>횟수</td>
+			<td>ID</td>
+			<td>운동명</td>
+			<td>목표 운동량</td>
+			<td>현재 운동량</td>
+			<td>목표 운동횟수</td>
+			<td>현재 운동횟수</td>
 		</tr>
 		<%
 			while (rs.next()) {
 		%>
 		<tr>
-			<td><%=rs.getString("dayNo")%></td>
-			<td><%=rs.getString("year")%></td>
-			<td><%=rs.getString("month")%></td>
-			<td><%=rs.getString("exdate")%></td>
-			<td><%=rs.getString("day")%></td>
-			<td><%=rs.getString("exNo")%></td>
-			<td><%=rs.getString("weight")%></td>
+			<td><%=rs.getString("id")%></td>
+			<td><%=rs.getString("exName")%></td>
+			<td><%=rs.getString("goalExTime")%></td>
+			<td><%=rs.getString("exTime")%></td>
+			<td><%=rs.getString("goalExCount")%></td>
 			<td><%=rs.getString("count")%></td>
 		</tr>
 	
@@ -116,11 +112,6 @@
 	}
 	}
 	%>
-	</table><br><br>
-	
-
-	<a href="exerciseNewForm">운동 기록 직접 입력</a><br><br>
-	<a href="exerciseNewForm">운동 기록 (음성 녹음) (아직 안만들었음!)</a><br><br>
-	<a href="exerciseNewForm">운동 기록 (음성 파일 업로드) (아직 안만들었음!)</a><br><br>
+	</table>
 </body>
 </html>
