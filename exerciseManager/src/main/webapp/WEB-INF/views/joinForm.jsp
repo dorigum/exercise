@@ -5,11 +5,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>회원 가입 폼</title>			
+		<title>회원 가입 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>		
-		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-		<script type="text/javascript">
-		</script>
+		<script src="<c:url value='/js/idCheck.js'/>"></script>	
+		<script type="text/javascript"></script>	
 	</head>
 	<body>
 	<div id="wrap">
@@ -29,8 +28,9 @@
 								   <option value="남">남</option>
 								   <option value="녀">녀</option>
 	                          </select></td></tr> 
+	            <tr><th>목표체중</th><td><input type="text" id ="goalWeight" name="golWeight"></td></tr>
 
-	             <tr>
+	            <tr>
 	                <td colspan="2" align="center" id="button">
 	                    <br><input type="submit" value="완료">
 	                    <input type="reset" value="취소">
