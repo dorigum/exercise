@@ -20,8 +20,10 @@
         var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); //현재 달의 마지막 날
         var tbcal = document.getElementById("calendar"); // 테이블 달력을 만들 테이블
         var yearmonth = document.getElementById("yearmonth"); //  년도와 월 출력할곳
+        var monthday = document.getElementById("monthday"); //  년도와 월 출력할곳
         
         yearmonth.innerHTML = today.getFullYear() + " . "+ (today.getMonth() + 1); //년도와 월 출력
+        /*monthday.innerHTML = (today.getMonth() + 1) + " . " + today.getDate();*/ //년도와 월 출력
         before.innerHTML= "<i class='fas fa-caret-square-left'></i>";
         next.innerHTML= "<i class='fas fa-caret-square-right'></i>";
         
@@ -42,23 +44,24 @@
         // 달력 출력
         for (i = 1; i <= lastDate.getDate(); i++) { // 1일부터 마지막 일까지
             cell = row.insertCell();{
-            
+            var mon = (today.getMonth() + 1);
+            var dat = i;
             cell.innerHTML = 
             	" \
             		<div class='flip-card' id='flip-card'> \
 	            		<div class='flip-card-inner'> \
 						    <div class='flip-card-front'> \
-						        <h3>" + 
-						        (today.getMonth() + 1) + "." + i + 
+						        <h3 class='front'>" + 
+						        mon + "." + dat + 
 						        "</h3> \
-						        <h1 id='cal' style='color:#1c1e26;'> null <br> Kcal</h1> \
+						        <h1 id='cal' style='color:#1c1e26;'> 0 <br> Kcal</h1> \
 						    </div> \
 						    <div class='flip-card-back'> \
 						        <h3>" +
 						        (today.getMonth() + 1) + "." + i + 
 						        "</h3> \
-						        <p>권장: null Kcal</p> \
-						        <p>섭취: null Kcal</p> \
+						        <p>권장: 0 Kcal</p> \
+						        <p>섭취: 0 Kcal</p> \
 						    </div> \
 						</div> \
 					</div> \

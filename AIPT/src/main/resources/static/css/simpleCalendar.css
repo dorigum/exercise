@@ -1,8 +1,18 @@
 @charset "UTF-8";
+@font-face {
+    font-family: 'CookieRunOTF-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
-  font-family: JetBrains Mono, Helvetica, sans-serif;
+  font-family: 'CookieRunOTF-Bold';
   background: #FADAD1;
+}
+
+input {
+	  font-family: 'CookieRunOTF-Bold';
 }
 
 i {
@@ -10,14 +20,15 @@ i {
 	color: #e95678;
 }
 
-td {
+#calendar td {
 	height: 100;
 }
 
-table {
+#calendar {
 /* 	border: 1px solid #BDBDBD; */
 	text-align: center;
 	width: 30%;
+	padding-top:10px;
 }
 
 td#yearmonth {
@@ -92,4 +103,12 @@ p {
 
 .wrap {
 	text-align: center;
+}
+
+td#monthday {
+	font-size: 30px;
+}
+
+td a {
+	text-decoration: none;
 }

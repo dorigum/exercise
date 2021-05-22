@@ -7,7 +7,7 @@
     width: 45px;
     height: 45px;
     padding: 5px;
-    background-color: #f0f0f0;
+    background-color: rgba( 255, 255, 255, 0);
     border: 0;
 }
 .mobile-menu i {
@@ -16,18 +16,56 @@
 .menuwrap {
     position: fixed;
     top: 0;
-    left: -300px; /* 너비 300px 인 사이드바를 왼쪽으로 300px 이동시켜 화면에 보이지 않게 함 */
+    left: -400px; /* 너비 300px 인 사이드바를 왼쪽으로 300px 이동시켜 화면에 보이지 않게 함 */
     z-index: 400;
     overflow: auto;
-    width: 300px; /* 너비 */
+    width: 400px; /* 너비 */
     height: 100%;
-    padding: 50px 20px;
+    padding: 20px 20px;
     box-sizing: border-box;
     transition: left .3s ease-in-out; /* 0.3초 동안 이동 애니메이션 */
-    background-color: #f0f0f0;
+    background-color: #F4F1FD;
 }
+
+.textSearchMenuwrap {
+    position: fixed;
+    top: 0;
+    left: -400px; /* 너비 300px 인 사이드바를 왼쪽으로 300px 이동시켜 화면에 보이지 않게 함 */
+    z-index: 390;
+    overflow: auto;
+    width: 400px; /* 너비 */
+    height: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    transition: left .3s ease-in-out; /* 0.3초 동안 이동 애니메이션 */
+    background-color: #F4F1FD;
+}
+
+.OCRSearchMenuwrap {
+    position: fixed;
+    top: 0;
+    left: -400px; /* 너비 300px 인 사이드바를 왼쪽으로 300px 이동시켜 화면에 보이지 않게 함 */
+    z-index: 390;
+    overflow: auto;
+    width: 400px; /* 너비 */
+    height: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    transition: left .3s ease-in-out; /* 0.3초 동안 이동 애니메이션 */
+    background-color: #F4F1FD;
+}
+
+
 .menuwrap.on {
     left: 0;
+}
+
+.textSearchMenuwrap.on {
+    left: 400px;
+}
+
+.OCRSearchMenuwrap.on {
+    left: 400px;
 }
 #dimmed {
     position: fixed;
@@ -38,3 +76,27 @@
     height: 100%;
     background-color: rgba(0,0,0,0.5);
 }
+
+#menu input{
+	/* margin: 0 auto;	 */
+	width: 300px;
+	height: 50px;
+	font-size: 20px;
+	margin-bottom: 5mm;
+}
+
+#menu h4 {
+	text-align: left;
+	margin-left: 10px;
+	font-size: 18px;
+}
+
+#menu table {
+	margin-left: 40px;
+}
+
+#dietSearch {
+	position: absolute;
+	bottom: 20px;
+}
+

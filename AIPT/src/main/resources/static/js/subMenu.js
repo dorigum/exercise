@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
     document.querySelector(".mobile-menu").addEventListener("click", function(e){
+		monthday.innerHTML = $(this).find('.front').text();
        if ( document.querySelector('.menuwrap').classList.contains('on') ){
             //메뉴닫힘
             document.querySelector('.menuwrap').classList.remove('on');

@@ -13,7 +13,7 @@
 		<script src="<c:url value='js/simpleCalendar.js'/>"></script>
 	    <link href="<c:url value='css/simpleCalendar.css'/>" rel='stylesheet' />
 	    
-	    <script src="<c:url value='js/subMenu.js'/>"></script>
+	    <%-- <script src="<c:url value='js/subMenu.js'/>"></script> --%>
 	    <script src="<c:url value='js/subMenu2.js'/>"></script>
         <link href="<c:url value='css/subMenu.css'/>" rel="stylesheet" >
         
@@ -29,13 +29,13 @@
 		<div class="wrap">
 		    <table align="center" id="calendar">
 		        <tr>
-		            <td>
+		            <td colspan="2">
 		            	<font size=1%; color="#B3B6B3">
 		            		<label onclick="beforem()" id="before" ></label>
 	            		</font>
 	           		</td>
-		            <td colspan="5" align="center" id="yearmonth"></td>
-		            <td>
+		            <td colspan="3" align="center" id="yearmonth"></td>
+		            <td colspan="2">
 		            	<font size=1%; color="#B3B6B3">
 		            		<label onclick="nextm()" id="next"></label>
 	            		</font>
@@ -52,18 +52,84 @@
 		        </tr>
 	
 		    </table>
-		    <button type="button" class="mobile-menu"><i class="fas fa-bars"></i></button>
+		    <!-- <button type="button" class="mobile-menu"><i class="fas fa-bars"></i></button> -->
+		    
 		    <div class="menuwrap">
 		        <nav id="menu">
 		            <!-- "메뉴목록 표시" -->
-		            <ul class="category_list">
-		            	<li id="yearmonth"></li>
-		                <li class=""><a class="link_sub_item" href="#">식단 입력: 텍스트</a></li>
-		                <li class=""><a class="link_sub_item" href="#">식단 입력: OCR</a></li>
-		                <li class=""><a class="link_sub_item" href="#">식단 수정</a></li>
-		            </ul>            
+		            <h3 align="center" id="monthday" style="font-size:25px;"></h3>
+		            <h4>아침</h4>
+		            <table id="brkfstTable" border="1" width="300">
+		            	<tr>
+		            		<td style="">음식명</td>
+		            		<td>섭취량</td>
+		            		<td>칼로리</td>
+		            	</tr>
+		            </table>
+		            
+		            <br>
+		            <h4>점심</h4>
+		            <table id="lunchTable" border="1" width="300">
+    			        <tr>
+		            		<td style="">음식명</td>
+		            		<td>섭취량</td>
+		            		<td>칼로리</td>
+		            	</tr>
+		            </table>
+		            <br>
+		            <h4>저녁</h4>
+		            <table id="dinnerTable" border= "1" width="300">
+		            	<tr>
+		            		<td style="">음식명</td>
+		            		<td>섭취량</td>
+		            		<td>칼로리</td>
+		            	</tr>
+		            </table>
+		            <br>
+		            <h4>간식</h4>
+		            <table id="snackTable" border= "1" width="300">
+		            	<tr>
+		            		<td style="">음식명</td>
+		            		<td>섭취량</td>
+		            		<td>칼로리</td>
+		            	</tr>
+		            </table>
+		            <br><br>
+		            
+		            <div id="dietSearch">
+			            <input type="button" id="textSearch" href="#" value="식단 입력: 텍스트로 검색">
+			            <input type="button" id="OCRSearch" href="#" value="식단 입력: 성분표로 검색">
+			            <input type="button" id="dietDelete" href="#" value="식단 삭제 (미구현)">
+		            </div>
+
 		        </nav>
 		    </div>
+		    
+		    <div class="textSearchMenuwrap">
+		        <nav id="textSearchMenu">
+		        	<h3>식단 입력: 텍스트로 검색</h3>
+		        		<div class="selectTime">
+			        		<h4>시간 선택</h4>
+			        			<button type="button" class="breakfastBtn"><i class="fas fa-sun"></i></i></button>
+			        			<button type="button" class="lunchBtn"><i class="fas fa-cloud-sun"></i></button>
+			        			<button type="button" class="dinnerBtn"><i class="fas fa-moon"></i></button>
+			        			<button type="button" class="snackBtn"><i class="fas fa-cookie-bite"></i></i></button>
+		        		</div>
+		        </nav>
+        	</div>
+		    
+		    <div class="OCRSearchMenuwrap">
+		        <nav id="OCRSearchMenu">
+		        	<h3>식단 입력: 성분표로 검색</h3>
+		        		<div class="selectTime">
+			        		<h4>시간 선택</h4>
+			        			<button type="button" class="breakfastBtn"><i class="fas fa-sun"></i></i></button>
+			        			<button type="button" class="lunchBtn"><i class="fas fa-cloud-sun"></i></button>
+			        			<button type="button" class="dinnerBtn"><i class="fas fa-moon"></i></button>
+			        			<button type="button" class="snackBtn"><i class="fas fa-cookie-bite"></i></i></button>
+		        		</div>
+		        </nav>
+        	</div>
 	    </div>
 	    
 	</body>
