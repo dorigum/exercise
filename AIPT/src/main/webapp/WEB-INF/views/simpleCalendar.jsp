@@ -130,14 +130,14 @@
 	        		<div class="container">
 					
 						<ul class="tabs">
-							<li id="breakfastBtn" class="tab-link current" data-tab="tab-1">아침</li>
-							<li id="lunchBtn" class="tab-link" data-tab="tab-2">점심</li>
-							<li id="dinnerBtn" class="tab-link" data-tab="tab-3">저녁</li>
-							<li id="nightBtn" class="tab-link" data-tab="tab-4">야식</li>
-							<li id="snackBtn" class="tab-link" data-tab="tab-4">간식</li>
+							<li class="breakfastBtn">아침</li>
+							<li class="lunchBtn">점심</li>
+							<li class="dinnerBtn">저녁</li>
+							<li class="nightBtn">야식</li>
+							<li class="snackBtn">간식</li>
 						</ul>
 
-						<div id="content">
+						<div class="content">
 								
 						</div>
 					</div>
@@ -157,14 +157,14 @@
 	        		<div class="container">
 					
 						<ul class="tabs">
-							<li id="breakfastBtn" class="tab-link current" data-tab="tab-1">아침</li>
-							<li id="lunchBtn" class="tab-link" data-tab="tab-2">점심</li>
-							<li id="dinnerBtn" class="tab-link" data-tab="tab-3">저녁</li>
-							<li id="nightBtn" class="tab-link" data-tab="tab-4">야식</li>
-							<li id="snackBtn" class="tab-link" data-tab="tab-4">간식</li>
+							<li class="breakfastBtn current">아침</li>
+							<li class="lunchBtn">점심</li>
+							<li class="dinnerBtn">저녁</li>
+							<li class="nightBtn">야식</li>
+							<li class="snackBtn">간식</li>
 						</ul>
 
-						<div id="content">
+						<div class="content">
 							
 						</div>
 

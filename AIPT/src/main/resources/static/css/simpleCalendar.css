@@ -90,6 +90,9 @@ td#yearmonth {
 	font-size: 10px;
 }
 
+.flip-card h3 {
+	font-size: 15px;
+}
 #cal {
 	text-align: center;
 }
