@@ -1,18 +1,18 @@
 @charset "UTF-8";
 @font-face {
-    font-family: 'CookieRunOTF-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
+    font-family: 'BinggraeMelona-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona-Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-  font-family: 'CookieRunOTF-Bold';
+  font-family: 'BinggraeMelona-Bold';
   background: #FADAD1;
 }
 
 input {
-	  font-family: 'CookieRunOTF-Bold';
+	  font-family: 'BinggraeMelona-Bold';
 }
 
 i {
@@ -22,6 +22,10 @@ i {
 
 #calendar td {
 	height: 100;
+}
+
+#before, #next {
+	cursor: pointer;
 }
 
 #calendar {
@@ -46,6 +50,7 @@ td#yearmonth {
   height: 100px;
   perspective: 1000px;
   /* margin-bottom: 4px; */
+  cursor: pointer;
   
 }
 
@@ -99,6 +104,10 @@ td#yearmonth {
 
 p {
 	text-align: center;
+}
+
+.menuwrap p {
+	text-align: left;
 }
 
 .wrap {

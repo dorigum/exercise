@@ -14,12 +14,15 @@
 	    <link href="<c:url value='css/simpleCalendar.css'/>" rel='stylesheet' />
 	    
 	    <%-- <script src="<c:url value='js/subMenu.js'/>"></script> --%>
-	    <script src="<c:url value='js/subMenu2.js'/>"></script>
+	    <script src="<c:url value='js/subMenu.js'/>"></script>
         <link href="<c:url value='css/subMenu.css'/>" rel="stylesheet" >
+	    <script src="<c:url value='js/selectTimeBtn.js'/>"></script>
+        <link href="<c:url value='css/selectTimeBtn.css'/>" rel="stylesheet" >
         
+        <script src="<c:url value='js/selectTimeBtn.js'/>"></script>
 		<meta charset="EUC-KR">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>simple Calender</title>
+		<title>simple Calender</title> 
 		<style>
 
 		</style>
@@ -58,7 +61,7 @@
 		        <nav id="menu">
 		            <!-- "메뉴목록 표시" -->
 		            <h3 align="center" id="monthday" style="font-size:25px;"></h3>
-		            <h4>아침</h4>
+		            <p>아침</p>
 		            <table id="brkfstTable" border="1" width="300">
 		            	<tr>
 		            		<td style="">음식명</td>
@@ -68,7 +71,7 @@
 		            </table>
 		            
 		            <br>
-		            <h4>점심</h4>
+		            <p>점심</p>
 		            <table id="lunchTable" border="1" width="300">
     			        <tr>
 		            		<td style="">음식명</td>
@@ -77,7 +80,7 @@
 		            	</tr>
 		            </table>
 		            <br>
-		            <h4>저녁</h4>
+		            <p>저녁</p>
 		            <table id="dinnerTable" border= "1" width="300">
 		            	<tr>
 		            		<td style="">음식명</td>
@@ -86,7 +89,16 @@
 		            	</tr>
 		            </table>
 		            <br>
-		            <h4>간식</h4>
+		            <p>야식</p>
+		            <table id="nightTable" border= "1" width="300">
+		            	<tr>
+		            		<td style="">음식명</td>
+		            		<td>섭취량</td>
+		            		<td>칼로리</td>
+		            	</tr>
+		            </table>
+		            <br>
+		            <p>간식</p>
 		            <table id="snackTable" border= "1" width="300">
 		            	<tr>
 		            		<td style="">음식명</td>
@@ -108,26 +120,55 @@
 		    <div class="textSearchMenuwrap">
 		        <nav id="textSearchMenu">
 		        	<h3>식단 입력: 텍스트로 검색</h3>
-		        		<div class="selectTime">
+<!-- 		        		<div class="selectTime">
 			        		<h4>시간 선택</h4>
 			        			<button type="button" class="breakfastBtn"><i class="fas fa-sun"></i></i></button>
 			        			<button type="button" class="lunchBtn"><i class="fas fa-cloud-sun"></i></button>
 			        			<button type="button" class="dinnerBtn"><i class="fas fa-moon"></i></button>
 			        			<button type="button" class="snackBtn"><i class="fas fa-cookie-bite"></i></i></button>
-		        		</div>
+		        		</div> -->
+	        		<div class="container">
+					
+						<ul class="tabs">
+							<li id="breakfastBtn" class="tab-link current" data-tab="tab-1">아침</li>
+							<li id="lunchBtn" class="tab-link" data-tab="tab-2">점심</li>
+							<li id="dinnerBtn" class="tab-link" data-tab="tab-3">저녁</li>
+							<li id="nightBtn" class="tab-link" data-tab="tab-4">야식</li>
+							<li id="snackBtn" class="tab-link" data-tab="tab-4">간식</li>
+						</ul>
+
+						<div id="content">
+								
+						</div>
+					</div>
 		        </nav>
         	</div>
 		    
 		    <div class="OCRSearchMenuwrap">
 		        <nav id="OCRSearchMenu">
 		        	<h3>식단 입력: 성분표로 검색</h3>
-		        		<div class="selectTime">
+<!-- 		        		<div class="selectTime">
 			        		<h4>시간 선택</h4>
 			        			<button type="button" class="breakfastBtn"><i class="fas fa-sun"></i></i></button>
 			        			<button type="button" class="lunchBtn"><i class="fas fa-cloud-sun"></i></button>
 			        			<button type="button" class="dinnerBtn"><i class="fas fa-moon"></i></button>
 			        			<button type="button" class="snackBtn"><i class="fas fa-cookie-bite"></i></i></button>
-		        		</div>
+		        		</div> -->
+	        		<div class="container">
+					
+						<ul class="tabs">
+							<li id="breakfastBtn" class="tab-link current" data-tab="tab-1">아침</li>
+							<li id="lunchBtn" class="tab-link" data-tab="tab-2">점심</li>
+							<li id="dinnerBtn" class="tab-link" data-tab="tab-3">저녁</li>
+							<li id="nightBtn" class="tab-link" data-tab="tab-4">야식</li>
+							<li id="snackBtn" class="tab-link" data-tab="tab-4">간식</li>
+						</ul>
+
+						<div id="content">
+							
+						</div>
+
+					</div>
 		        </nav>
         	</div>
 	    </div>
