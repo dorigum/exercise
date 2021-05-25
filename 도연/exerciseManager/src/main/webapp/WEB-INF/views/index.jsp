@@ -85,6 +85,11 @@
 		 
 		 <!-- 음성 녹음 추가 테스트으으으으으으으으으으으으으으 -->
  		<!-- <a href="voiceRecord">음성 녹음 테스트</a><br><br> -->
+ 		
+ 		
+ 		
+ 		<!-- 음성 파일 업로드 추가 -->
+ 		<a href="stt">Speech To Text (음성을 텍스트로 변환)</a><br><br>
 		
 	</body>
 </html>
