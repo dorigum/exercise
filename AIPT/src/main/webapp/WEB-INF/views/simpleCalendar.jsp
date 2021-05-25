@@ -62,7 +62,7 @@
 		            <!-- "메뉴목록 표시" -->
 		            <h3 align="center" id="monthday" style="font-size:25px;"></h3>
 		            <p>아침</p>
-		            <table id="brkfstTable" border="1" width="300">
+		            <table class="brkfstTable" border="1" width="300">
 		            	<tr>
 		            		<td style="">음식명</td>
 		            		<td>섭취량</td>
@@ -72,7 +72,7 @@
 		            
 		            <br>
 		            <p>점심</p>
-		            <table id="lunchTable" border="1" width="300">
+		            <table class="lunchTable" border="1" width="300">
     			        <tr>
 		            		<td style="">음식명</td>
 		            		<td>섭취량</td>
@@ -81,7 +81,7 @@
 		            </table>
 		            <br>
 		            <p>저녁</p>
-		            <table id="dinnerTable" border= "1" width="300">
+		            <table class="dinnerTable" border= "1" width="300">
 		            	<tr>
 		            		<td style="">음식명</td>
 		            		<td>섭취량</td>
@@ -90,7 +90,7 @@
 		            </table>
 		            <br>
 		            <p>야식</p>
-		            <table id="nightTable" border= "1" width="300">
+		            <table class="nightTable" border= "1" width="300">
 		            	<tr>
 		            		<td style="">음식명</td>
 		            		<td>섭취량</td>
@@ -99,7 +99,7 @@
 		            </table>
 		            <br>
 		            <p>간식</p>
-		            <table id="snackTable" border= "1" width="300">
+		            <table class="snackTable" border= "1" width="300">
 		            	<tr>
 		            		<td style="">음식명</td>
 		            		<td>섭취량</td>
@@ -117,55 +117,67 @@
 		        </nav>
 		    </div>
 		    
+		    
 		    <div class="textSearchMenuwrap">
 		        <nav id="textSearchMenu">
 		        	<h3>식단 입력: 텍스트로 검색</h3>
-<!-- 		        		<div class="selectTime">
-			        		<h4>시간 선택</h4>
-			        			<button type="button" class="breakfastBtn"><i class="fas fa-sun"></i></i></button>
-			        			<button type="button" class="lunchBtn"><i class="fas fa-cloud-sun"></i></button>
-			        			<button type="button" class="dinnerBtn"><i class="fas fa-moon"></i></button>
-			        			<button type="button" class="snackBtn"><i class="fas fa-cookie-bite"></i></i></button>
-		        		</div> -->
 	        		<div class="container">
 					
 						<ul class="tabs">
-							<li class="breakfastBtn">아침</li>
-							<li class="lunchBtn">점심</li>
-							<li class="dinnerBtn">저녁</li>
-							<li class="nightBtn">야식</li>
-							<li class="snackBtn">간식</li>
+							<li class="breakfastBtn" value="아침">아침</li>
+							<li class="lunchBtn" value="점심">점심</li>
+							<li class="dinnerBtn" value="저녁">저녁</li>
+							<li class="nightBtn" value="야식">야식</li>
+							<li class="snackBtn" value="간식">간식</li>
 						</ul>
-
+						
 						<div class="content">
-								
+							<p align="center" id="clickDay1" style="font-size:15px; margin: 5px;"></p>
+							<p align="center" id="clickTime1" style="font-size:15px; margin: 5px;">시간을 클릭하세요 :)</p>
+							<p align="center" style="font-size:15px; margin: 5px;">
+								현재 식단
+							</p>
+				            <table class="brkfstTable" border="1" width="350">
+				            	<tr>
+				            		<td style="">음식명</td>
+				            		<td>섭취량</td>
+				            		<td>칼로리</td>
+				            	</tr>
+				            </table>
 						</div>
+
 					</div>
 		        </nav>
         	</div>
 		    
+		    
 		    <div class="OCRSearchMenuwrap">
 		        <nav id="OCRSearchMenu">
 		        	<h3>식단 입력: 성분표로 검색</h3>
-<!-- 		        		<div class="selectTime">
-			        		<h4>시간 선택</h4>
-			        			<button type="button" class="breakfastBtn"><i class="fas fa-sun"></i></i></button>
-			        			<button type="button" class="lunchBtn"><i class="fas fa-cloud-sun"></i></button>
-			        			<button type="button" class="dinnerBtn"><i class="fas fa-moon"></i></button>
-			        			<button type="button" class="snackBtn"><i class="fas fa-cookie-bite"></i></i></button>
-		        		</div> -->
 	        		<div class="container">
 					
 						<ul class="tabs">
-							<li class="breakfastBtn current">아침</li>
-							<li class="lunchBtn">점심</li>
-							<li class="dinnerBtn">저녁</li>
-							<li class="nightBtn">야식</li>
-							<li class="snackBtn">간식</li>
+							<li class="breakfastBtn" value="아침">아침</li>
+							<li class="lunchBtn" value="점심">점심</li>
+							<li class="dinnerBtn" value="저녁">저녁</li>
+							<li class="nightBtn" value="야식">야식</li>
+							<li class="snackBtn" value="간식">간식</li>
 						</ul>
 
 						<div class="content">
-							
+						
+							<p align="center" id="clickDay2" style="font-size:15px; margin: 5px;"></p>
+							<p align="center" id="clickTime2" style="font-size:15px; margin: 5px;">시간을 클릭하세요 :)</p>
+							<p align="center" style="font-size:15px; margin: 5px;">
+								현재 식단
+							</p>
+				            <table class="brkfstTable" border="1" width="350">
+				            	<tr>
+				            		<td style="">음식명</td>
+				            		<td>섭취량</td>
+				            		<td>칼로리</td>
+				            	</tr>
+				            </table>
 						</div>
 
 					</div>

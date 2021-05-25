@@ -77,20 +77,20 @@
                 // cell.bgColor = "#BCF1B1"; //오늘날짜배경색 #EE64AE
 	            cell.innerHTML = 
 	            	" \
-	            		<div class='flip-card'> \
+	            		<div class='flip-card' id='flip-card'> \
 		            		<div class='flip-card-inner'> \
-							    <div class='flip-card-front' style='background-color:#B877DB;'> \
-							        <h3>" + 
+							    <div class='flip-card-front' style='background-color:#FCABB9;'> \
+							        <h3 class='front'>" + 
 							        (today.getMonth() + 1) + "." + i + 
 							        "</h3> \
-							        <h1 id='cal' style='color:#1c1e26;'> null <br> Kcal</h1> \
+							        <h1 id='cal' style='color:#1c1e26;'> 0 <br> Kcal</h1> \
 							    </div> \
 							    <div class='flip-card-back'> \
 							        <h3>" +
 							        (today.getMonth() + 1) + "." + i + 
 							        "</h3> \
-							        <p>권장: null Kcal</p> \
-							        <p>섭취: null Kcal</p> \
+							        <p>권장: 0 Kcal</p> \
+							        <p>섭취: 0 Kcal</p> \
 							    </div> \
 							</div> \
 						</div> \

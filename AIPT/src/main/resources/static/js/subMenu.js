@@ -3,6 +3,9 @@ $(document).ready(function() {
 	$(document).on('click', '.flip-card', function(){
 
 		monthday.innerHTML = $(this).find('.front').text();
+		clickDay1.innerHTML = $(this).find('.front').text();
+		clickDay2.innerHTML = $(this).find('.front').text();
+		
 		document.querySelector('.menuwrap').classList.add('on');
 	    let div = document.createElement('div');
 	    div.id = 'dimmed';

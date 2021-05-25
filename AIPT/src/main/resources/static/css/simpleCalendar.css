@@ -84,7 +84,7 @@ td#yearmonth {
 }
 
 .flip-card-back {
-	background-color: #25B2BC;
+	background-color: #FA8072;
 	color: white;
 	transform: rotateY(180deg);
 	font-size: 10px;
