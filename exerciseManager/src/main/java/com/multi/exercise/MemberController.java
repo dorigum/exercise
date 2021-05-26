@@ -1,6 +1,5 @@
 package com.multi.exercise;
 
-import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -70,8 +69,11 @@ public class MemberController {
 		String pwd =request.getParameter("pwd");
 		String name =request.getParameter("memName");
 		String email =request.getParameter("email");
-		System.out.println(id+pwd+name+email);
-		MemberVO vo =memservice.join(id, pwd, name, email);
+		int age =Integer.parseInt(request.getParameter("age"));
+		String gender =request.getParameter("gender");
+		float height =Float.parseFloat(request.getParameter("height"));
+		float weight =Float.parseFloat(request.getParameter("weight"));
+		MemberVO vo =memservice.join(id, pwd, name, email, age, gender, height, weight);
 		session.setAttribute("sid", id);
 		// 조인 컨펌으로 이동
 		return "joinConfirm"; //
