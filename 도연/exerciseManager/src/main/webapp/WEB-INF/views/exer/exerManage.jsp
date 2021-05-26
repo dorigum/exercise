@@ -18,6 +18,11 @@
 	<head>
 	<meta charset="UTF-8">
 	<title>JDBC를 이용한 데이터베이스 테이블 만들기</title>
+	
+	<!-- CSS 적용 -->
+	<link rel="stylesheet" type="text/css" href="css/table.css">
+	
+	
 		<%
 			Calendar cal = Calendar.getInstance();
 			String[] arr = {"일", "월", "화", "수", "목", "금", "토"};
@@ -40,6 +45,7 @@
 		%>
 	</head>
 	<body>
+	
 		<!-- 날짜 및 요일 -->
 		<%= cal.get(Calendar.YEAR) %>년
 		<%= cal.get(Calendar.MONTH)+1 %>월
@@ -49,7 +55,7 @@
 		
 		<!-- 운동 현황 보여주는 테이블 만들기 -->
 		단순 텍스트 테이블 출력<br>
-		<table border="1">
+		<table class="type07">
 	 		<tr><td>	</td><td>목표</td><td>현재</td></tr>
 	 		<tr><td colspan=3>코어</td></tr>
 	 		<tr><td>플랭크</td><td>10분</td><td>20분</td></tr>
@@ -58,7 +64,35 @@
 	 		<tr><td>스쿼트</td><td>20회</td><td>스쿼트:0회/0분</td></tr><br><br><br>
 	 	</table><br><br>
 
-	 <!-- exercise 테이블 조회 -->
+
+
+	<table class="type07">
+		<thead>
+			<tr>
+				<th scope="cols">타이틀</th>
+				<th scope="cols">내용</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">항목명</th>
+				<td>내용이 들어갑니다.</td>
+			</tr>
+			<tr>
+				<th scope="row">항목명</th>
+				<td>내용이 들어갑니다.</td>
+			</tr>
+			<tr>
+				<th scope="row">항목명</th>
+				<td>내용이 들어갑니다.</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+
+	<!-- exercise 테이블 조회 -->
 	<%
 		try {
 		// 데이터베이스를 접속하기 위한 드라이버 SW 로드
@@ -120,7 +154,7 @@
 	
 
 	<a href="exerciseNewForm">운동 기록 직접 입력</a><br><br>
-	<a href="exerciseNewForm">운동 기록 (음성 녹음) (아직 안만들었음!)</a><br><br>
-	<a href="exerciseNewForm">운동 기록 (음성 파일 업로드) (아직 안만들었음!)</a><br><br>
+	<a href="voiceRecord">운동 기록 (음성 녹음) : 경로 수정해야함</a><br><br>
+	<a href="stt">운동 기록 (음성 파일 업로드) : 경로 수정해야함</a><br><br>
 </body>
 </html>

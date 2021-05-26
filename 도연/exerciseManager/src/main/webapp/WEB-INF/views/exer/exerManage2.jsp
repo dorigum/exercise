@@ -40,24 +40,15 @@
 		%>
 	</head>
 	<body>
+		<div>
+			
+		</div>
 		<!-- 날짜 및 요일 -->
 		<%= cal.get(Calendar.YEAR) %>년
 		<%= cal.get(Calendar.MONTH)+1 %>월
 		<%= cal.get(Calendar.DATE) %>일
 		<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동<br><br>
 		
-		
-		<!-- 운동 현황 보여주는 테이블 만들기 -->
-		단순 텍스트 테이블 출력<br>
-		<table border="1">
-	 		<tr><td>	</td><td>목표</td><td>현재</td></tr>
-	 		<tr><td colspan=3>코어</td></tr>
-	 		<tr><td>플랭크</td><td>10분</td><td>20분</td></tr>
-	 		
-	 		<tr><td colspan=3>하체</td></tr>
-	 		<tr><td>스쿼트</td><td>20회</td><td>스쿼트:0회/0분</td></tr><br><br><br>
-	 	</table><br><br>
-
 	 <!-- exercise 테이블 조회 -->
 	<%
 		try {

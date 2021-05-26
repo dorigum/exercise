@@ -9,6 +9,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Exercise index 페이지</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/table.css">
+		
 		<%
 			Calendar cal = Calendar.getInstance();
 			String[] arr = {"일", "월", "화", "수", "목", "금", "토"};
@@ -53,6 +56,14 @@
 		%>
 	</head>
 	<body>
+	
+	<!-- 상단 메뉴 고정하기(아직 안만듦) -->
+<%-- 	<div id="wrap">
+	<!--  TOP  -->
+	<jsp:include page="/WEB-INF/views/jsp/top.jsp" flush="true" />  --%>
+	
+	
+	
 		<h3>운동 관리 페이지</h3>
 		<a href="exer/exerciseListView">운동 기록 조회</a><br><br>
 		<a href="exer/exerciseNewForm">운동 기록</a><br><br>
@@ -73,7 +84,7 @@
 		 --%>
 		 
 		 <!-- 단순 테이블만 출력 -->
-		 <table border="1">
+		 <table class="type07">
 	 		<tr><td>	</td><td>목표</td><td>현재</td></tr>
 	 		<tr><td colspan=3>코어</td></tr>
 	 		<tr><td>플랭크</td><td>10분</td><td>20분</td></tr>
@@ -81,9 +92,37 @@
 	 		<tr><td colspan=3>하체</td></tr>
 	 		<tr><td>스쿼트</td><td>20회</td><td>스쿼트:0회/0분</td></tr>
 		 </table>
-		 
-		 
- 		<!-- 음성 파일 업로드 추가 -->
+
+
+	<!-- 테이블 CSS 예시  -->
+	<table class="type07">
+		<thead>
+			<tr>
+				<th scope="cols">타이틀</th>
+				<th scope="cols">내용</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">항목명</th>
+				<td>내용이 들어갑니다.</td>
+			</tr>
+			<tr>
+				<th scope="row">항목명</th>
+				<td>내용이 들어갑니다.</td>
+			</tr>
+			<tr>
+				<th scope="row">항목명</th>
+				<td>내용이 들어갑니다.</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+
+
+	<!-- 음성 파일 업로드 추가 -->
  		<a href="stt">Speech To Text (음성을 텍스트로 변환)</a><br><br>
  		
  		 <!-- 음성 녹음 추가 테스트으으으으으으으으으으으으으으 -->
