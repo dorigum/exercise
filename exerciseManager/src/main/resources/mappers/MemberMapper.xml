@@ -7,7 +7,8 @@
   		<resultMap type="com.multi.exercise.MemberVO" id="memResult">
   			<result property="id" column="id"  />
   			<result property="pwd" column="pwd"  />
-  			<result property="name" column="name"  />  		
+  			<result property="name" column="name"  /> 
+  			<result property="email" column="email"  />
   		</resultMap>  
  
   		<!-- 로그인 확인 -->
@@ -20,6 +21,13 @@
   		<!-- 아이디 중복 체크 -->
   		<select id="idCheck" resultType="int" parameterType="String">
   			SELECT COUNT(id) FROM member WHERE id=#{id}
+  		</select>
+  		
+  		<!-- 회원가입 확인 -->
+  		<select id="join" resultMap="memResult" parameterType="hashmap">
+  			<![CDATA[
+  				INSERT INTO member (id, pwd, name, email) VALUES (#{id},#{pwd},#{name},#{email})
+  			]]>
   		</select>
   </mapper>
   

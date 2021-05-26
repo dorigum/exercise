@@ -7,8 +7,18 @@
 		<meta charset="UTF-8">
 		<title>회원 가입 폼</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>		
-		<script src="<c:url value='/js/idCheck.js'/>"></script>	
-		<script type="text/javascript"></script>	
+		<script src="<c:url value='/js/idCheck.js'/>"></script>
+		<script type="text/javascript">
+			function passwordCheckfunction(){
+				var userPassword1 = $('#pwd').val();
+				var userPassword2 = $('#pwd2').val();
+				if(userPassword1 != userPassword2){
+					$('#passwordCheckMessage').html('비밀번호가 일치하지 않습니다');
+				}else{
+					$('#passwordCheckMessage').html('비밀번호가 일치합니다');
+				}
+			}
+		</script>	
 	</head>
 	<body>
 	<div id="wrap">
@@ -19,20 +29,25 @@
 	        <form id="joinForm" name="joinForm" method="post"  action="/join"><!-- action="join.do" -->
 	          <table>
 	            <tr><th> 성명</th><td><input type="text" id="memName" name="memName" ></td></tr>
-	            <tr><th> ID</th><td><input type="text" id="memId" name="memId" > 
+	            <tr><th> ID</th><td><input type="text" id="Id" name="Id" > 
 	            		<input type="button" id="idCheck" value="ID 중복 체크"></td></tr>
-	            <tr><th>비밀번호</th><td><input type="password" id="memPwd" name="memPwd"></td></tr>
+	            <tr><th>비밀번호</th><td><input type="password" onkeyup="passwordCheckfunction()" id="pwd" name="pwd"></td></tr>
+	            <tr><th>비밀번호 확인</th><td><input type="password" onkeyup="passwordCheckfunction()" id="pwd2" name="pwd2"></td></tr>
+	            <tr><th></th><td style="color : red" id="passwordCheckMessage"></td></tr>
+	            
 	            <tr><th>성별</th>
-	                  <td><select id="memDepartment" name="memDepartment">
+	                  <td><select id="gender" name="gender">
 	                               <option value="">선택하세요</option>
 								   <option value="남">남</option>
 								   <option value="녀">녀</option>
 	                          </select></td></tr> 
-	            <tr><th>목표체중</th><td><input type="text" id ="goalWeight" name="golWeight"></td></tr>
-
+	            <tr><th>이메일</th><td><input type="text" id ="email" name="email"></td></tr>
+				<tr><th>가입일(ex2011-05-12)</th><td><input type="text" id ="joinDate" name="joinDate"></td></tr>
+				
 	            <tr>
 	                <td colspan="2" align="center" id="button">
-	                    <br><input type="submit" value="완료">
+	                	
+	                    <br><input type="submit" id="join" value="회원가입">
 	                    <input type="reset" value="취소">
 	                </td>
 	            </tr>             

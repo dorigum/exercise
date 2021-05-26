@@ -1,5 +1,6 @@
 package com.multi.exercise;
 
+import java.util.Date;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,15 @@ public class MemberService  {
 	
 	public int idCheck(String id) {
 		return memdao.idCheck(id);
+	}
+	
+	public MemberVO join(String id, String pwd, String name, String email) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("pwd", pwd);
+		map.put("name", name);
+		map.put("email", email);
+		return memdao.join(map);
 	}
 	
 }

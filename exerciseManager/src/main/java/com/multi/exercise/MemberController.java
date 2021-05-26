@@ -1,5 +1,9 @@
 package com.multi.exercise;
 
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +33,9 @@ public class MemberController {
 		// 결과 받아서 id와 비밀전호가 일치하면 세션 변수로 저장
 		if (vo != null) {
 			session.setAttribute("sid", vo.getId());
+		}else {
+			session.setAttribute("ERRORMSG", true);
+			return "loginForm";
 		}
 
 		return "redirect:/"; // index 페이지로 포워딩
@@ -55,5 +62,19 @@ public class MemberController {
 		return memservice.idCheck(id); 
 	}
 	  
+	// 회원 가입 완료
+	@RequestMapping("join")
+	public String join(HttpServletRequest request, HttpServletResponse response, HttpSession session ) {
+		// memberservice에서 로긴 체크
+		String id =request.getParameter("Id");
+		String pwd =request.getParameter("pwd");
+		String name =request.getParameter("memName");
+		String email =request.getParameter("email");
+		System.out.println(id+pwd+name+email);
+		MemberVO vo =memservice.join(id, pwd, name, email);
+		session.setAttribute("sid", id);
+		// 조인 컨펌으로 이동
+		return "joinConfirm"; //
+	}
 	
 }

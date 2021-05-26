@@ -10,4 +10,5 @@ public interface IMemberDAO {
 	MemberVO loginCheck(HashMap<String, Object> map);
 //	MemberVO idCheck(String id);
 	int idCheck(String id);
+	MemberVO join(HashMap<String, Object> map);
 }
