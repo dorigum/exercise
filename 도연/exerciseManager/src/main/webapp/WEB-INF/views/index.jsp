@@ -58,7 +58,6 @@
 		<a href="exer/exerciseNewForm">운동 기록</a><br><br>
 		<a href="exer/exerManage">운동 관리</a><br><br>
 		<a href="exer/exerManage2">운동 관리2</a><br><br>
-		<a href="jsp/top">테스트용</a><br><br>
 
 		<!-- 날짜 및 요일 -->
 		<%= cal.get(Calendar.YEAR) %>년
@@ -73,6 +72,7 @@
 		<%= strDay %> '금요일' 로 출력
 		 --%>
 		 
+		 <!-- 단순 테이블만 출력 -->
 		 <table border="1">
 	 		<tr><td>	</td><td>목표</td><td>현재</td></tr>
 	 		<tr><td colspan=3>코어</td></tr>
@@ -83,13 +83,11 @@
 		 </table>
 		 
 		 
-		 <!-- 음성 녹음 추가 테스트으으으으으으으으으으으으으으 -->
- 		<!-- <a href="voiceRecord">음성 녹음 테스트</a><br><br> -->
- 		
- 		
- 		
  		<!-- 음성 파일 업로드 추가 -->
  		<a href="stt">Speech To Text (음성을 텍스트로 변환)</a><br><br>
+ 		
+ 		 <!-- 음성 녹음 추가 테스트으으으으으으으으으으으으으으 -->
+ 		<a href="voiceRecord">음성 녹음 테스트</a><br><br>
 		
 	</body>
 </html>

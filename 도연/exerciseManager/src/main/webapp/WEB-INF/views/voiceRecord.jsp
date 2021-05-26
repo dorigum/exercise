@@ -12,6 +12,8 @@
 	<body>
 		<button id="record">녹음</button>
 		<button id="stop">정지</button>
-		<div id="sound-clips"></div>
+		<div id="sound-clips"></div><br><br>
+		
+		<a href="/">index 페이지로 이동</a>
 	</body>
 </html>

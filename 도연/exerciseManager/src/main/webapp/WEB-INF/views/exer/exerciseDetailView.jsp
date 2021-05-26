@@ -31,7 +31,7 @@
 			function deleteCheck(){
 				var answer = confirm("삭제하시겠습니까?");
 				if(answer == true){
-					location.href="/exer/exer/delete/${DayExercise.dayNo}";
+					location.href="/exer/delete/${DayExercise.dayNo}";
 				}
 			}
 		</script>

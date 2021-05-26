@@ -3,8 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="com.multi.dao.IExerciseDAO">
-  	<resultMap type="com.multi.model.ExerciseVO" id="exerciseResult">
+  <mapper namespace="com.multi.exercise.IExerciseDAO">
+  	<resultMap type="com.multi.exercise.ExerciseVO" id="exerciseResult">
   		<result property="dayNo" column="dayNo"/>
   		<result property="year" column="year"/>
   		<result property="month" column="month"/>
@@ -21,7 +21,7 @@
   	</select>
   	
 	<!-- 운동 정보 등록 --> <!-- ★★★★★★★★★★수정중★★★★★★★★★ -->
-  	<insert id="insertExercise" parameterType="com.multi.model.ExerciseVO">
+  	<insert id="insertExercise" parameterType="com.multi.exercise.ExerciseVO">
   		INSERT INTO DayExercise (dayNo, year, month, exdate, day, exNo, weight, count)
   		VALUES (#{dayNo}, #{year}, #{month}, #{exdate}, #{day}, #{exNo}, #{weight}, #{count})
   	</insert>
@@ -32,7 +32,7 @@
   	</select>
   	
   	<!-- 운동 기록 수정 --> <!-- 날짜는 수정 못하도록???????? -->
-  	<update id="updateExercise" parameterType="com.multi.model.ExerciseVO">
+  	<update id="updateExercise" parameterType="com.multi.exercise.ExerciseVO">
   		UPDATE DayExercise
   		SET year=#{year}, month=#{month}, exdate=#{exdate},
   			day=#{day}, exNo=#{exNo}, weight=#{weight}, count=#{count}

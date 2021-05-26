@@ -7,7 +7,7 @@
 		<title>도서 정보 수정 화면</title>
 	</head>
 	<body>
-		<form method="post" action="/exer/exer/update">
+		<form method="post" action="/exer/update">
 			<table>
 				<tr><td>운동날짜</td><td><input type="text" name="dayNo" value="${DayExercise.dayNo }" readonly></td></tr>
 				<tr><td>년</td><td><input type="text" name="year" value="${DayExercise.year }"></td></tr>

@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h3>운동 기록</h3>
-		<form method="post" action="/exer/exer/insert">
+		<form method="post" action="/exer/insert">
 			<table>
 				<tr><td>운동날짜</td><td><input type="text" name="dayNo"></td></tr>
 				<tr><td>년</td><td><input type="text" name="year"></td></tr>
