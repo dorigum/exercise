@@ -178,6 +178,8 @@
 				            		<td>칼로리</td>
 				            	</tr>
 				            </table>
+				            
+				            
 						</div>
 
 					</div>

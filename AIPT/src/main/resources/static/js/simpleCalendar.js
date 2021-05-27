@@ -48,7 +48,7 @@
             var dat = i;
             cell.innerHTML = 
             	" \
-            		<div class='flip-card' id='flip-card'> \
+            		<div class='flip-card'> \
 	            		<div class='flip-card-inner'> \
 						    <div class='flip-card-front'> \
 						        <h3 class='front'>" + 
@@ -77,7 +77,7 @@
                 // cell.bgColor = "#BCF1B1"; //오늘날짜배경색 #EE64AE
 	            cell.innerHTML = 
 	            	" \
-	            		<div class='flip-card' id='flip-card'> \
+	            		<div class='flip-card'> \
 		            		<div class='flip-card-inner'> \
 							    <div class='flip-card-front' style='background-color:#FCABB9;'> \
 							        <h3 class='front'>" + 
