@@ -8,7 +8,7 @@
 		$.ajax({
 			url: "idCheck",
 			method: "post",
-			data: {"id":$('#Id').val()},
+			data: {"id":$('#id').val()},
 			success:function(result, textStatus){
 				if(result > 0) {
 					alert("사용할 수 없는 ID입니다. ");

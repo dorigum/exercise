@@ -17,6 +17,12 @@ public class MemberController {
 	@Autowired
 	MemberService memservice;
 	
+	//테스트
+	@RequestMapping("test")
+	public String test() {
+		return "test";
+	}
+	
 	// 로그인 폼으로 이동
 	@RequestMapping("loginForm")
 	public String loginForm() {
@@ -65,7 +71,7 @@ public class MemberController {
 	@RequestMapping("join")
 	public String join(HttpServletRequest request, HttpServletResponse response, HttpSession session ) {
 		// memberservice에서 로긴 체크
-		String id =request.getParameter("Id");
+		String id =request.getParameter("id");
 		String pwd =request.getParameter("pwd");
 		String name =request.getParameter("memName");
 		String email =request.getParameter("email");
