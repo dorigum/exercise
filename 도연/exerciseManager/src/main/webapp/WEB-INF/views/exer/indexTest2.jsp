@@ -20,7 +20,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Exercise index 페이지</title>
+		<title>음성 녹음</title>
+		<script src="<c:url value='js/jquery-3.6.0.min.js'/>"></script>
+		<script src="<c:url value='js/voiceRecord.js'/>"></script>
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
@@ -138,11 +141,21 @@
 										}
 										%>
 										</table>
+										
+										
+						<!-- 녹음 버튼 추가!!!!!!!!!!!!!!!!!! -->
+						<button id="record">녹음</button>
+						<button id="stop">정지</button>
+						<div id="sound-clips"></div><br><br>
+						
+						<a href="/">index 페이지로 이동</a>
+						
 								</section>
 
 						</div>
 					</div>
 
+		
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
@@ -187,7 +200,6 @@
 									</header>
 									<ul>
 										<li><a href="exer/exerciseListView">Exercise Record List</a></li>
-										<li><a href="indexTest2">Recode TEST</a></li>
 										<li><a href="voiceRecord">Voice Record</a></li>
 										<li><a href="stt">Voice Record File Upload</a></li>
 										<li><a href="exer/exerciseNewForm">Text record</a></li>
@@ -195,7 +207,7 @@
 								
 								
 							<!-- Section -->
-								<section>
+								<!-- <section>
 									<header class="major">
 										<h2>Record / File Upload</h2>
 									</header> -->
@@ -216,7 +228,7 @@
 									<ul class="actions">
 										<li><a href="#" class="button">More</a></li>
 									</ul>
-								</section>
+								</section> -->
 
 
 

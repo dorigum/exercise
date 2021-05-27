@@ -187,7 +187,6 @@
 									</header>
 									<ul>
 										<li><a href="exer/exerciseListView">Exercise Record List</a></li>
-										<li><a href="indexTest2">Recode TEST</a></li>
 										<li><a href="voiceRecord">Voice Record</a></li>
 										<li><a href="stt">Voice Record File Upload</a></li>
 										<li><a href="exer/exerciseNewForm">Text record</a></li>
@@ -195,7 +194,7 @@
 								
 								
 							<!-- Section -->
-								<section>
+								<!-- <section>
 									<header class="major">
 										<h2>Record / File Upload</h2>
 									</header> -->
@@ -216,7 +215,7 @@
 									<ul class="actions">
 										<li><a href="#" class="button">More</a></li>
 									</ul>
-								</section>
+								</section> -->
 
 
 

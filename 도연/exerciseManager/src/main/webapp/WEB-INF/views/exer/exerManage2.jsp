@@ -41,13 +41,13 @@
 	</head>
 	<body>
 		<div>
-			
+			<!-- 날짜 및 요일 -->
+			<%= cal.get(Calendar.YEAR) %>년
+			<%= cal.get(Calendar.MONTH)+1 %>월
+			<%= cal.get(Calendar.DATE) %>일
+			<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동<br><br>
 		</div>
-		<!-- 날짜 및 요일 -->
-		<%= cal.get(Calendar.YEAR) %>년
-		<%= cal.get(Calendar.MONTH)+1 %>월
-		<%= cal.get(Calendar.DATE) %>일
-		<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동<br><br>
+		
 		
 	 <!-- exercise 테이블 조회 -->
 	<%

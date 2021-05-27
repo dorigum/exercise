@@ -56,7 +56,8 @@
 		</div>
 		
 		
-		<a href=exerMain>운동관리 페이지</a>
+		<a href=exerMain>운동관리 페이지</a><br>
+		<a href=indexTest>indexTest</a><br>
 	</article>
 
 </body>
