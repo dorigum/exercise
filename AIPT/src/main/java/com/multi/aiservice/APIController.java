@@ -10,12 +10,7 @@ public class APIController {
 	public String index() {
 		return "index";
 	}
-	
-	@RequestMapping("/fullCalendar")
-	public String fullCalendar() {
-		return "fullCalendar";
-	}
-	
+
 	@RequestMapping("/simpleCalendar")
 	public String simpleCalendar() {
 		return "simpleCalendar";

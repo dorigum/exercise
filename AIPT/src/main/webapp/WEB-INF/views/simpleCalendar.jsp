@@ -20,6 +20,8 @@
         <link href="<c:url value='css/selectTimeBtn.css'/>" rel="stylesheet" >
         
         <script src="<c:url value='js/selectTimeBtn.js'/>"></script>
+        <script src="<c:url value='js/ocr.js'/>"></script>
+        <link href="<c:url value='css/ocr.css'/>" rel="stylesheet" >
 		<meta charset="EUC-KR">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>simple Calender</title> 
@@ -137,7 +139,7 @@
 							<p align="center" style="font-size:15px; margin: 5px;">
 								현재 식단
 							</p>
-				            <table class="brkfstTable" border="1" width="350">
+				            <table class="selectedTable" border="1" width="350">
 				            	<tr>
 				            		<td style="">음식명</td>
 				            		<td>섭취량</td>
@@ -171,7 +173,7 @@
 							<p align="center" style="font-size:15px; margin: 5px;">
 								현재 식단
 							</p>
-				            <table class="brkfstTable" border="1" width="350">
+				            <table class="selectedTable" border="1" width="350">
 				            	<tr>
 				            		<td style="">음식명</td>
 				            		<td>섭취량</td>
@@ -179,7 +181,30 @@
 				            	</tr>
 				            </table>
 				            
-				            
+		            		<h3>영양 성분표 불러오기</h3>
+		
+							<form id="ocrForm"  method="post" enctype="multipart/form-data">	         
+					         	파일 :  <input type="file" id="uploadFile" name="uploadFile"> 
+					         	<br><br>
+					           <input id="submit" type="submit" value="불러오기">
+							</form><br><br>		
+							
+							
+							<h3>영양 성분표 분석 결과</h3>
+							
+							<div id="resultDiv"></div>
+							
+							상품명: [입력받기] <br>
+							총 내용량: [    ] <br> <!-- readonly -->
+							칼로리: [    ] <br> <!-- readonly -->
+							○○○ 님 섭취량: [입력받기] <br>
+							○○○ 님 섭취 칼로리: [계산된 값] <br>
+							
+							<!-- 나중에 해당 정보를 DB에 넣는 기능까지 넣기 -->
+								<!-- 칼로리사전에 저장 버튼 -> 클릭 (alert("사전에 저장되었습니다 :)") -->
+							<br><br>
+							<a href="/">index 페이지로 이동</a>
+							
 						</div>
 
 					</div>
