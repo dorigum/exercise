@@ -1,7 +1,7 @@
 /**
  *  idCheck.js
  */
- 
+ var idck=0;
  $(function(){
 	$('#idCheck').on('click', function(){
 
@@ -17,6 +17,7 @@
 				else{
 					alert("사용 가능한 ID입니다.");
 					$('#checktype').attr('class','modal-content panel-waring');
+					idck=1;
 				} 
 				$('#checkModal').modal("show");
 			},

@@ -5,28 +5,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 <title>Insert title here</title>
 </head>
-<body>
-	<header>
-		<div id="headerBox">
-			<div id="logoBox">
-				<a href="<c:url value='/'/>"> <img
-					src="<c:url value='image/logo2.png'/>" id="logoImg"></a>
-			</div>
-			<div id="topMenuBox">
-				<c:if test="${empty sessionScope.sid }">
-					<a href="<c:url value='/loginForm' />">로그인</a>
-					<a href="<c:url value='/joinForm' />">회원가입</a>
-					<a href="<c:url value='/test' />">test 삭제예정</a>
-				</c:if>
-				<c:if test="${not empty sessionScope.sid }">
+<body class="is-preload">
+	<header id="header">
+		<a href="/" class="logo"><strong>ExerciseManager</strong> by 건강에 일조</a>
+		<ul class="icons">
+			<c:if test="${empty sessionScope.sid }">
+				<li><a href="<c:url value='/loginForm' />">로그인</a></li>
+				<li><a href="<c:url value='/joinForm' />">회원가입</a></li>
+				<li><a href="<c:url value='/test' />">test 삭제예정</a></li>
+			</c:if>
+			<c:if test="${not empty sessionScope.sid }">
             			${sessionScope.sid } 님 환영합니다! 
             			<a href="<c:url value='/logout' />">로그아웃 </a>
-					<a href="<c:url value='/member/myPage' />">MY Page </a>
-				</c:if>
-			</div>
-		</div>
+				<a href="<c:url value='/member/myPage' />">MY Page </a>
+			</c:if>
+		</ul>
 	</header>
+	
 </body>
 </html>

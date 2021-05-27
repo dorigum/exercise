@@ -16,91 +16,113 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="<c:url value='/js/idCheck.js'/>"></script>
+
 <script type="text/javascript">
 	function passwordCheckfunction() {
 		var userPassword1 = $('#pwd').val();
 		var userPassword2 = $('#pwd2').val();
+		var pwdCh = 0;
 		if (userPassword1 != userPassword2) {
 			$('#passwordCheckMessage').html('비밀번호가 일치하지 않습니다');
 		} else {
 			$('#passwordCheckMessage').html('비밀번호가 일치합니다');
+			pwdCh = 1;
+		}
+	}
+	function checksubmit() {
+		var data = document.mainform;
+		if (pwdCh == 0) {
+			alert('비밀번호가 다릅니다.');
+			return false;
 		}
 	}
 </script>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
-	<div class="container">
-		<form id="joinForm" name="joinForm" method="post" action="/join">
-			<div class="form-group">
-				<label for="id">id:</label> <input type="text" class="form-control"
-					id="id" placeholder="Enter username" name="id" required>
-				<div class="valid-feedback">Valid.</div>
-				<div class="invalid-feedback">Please fill out this field.</div>
-			</div>
-			<button type="button" class="btn btn-primary" id="idCheck"
-				value="ID 중복 체크">ID 중복 체크</button>
+	<div id="main">
+		<div class="inner">
+			<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
+			<div class="container">
+				<form id="joinForm" name="joinForm" method="post" action="/join">
+					<div class="form-group">
+						<br><label for="id">id:</label> <input type="text"
+							class="form-control" id="id" placeholder="Enter username"
+							name="id" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<button type="button" id="idCheck" value="ID 중복 체크">ID 중복
+						체크</button>
 
-			<div class="form-group">
-				<label for="name">이름:</label> <input type="text"
-					class="form-control" id="memName" placeholder="Enter password"
-					name="memName" required>
-				<div class="valid-feedback">Valid.</div>
-				<div class="invalid-feedback">Please fill out this field.</div>
+					<div class="form-group">
+						<label for="name">이름:</label> <input type="text"
+							class="form-control" id="memName" placeholder="Enter password"
+							name="memName" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label> <input type="password"
+							class="form-control" id="pwd" onkeyup="passwordCheckfunction()"
+							placeholder="Enter password" name="pwd" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password 확인:</label> <input type="password"
+							class="form-control" id="pwd2" onkeyup="passwordCheckfunction()"
+							placeholder="Enter password" name="pwd2" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<div style="color: red" id="passwordCheckMessage"></div>
+					<div class="form-group">
+						<div class="form-group">
+							<label for="gender">성별:</label> <select class="form-control"
+								id="gender" name="gender">
+								<option value="남">남</option>
+								<option value="녀">녀</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email">이메일:</label> <input type="text"
+							class="form-control" id="email" placeholder="Enter email"
+							name="email" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<div class="form-group">
+						<label for="age">나이:</label> <input type="text"
+							class="form-control" id="age" placeholder="Enter age" name="age"
+							required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<div class="form-group">
+						<label for="height">키:</label> <input type="text"
+							class="form-control" id="height" placeholder="Enter height"
+							name="height" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<div class="form-group">
+						<label for="height">몸무게</label> <input type="text"
+							class="form-control" id="weight" placeholder="Enter weight"
+							name="weight" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<button type="submit">Submit</button>
+				</form>
 			</div>
-			<div class="form-group">
-				<label for="pwd">Password:</label> <input type="password"
-					class="form-control" id="pwd" onkeyup="passwordCheckfunction()"
-					placeholder="Enter password" name="pwd" required>
-				<div class="valid-feedback">Valid.</div>
-				<div class="invalid-feedback">Please fill out this field.</div>
-			</div>
-			<div class="form-group">
-				<label for="pwd">Password 확인:</label> <input type="password"
-					class="form-control" id="pwd2" onkeyup="passwordCheckfunction()"
-					placeholder="Enter password" name="pwd2" required>
-				<div class="valid-feedback">Valid.</div>
-				<div class="invalid-feedback">Please fill out this field.</div>
-			</div>
-			<div style="color: red" id="passwordCheckMessage"></div>
-			<div class="form-group">
-				<div class="form-group">
-					<label for="gender">성별:</label> <select class="form-control"
-						id="gender" name="gender">
-						<option value="남">남</option>
-						<option value="녀">녀</option>
-					</select>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="email">이메일:</label> <input type="text"
-					class="form-control" id="email" placeholder="Enter email"
-					name="email" required>
-				<div class="valid-feedback">Valid.</div>
-				<div class="invalid-feedback">Please fill out this field.</div>
-			</div>
-			<div class="form-group">
-				<label for="age">나이:</label> <input type="text" class="form-control"
-					id="age" placeholder="Enter age" name="age" required>
-				<div class="valid-feedback">Valid.</div>
-				<div class="invalid-feedback">Please fill out this field.</div>
-			</div>
-			<div class="form-group">
-				<label for="height">키:</label> <input type="text"
-					class="form-control" id="height" placeholder="Enter height"
-					name="height" required>
-				<div class="valid-feedback">Valid.</div>
-				<div class="invalid-feedback">Please fill out this field.</div>
-			</div>
-			<div class="form-group">
-				<label for="height">몸무게</label> <input type="text"
-					class="form-control" id="weight" placeholder="Enter weight"
-					name="weight" required>
-				<div class="valid-feedback">Valid.</div>
-				<div class="invalid-feedback">Please fill out this field.</div>
-			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		</div>
 	</div>
 </body>
 </html>

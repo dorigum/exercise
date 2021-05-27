@@ -16,30 +16,39 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body>
-	<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
-	<div class="container">
+<body class="is-preload">
+	<div id="main">
+		<div class="inner">
+			<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
+			<div class="container">
 
-		<!--  TOP 메뉴 넣을 곳  -->
-		<h2>로그인</h2>
-		<form method="post" id="loginForm" action="<c:url value="/login"/>">
-			<div class="form-group">
-				<label for="id">id</label> <input type="text" class="form-control"
-					id="id" placeholder="Enter id" name="id">
+				<!--  TOP 메뉴 넣을 곳  -->
+				<h2>로그인</h2>
+				<form method="post" id="loginForm" action="<c:url value="/login"/>">
+					<div class="form-group">
+						<label for="id">id</label> <input type="text" class="form-control"
+							id="id" placeholder="Enter id" name="id">
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label> <input type="password"
+							class="form-control" id="pwd" placeholder="Enter password"
+							name="pwd">
+					</div>
+					<c:if test="${not empty ERRORMSG}">
+						<font color="blue"> login failed<br>
+						</font>
+					</c:if>
+					<button type="submit">Submit</button>
+				</form>
+				<!--  BOTTOM 메뉴? 넣을지 안넣을지는 미정  -->
 			</div>
-			<div class="form-group">
-				<label for="pwd">Password:</label> <input type="password"
-					class="form-control" id="pwd" placeholder="Enter password"
-					name="pwd">
-			</div>
-			<c:if test="${not empty ERRORMSG}">
-				<font color="red"> login failed<br>
-				</font>
-			</c:if>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
-
-		<!--  BOTTOM 메뉴? 넣을지 안넣을지는 미정  -->
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		</div>
 	</div>
 </body>
 </html>

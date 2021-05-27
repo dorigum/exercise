@@ -17,9 +17,11 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	${sessionScope.sid } 님 환영합니다! 회원가입이 완료되었습니다.
-
-	<a href="/">메인 화면으로 이동</a>
-	<br>
+	<div id="main">
+		<div class="inner">
+			${sessionScope.sid } 님 환영합니다! 회원가입이 완료되었습니다. <a href="/">메인 화면으로
+				이동</a> <br>
+		</div>
+	</div>
 </body>
 </html>
