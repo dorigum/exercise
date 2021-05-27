@@ -1,7 +1,18 @@
 /**
  *  idCheck.js
  */
- var idck=0;
+
+ $(function(){
+    $("submit").click(function(){
+
+	   if($("input[name='checked_id']").val()==''){
+        alert('아이디중복 확인을 해주세요.');
+        $("input[name='checked_id']").eq(0).focus();
+        return false;
+    	}
+
+    });  
+});
  $(function(){
 	$('#idCheck').on('click', function(){
 

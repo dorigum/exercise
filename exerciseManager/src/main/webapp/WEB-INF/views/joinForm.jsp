@@ -17,6 +17,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="<c:url value='/js/idCheck.js'/>"></script>
 
+
 <script type="text/javascript">
 	function passwordCheckfunction() {
 		var userPassword1 = $('#pwd').val();
@@ -53,6 +54,7 @@
 					</div>
 					<button type="button" id="idCheck" value="ID 중복 체크">ID 중복
 						체크</button>
+						<input type="hidden" name="checked_id" value=0>
 
 					<div class="form-group">
 						<label for="name">이름:</label> <input type="text"
@@ -85,6 +87,7 @@
 							</select>
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<label for="email">이메일:</label> <input type="text"
 							class="form-control" id="email" placeholder="Enter email"
@@ -113,7 +116,7 @@
 						<div class="valid-feedback">Valid.</div>
 						<div class="invalid-feedback">Please fill out this field.</div>
 					</div>
-					<button type="submit">Submit</button>
+					<button id="submit" type="submit">Submit</button>
 				</form>
 			</div>
 			<!-- Scripts -->
