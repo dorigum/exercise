@@ -20,7 +20,8 @@ public class ExerciseController {
 	 // 운동 관리 페이지
 	@RequestMapping("exerMain")
 	public String viewExerMain() {
-		return "exerMain"; }
+		return "exerMain";
+	}
 		
 	// 전체 운동 기록 조회
 	@RequestMapping("/exer/exerciseListView")
@@ -95,5 +96,18 @@ public class ExerciseController {
 	@RequestMapping("voiceRecord")
 	 public String voiceRecord() {
 	 return "voiceRecord"; // voiceRecord.jsp
+	 }
+	
+	
+	// indexTest
+	@RequestMapping("indexTest")
+	 public String indexTest() {
+	 return "indexTest";
+	 }
+	
+	// 녹음 페이지 테스트용
+	@RequestMapping("indexTest2")
+	 public String indexTest2() {
+	 return "indexTest2";
 	 }
 }
