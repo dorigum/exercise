@@ -1,14 +1,40 @@
 package com.multi.exercise;
 
-import java.util.Date;
 
 public class MemberVO {
 	private String id;
 	private String pwd;
 	private String name;
 	private String email;
-	private Date joinDate;
+	private int age;
+	private String gender;
+	private float height;
+	private float weight;
 	
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public float getHeight() {
+		return height;
+	}
+	public void setHeight(float height) {
+		this.height = height;
+	}
+	public float getWeight() {
+		return weight;
+	}
+	public void setWeight(float weight) {
+		this.weight = weight;
+	}
 	public String getId() {
 		return id;
 	}
@@ -33,12 +59,4 @@ public class MemberVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getJoinDate() {
-		return joinDate;
-	}
-	public void setJoinDate(Date joinDate) {
-		this.joinDate = joinDate;
-	}
-	
-	
 }

@@ -13,16 +13,15 @@ public class ExerciseController {
 	@Autowired
 	ExerciseService service;
 	
-	// test!!!!!!!!!!!!!!!!!!!!!
 	@Autowired
 	private STTService sttService;
 	
 	
-	 // index 페이지
-		/*
-		 * @RequestMapping("/") public String viewIndex() { return "index"; }
-		 */
-
+	 // 운동 관리 페이지
+	@RequestMapping("exerMain")
+	public String viewExerMain() {
+		return "exerMain"; }
+		
 	// 전체 운동 기록 조회
 	@RequestMapping("/exer/exerciseListView")
 	public String viewExerciseList(Model model) {

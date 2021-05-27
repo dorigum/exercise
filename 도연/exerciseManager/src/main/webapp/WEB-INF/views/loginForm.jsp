@@ -13,6 +13,13 @@
 		<div id="wrap">
 			<!--  TOP 메뉴 넣을 곳  -->
 			
+			<!-- 로그인 실패 시 에러 메시지 출력 -->
+			<c:if test="${not empty ERRORMSG}">
+	        	<font color="red">
+	        		login failed
+	        	</font>
+    		</c:if>  
+    		
 			<!--  로그인 폼  -->
 			<section>
 		        <h1 id="title">로그인</h1>
@@ -30,12 +37,7 @@
 		        </form>	
 	        </section>
 	        
-	        <!-- 로그인 실패 시 에러 메시지 출력 -->
-		<c:if test="${not empty ERRORMSG}">
-	        <font color="red">
-	        	${ERRORMSG }
-	        </font>
-    	</c:if>    	
+	      	
 	      
 		    <!--  BOTTOM 메뉴? 넣을지 안넣을지는 미정  -->
 		</div>
