@@ -24,7 +24,7 @@ public class ExerciseController {
 	}
 		
 	// 전체 운동 기록 조회
-	@RequestMapping("/exer/exerciseListView")
+	@RequestMapping("/exer/exerciseListView") // /exer/exerciseListView
 	public String viewExerciseList(Model model) {
 		ArrayList<ExerciseVO> exerciseList = service.exerciseList();
 		model.addAttribute("exerciseList", exerciseList);
@@ -32,7 +32,7 @@ public class ExerciseController {
 	}
 
 	// 운동 기록 화면으로 이동
-	@RequestMapping("/exer/exerciseNewForm")
+	@RequestMapping("/exer/exerciseNewForm") // /exer/exerciseNewForm
 	public String viewExerciseForm() {
 		return "exer/exerciseNewForm";
 	}
@@ -45,26 +45,26 @@ public class ExerciseController {
 	}
 
 	// 운동 상세 기록 조회
-	@RequestMapping("/exer/exerciseDetailView/{dayNo}")
+	@RequestMapping("/exer/exerciseDetailView/{dayNo}") // /exer/exerciseDetailView/{dayNo}
 	public String detailViewExercise(@PathVariable String dayNo, Model model) {
 		ExerciseVO DayExercise = service.exerciseDetailView(dayNo);
 		model.addAttribute("DayExercise", DayExercise);
-		return "exer/exerciseDetailView";
+		return "exer/exerciseDetailView"; // exer/exerciseDetailView
 	}
 
 	// 운동 기록 수정화면으로 이동
-	@RequestMapping("/exer/updateForm/{dayNo}")
+	@RequestMapping("/exer/updateForm/{dayNo}") // /exer/updateForm/{dayNo}
 	public String updateExerciseForm(@PathVariable String dayNo, Model model) {
 		ExerciseVO DayExercise = service.exerciseDetailView(dayNo);
 		model.addAttribute("DayExercise", DayExercise);
-		return "exer/exerciseUpdateForm";
+		return "exer/exerciseUpdateForm"; // exer/exerciseUpdateForm
 	}
 
 	// 운동 기록 수정
-	@RequestMapping("/exer/update")
+	@RequestMapping("/exer/update") // /exer/update
 	public String updateExercise(ExerciseVO DayExercise) {
 		service.updateExercise(DayExercise);
-		return "redirect:./exerciseListView";
+		return "redirect:./exerciseListView"; // redirect:./exerciseListView
 	}
 
 	// 운동 기록 삭제
@@ -72,18 +72,6 @@ public class ExerciseController {
 	public String deleteExercise(@PathVariable String dayNo) {
 		service.deleteExercise(dayNo);
 		return "redirect:/exer/exerciseListView";
-	}
-
-	// 운동 관리 화면으로 이동
-	@RequestMapping("/exer/exerManage")
-	public String viewExerManageForm() {
-		return "exer/exerManage";
-	}
-
-	// 운동 관리 화면으로 이동2222222
-	@RequestMapping("/exer/exerManage2")
-	public String viewExerManageForm2() {
-		return "exer/exerManage2";
 	}
 		
 	// 음성 파일 등록
@@ -96,18 +84,5 @@ public class ExerciseController {
 	@RequestMapping("voiceRecord")
 	 public String voiceRecord() {
 	 return "voiceRecord"; // voiceRecord.jsp
-	 }
-	
-	
-	// indexTest
-	@RequestMapping("indexTest")
-	 public String indexTest() {
-	 return "indexTest";
-	 }
-	
-	// 녹음 페이지 테스트용
-	@RequestMapping("indexTest2")
-	 public String indexTest2() {
-	 return "indexTest2";
 	 }
 }
