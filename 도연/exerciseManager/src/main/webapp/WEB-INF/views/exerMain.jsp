@@ -1,17 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.Statement"%>
+<%@ page import="java.sql.ResultSet"%>
 <%@ page import = "java.util.Calendar" %>
 <%@ page import = "java.util.Date" %>
+<%!// 변수 선언
+	Connection conn = null;
+	Statement stmt = null;
+	ResultSet rs = null;
+	String uid = "exercise";
+	String pwd = "1234";
+	String url = "jdbc:oracle:thin:@localhost:1521:XE";
+	String sql = "select * from test where id='bbb'";%>
+	
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Exercise index 페이지</title>
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/table.css">
-		
 		<%
 			Calendar cal = Calendar.getInstance();
 			String[] arr = {"일", "월", "화", "수", "목", "금", "토"};
@@ -32,85 +45,190 @@
 			return str;
 		}
 		%>
+		
 	</head>
-	<body>
-	
-	
-	<!-- 상단 메뉴 고정하기(아직 안만듦) -->
-	<%-- 	<div id="wrap">
-	<!--  TOP  -->
-	<jsp:include page="/WEB-INF/views/jsp/top.jsp" flush="true" />  --%>
-	
-	
-		<h3>운동 관리 페이지</h3>
-		<a href="exer/exerciseListView">운동 기록 조회</a><br><br>
-		<a href="exer/exerciseNewForm">운동 기록</a><br><br>
-		<a href="exer/exerManage">운동 관리</a><br><br>
-		<a href="exer/exerManage2">운동 관리2</a><br><br>
+	<body class="is-preload">
 
-		<!-- 날짜 및 요일 -->
-		<%= cal.get(Calendar.YEAR) %>년
-		<%= cal.get(Calendar.MONTH)+1 %>월
-		<%= cal.get(Calendar.DATE) %>일
-		<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동
-		
-				 
-		 <!-- 단순 테이블만 출력 -->
-		 <table class="type07">
-		 	<thead>
-	 		<tr>
-	 			<th scope="cols">운동</th>
-	 			<th scope="cols">목표</th>
-	 			<th scope="cols">현재</th>
-	 		</tr>
-	 		</thead>
-	 		
-	 		<tbody>
-	 		<tr>
-	 			<th>플랭크</th>
-	 			<td>10분</td>
-	 			<td>20분</td>
- 			</tr>
-	 		
-	 		<tr>
-	 			<th>스쿼트</th>
-	 			<td>20회</td>
-	 			<td>스쿼트:0회/0분</td>
- 			</tr>	
-	 		</tbody>
-		 </table>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
 
-		<!-- 테이블 CSS 예시  -->
-		<table class="type07">
-			<thead>
-				<tr>
-					<th scope="cols">타이틀</th>
-					<th scope="cols">내용</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th scope="row">항목명</th>
-					<td>내용이 들어갑니다.</td>
-				</tr>
-				<tr>
-					<th scope="row">항목명</th>
-					<td>내용이 들어갑니다.</td>
-				</tr>
-				<tr>
-					<th scope="row">항목명</th>
-					<td>내용이 들어갑니다.</td>
-				</tr>
-			</tbody>
-		</table>
+							<!-- Header -->
+								<header id="header">
+									<a href="/" class="logo"><strong>AI Personal </strong>Trainer</a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
 
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Exercise Management</h1>
+									</header>
+									
+									<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span> -->
+									
+									<!-- 날짜 및 요일 -->
+										<font size=4px>
+										<%= cal.get(Calendar.YEAR) %>년
+										<%= cal.get(Calendar.MONTH)+1 %>월
+										<%= cal.get(Calendar.DATE) %>일
+										<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동</font><br><br>
+										
+										<!-- exercise 테이블 조회 -->
+										<%
+											try {
+											// 데이터베이스를 접속하기 위한 드라이버 SW 로드
+											Class.forName("oracle.jdbc.driver.OracleDriver");
+											// 데이터베이스에 연결하는 작업 수행
+											conn = DriverManager.getConnection(url, uid, pwd);
+											// 쿼리를 생성할 객체 생성
+											stmt = conn.createStatement();
+											// 쿼리 생성
+											rs = stmt.executeQuery(sql);
+										%>
+										<table border="1">
+											<tr>
+												<td>ID</td>
+												<td>운동명</td>
+												<td>목표 운동량</td>
+												<td>현재 운동량</td>
+												<td>목표 운동횟수</td>
+												<td>현재 운동횟수</td>
+											</tr>
+											<%
+												while (rs.next()) {
+											%>
+											<tr>
+												<td><%=rs.getString("id")%></td>
+												<td><%=rs.getString("exName")%></td>
+												<td><%=rs.getString("goalExTime")%></td>
+												<td><%=rs.getString("exTime")%></td>
+												<td><%=rs.getString("goalExCount")%></td>
+												<td><%=rs.getString("count")%></td>
+											</tr>
+										<%
+											}
+										} catch (Exception e) {
+										e.printStackTrace();
+										} finally {
+										try {
+										if (rs != null) {
+											rs.close();
+										}
+										if (stmt != null) {
+											stmt.close();
+										}
+										if (conn != null) {
+											conn.close();
+										}
+										} catch (Exception e) {
+										e.printStackTrace();
+										}
+										}
+										%>
+										</table>
+								</section>
 
-		<!-- 음성 파일 업로드 -->
-	 	<a href="stt">Speech To Text (음성을 텍스트로 변환)</a><br><br>
-	 		
-	 	<!-- 음성 녹음 기능 -->
-	 	<a href="voiceRecord">음성 녹음 테스트</a><br><br>
-		
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="/">Mainpage</a></li>
+										<li><a href="exerMain">Exercise Management Main</a></li>
+										<li>
+											<span class="opener">Exercise Management</span>
+											<ul>
+												<li><a href="exer/exerciseListView">Exercise Record List</a></li>
+												<li><a href="../voiceRecord">Voice Record</a></li>
+												<li><a href="../stt">Voice Record File Upload</a></li>
+												<li><a href="exer/exerciseNewForm">Text record</a></li>
+											</ul>
+										<li>
+											<span class="opener">Food Management</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+								</nav>
+	 	
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Record / File Upload</h2>
+									</header>
+									<ul>
+										<li><a href="exer/exerciseListView">Exercise Record List</a></li>
+										<li><a href="voiceRecord">Voice Record</a></li>
+										<li><a href="stt">Voice Record File Upload</a></li>
+										<li><a href="exer/exerciseNewForm">Text record</a></li>
+								</nav>
+								
+								
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Record / File Upload</h2>
+									</header>
+									
+									
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+										<li class="icon solid fa-phone">(000) 000-0000</li>
+										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>

@@ -50,14 +50,12 @@
 				</div>
 				<div>
 					<a href="#"><img src="<c:url value='/image/prd002.jpg'/>">등
-						운동</a>
+						운동</a><br><br>
 				</div>
 			</div>
 		</div>
 		
-		
-		<a href=exerMain>운동관리 페이지</a><br>
-		<a href=indexTest>indexTest</a><br>
+		<a href=exerMain>운동 관리</a><br>
 	</article>
 
 </body>
