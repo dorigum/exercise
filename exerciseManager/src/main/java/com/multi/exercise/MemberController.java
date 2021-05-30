@@ -92,7 +92,6 @@ public class MemberController {
 	@RequestMapping("/myPage/{loginId}")
 	public String myPage(@PathVariable String loginId, Model model, HttpServletRequest request, HttpSession session) {
 		MemberVO mem = memservice.myPage(loginId);
-		System.out.println(mem);
 		model.addAttribute("mem", mem);
 		return "myPage"; // productDetailView.jsp 상품 상제 정보 페이지
 	}

@@ -16,86 +16,68 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-<script type="text/javascript">
-	function passwordCheckfunction() {
-		var userPassword1 = $('#pwd').val();
-		var userPassword2 = $('#pwd2').val();
-		var pwdCh = 0;
-		if (userPassword1 != userPassword2) {
-			$('#passwordCheckMessage').html('비밀번호가 일치하지 않습니다');
-		} else {
-			$('#passwordCheckMessage').html('비밀번호가 일치합니다');
-			pwdCh = 1;
-		}
-	}
-	function checksubmit() {
-		var data = document.mainform;
-		if (pwdCh == 0) {
-			alert('비밀번호가 다릅니다.');
-			return false;
-		}
-	}
-</script>
 </head>
 <body>
-	<h3>myPage</h3>
-	<form method="post" action="/memUpdate">
-		<table>
-			<tr>
-				<td>id</td>
-				<td><input type="text" name="id" value="${mem.id}" readonly></td>
-			</tr>
-			<tr>
-				<td>이름</td>
-				<td><input type="text" name="name" value="${mem.name }"
-					readonly></td>
-			</tr>
-			<tr>
-				<td>이메일</td>
-				<td><input type="text" name="email" value="${mem.email }"
-					readonly></td>
-			</tr>
-			<tr>
-				<td>나이</td>
-				<td><input type="text" name="age" value="${mem.age}"></td>
-			</tr>
-			<tr>
-				<td>성별</td>
-				<td><input type="text" name="gender" value="${mem.gender}"
-					readonly></td>
-			</tr>
-			<tr>
-				<td>키</td>
-				<td><input type="text" name="height" value="${mem.height}"></td>
-			</tr>
-			<tr>
-				<td>몸무게</td>
-				<td><input type="text" name="weight" value="${mem.weight}"></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="완료"> <input
-					type="reset" value="취소"></td>
-			</tr>
-
-		</table>
-	</form>
-	<br>
-	<br>
-	<a href="/mybatis/">메인 화면으로 이동</a>
-	<br>
-	<a href="<c:url value='/' />">메인 화면으로 이동</a>
-	<!--  같은 표현 -->
+	<div id="main">
+		<div class="inner">
+			<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
+			<div class="container">
+				<form id="joinForm" name="joinForm" method="post" action="/memUpdate">
+					<div class="form-group">
+						<br><label for="id">id:</label> <input type="text"
+							class="form-control" id="id"  value=${mem.id }
+							name="id" readonly >
+					</div>
+					<div class="form-group">
+						<label for="name">이름:</label> <input type="text"
+							class="form-control" id="name" value=${mem.name }
+							name="name" required readonly>
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label> <input type="password"
+							class="form-control" id="pwd" onkeyup="passwordCheckfunction()"
+							value=${mem.name } name="pwd" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="email">이메일:</label> <input type="text"
+							class="form-control" id="email" value="${mem.email }"
+							name="email" required readonly>
+					</div>
+					<div class="form-group">
+						<label for="age">나이:</label> <input type="text"
+							class="form-control" id="age" value="${mem.age}" name="age"
+							required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="height">키:</label> <input type="text"
+							class="form-control" id="height" value="${mem.height}"
+							name="height" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<div class="form-group">
+						<label for="height">몸무게</label> <input type="text"
+							class="form-control" id="weight" value="${mem.weight}"
+							name="weight" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<button id="submit" type="submit">Submit</button>
+				</form>
+			</div>
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		</div>
+	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
