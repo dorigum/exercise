@@ -35,6 +35,19 @@
   				VALUES (#{id},#{pwd},#{name},#{email},#{age},#{gender},#{height},#{weight})
   			]]>
   		</select>
+  		
+  		<!-- 본인 정보 확인(myPage) -->
+  		<select id="myPage" resultMap="memResult">
+  			SELECT * FROM member WHERE id= #{id}
+  		</select>
+  		
+  		<!-- 회원 정보 수정  -->
+  		<update id="updateMember" parameterType="com.multi.exercise.MemberVO">
+  			UPDATE member
+  			SET age=#{age}, height=#{height},
+  				   weight=#{weight}
+  			WHERE id=#{id}	   	
+  		</update>
   </mapper>
   
   

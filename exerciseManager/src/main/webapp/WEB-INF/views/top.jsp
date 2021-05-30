@@ -16,15 +16,15 @@
 	<header id="header">
 		<a href="/" class="logo"><strong>ExerciseManager</strong> by 건강에 일조</a>
 		<ul class="icons">
-			<c:if test="${empty sessionScope.sid }">
+			<c:if test="${empty sessionScope.loginId }">
 				<li><a href="<c:url value='/loginForm' />">로그인</a></li>
 				<li><a href="<c:url value='/joinForm' />">회원가입</a></li>
 				<li><a href="<c:url value='/test' />">test 삭제예정</a></li>
 			</c:if>
-			<c:if test="${not empty sessionScope.sid }">
-            			${sessionScope.sid } 님 환영합니다! 
-            			<a href="<c:url value='/logout' />">로그아웃 </a>
-				<a href="<c:url value='/member/myPage' />">MY Page </a>
+			<c:if test="${not empty sessionScope.loginId }">
+            			${sessionScope.loginId } 님 환영합니다! 
+            	<a href="<c:url value='/logout' />">로그아웃 </a>
+				<a href="<c:url value='/myPage/${sessionScope.loginId }'/>">MY Page </a>
 			</c:if>
 		</ul>
 	</header>
