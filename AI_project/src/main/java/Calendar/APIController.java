@@ -18,8 +18,6 @@ public class APIController {
 		return "index";
 		
 	}
-	@Autowired
-	ScheduleService service;
 	
 	@RequestMapping("/calendar")
 	public String calendar() {
@@ -38,6 +36,7 @@ public class APIController {
 	public String calendarPopup() {
 		return "calendarPopup";
 	}
+	
 	
 	
 
