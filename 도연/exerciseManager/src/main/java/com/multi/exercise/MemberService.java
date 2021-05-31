@@ -1,11 +1,14 @@
 package com.multi.exercise;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+
 
 
 @Service
@@ -45,6 +48,13 @@ public class MemberService  {
 		return memdao.join(map);
 	}
 	
+	public MemberVO myPage(String id) {
+		return memdao.myPage(id);
+		// 뷰페이지 이름 반환 (views 폴더 안의 product 폴더 안의 productListView.jsp
+	}
+	public void updateMember(MemberVO mem) {
+		memdao.updateMember(mem);
+	}
 }
 
 
