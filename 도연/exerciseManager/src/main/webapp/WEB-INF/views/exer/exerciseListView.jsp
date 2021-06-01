@@ -55,9 +55,9 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-
+							<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
 							<!-- Header -->
-								<header id="header">
+								<!-- <header id="header">
 									<a href="/" class="logo"><strong>AI Personal </strong>Trainer</a>
 									<ul class="icons">
 										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -66,7 +66,7 @@
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
 									</ul>
-								</header>
+								</header> -->
 
 							<!-- Content -->
 								<section>

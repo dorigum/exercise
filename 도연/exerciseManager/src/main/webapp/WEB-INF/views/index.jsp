@@ -57,7 +57,7 @@
 					</header>
 					<div class="posts">
 						<article>
-							<a href="voiceRecord" class="image"><img src="images/pic01.jpg" alt="" /></a>
+							<a href="exerMain" class="image"><img src="images/pic01.jpg" alt="" /></a>
 							<h3>음성 운동기록 시스템</h3>
 							<p>운동으로 음성기록 가능</p>
 						</article>
