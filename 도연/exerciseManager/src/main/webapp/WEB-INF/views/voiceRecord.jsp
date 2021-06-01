@@ -21,7 +21,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Exercise index 페이지</title>
-		<!-- 음성 녹음 테스트 -->
+		<!-- 음성 녹음 -->
 		<script src="<c:url value='js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='js/voiceRecord.js'/>"></script>
 		
@@ -29,8 +29,6 @@
 		<link rel="stylesheet" href="/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/table.css">
-		<!-- 한글 깨짐 인코딩  -->
-		<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> --%>
 		<%
 			Calendar cal = Calendar.getInstance();
 			String[] arr = {"일", "월", "화", "수", "목", "금", "토"};
@@ -93,7 +91,7 @@
 									<!-- 녹음 버튼 추가!!!!!!!!!!!!!!!!!! -->
 									<button id="record">녹음</button>
 									<button id="stop">정지</button><br><br>
-									<!-- <div id="sound-clips"></div><br><br> -->
+									<div id="sound-clips"></div><br><br>
 									
 								</section>
 
@@ -122,11 +120,12 @@
 										<li>
 											<span class="opener">Exercise Management</span>
 											<ul>
-												<li><a href="exerciseListView">Exercise Record List</a></li>
+												<li><a href="exer/exerciseListView">Exercise Record List</a></li>
 												<li><a href="voiceRecord">Voice Record</a></li>
 												<li><a href="stt">Voice Record File Upload</a></li>
-												<li><a href="exerciseNewForm">Text record</a></li>
+												<li><a href="exer/exerciseNewForm">Text record</a></li>
 											</ul>
+										</li>
 										<li>
 											<span class="opener">Food Management</span>
 											<ul>
@@ -136,6 +135,7 @@
 												<li><a href="#">Feugiat Veroeros</a></li>
 											</ul>
 										</li>
+									</ul>
 								</nav>
 	 	
 							<!-- Menu -->
@@ -149,6 +149,7 @@
 										<li><a href="voiceRecord">Voice Record</a></li>
 										<li><a href="stt">Voice Record File Upload</a></li>
 										<li><a href="exer/exerciseNewForm">Text record</a></li>
+									</ul>
 								</nav>
 
 							<!-- Section -->

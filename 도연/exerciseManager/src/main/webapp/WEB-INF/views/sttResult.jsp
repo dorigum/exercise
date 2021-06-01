@@ -149,6 +149,7 @@
 												<li><a href="#">Feugiat Veroeros</a></li>
 											</ul>
 										</li>
+									</ul>
 								</nav>
 	 	
 							<!-- Menu -->
@@ -161,6 +162,7 @@
 										<li><a href="voiceRecord">Voice Record</a></li>
 										<li><a href="stt">Voice Record File Upload</a></li>
 										<li><a href="exer/exerciseNewForm">Text record</a></li>
+									</ul>
 								</nav>
 								
 							<!-- Section -->
