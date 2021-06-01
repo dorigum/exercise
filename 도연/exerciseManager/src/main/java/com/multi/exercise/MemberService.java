@@ -56,12 +56,3 @@ public class MemberService  {
 		memdao.updateMember(mem);
 	}
 }
-
-
-
-
-
-
-
-
-
