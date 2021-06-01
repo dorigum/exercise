@@ -7,8 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.multi.exercise.ExerciseController;
 import com.multi.exercise.IExerciseDAO;
-import com.multi.exercise.IMemberDAO;
-import com.multi.exercise.MemberController;
+import com.multi.member.IMemberDAO;
+import com.multi.member.MemberController;
 
 @SpringBootApplication
 @ComponentScan(basePackageClasses = AiController.class)
