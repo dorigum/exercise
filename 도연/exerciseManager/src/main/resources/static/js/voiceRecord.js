@@ -26,15 +26,15 @@
                         record.style.color = "black";
                     }
 
-                    stop.onclick = () => {//정지 버튼 클릭 시
-                        mediaRecorder.stop();//녹음 정지                       
+                    stop.onclick = () => { //정지 버튼 클릭 시
+                        mediaRecorder.stop(); //녹음 정지                       
                         record.style.background = "";
                         record.style.color = "";
                     }
                     
                     mediaRecorder.onstop = e => {
                         
-                        const clipName = "voiceMsg"; // 파일명 : 확장자 안 붙었음
+                        const clipName = "exerVoiceRecord"; // 파일명 : 확장자 안 붙었음
                         
 						//태그 3개 생성
                         const clipContainer = document.createElement('article');                     
