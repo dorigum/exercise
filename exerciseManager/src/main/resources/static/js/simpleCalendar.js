@@ -54,7 +54,7 @@
 						        <h3 class='front'>" + 
 						        mon + "." + dat + 
 						        "</h3> \
-						        <h1 id='cal' style='color:#1c1e26;'> 0 <br> Kcal</h1> \
+						        <h3 id='cal' style='color:#1c1e26;'> 0 <br> Kcal</h3> \
 						    </div> \
 						    <div class='flip-card-back'> \
 						        <h3>" +
@@ -83,7 +83,7 @@
 							        <h3 class='front'>" + 
 							        (today.getMonth() + 1) + "." + i + 
 							        "</h3> \
-							        <h1 id='cal' style='color:#1c1e26;'> 0 <br> Kcal</h1> \
+							        <h3 id='cal' style='color:#1c1e26;'> 0 <br> Kcal</h3> \
 							    </div> \
 							    <div class='flip-card-back'> \
 							        <h3>" +
