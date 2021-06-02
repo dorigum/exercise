@@ -10,9 +10,10 @@ public interface IExerciseDAO {
 	public ExerciseVO exerciseDetailView(String dayNo);
 	
 	
-	// 음성 녹음 저장 테스트중!!!!!
-	public ArrayList<ExerVoiceVO> exerVoiceList();
-	public void insertVoice(ExerVoiceVO dayExercise);
-	public void updateVoice(ExerVoiceVO DayExercise);
-	public void deleteVoice(String dayNo);
+	// ---------------------------------------------------------------
+	// 음성 파일 DB 저장 테스트중!!!!!
+	public ArrayList<ExerciseVO> exerSTTList();
+	public void insertSTT(ExerciseVO dayExercise);
+	//public void updateSTT(ExerciseVO DayExercise);
+	//public void deleteSTT(String dayNo);
 }

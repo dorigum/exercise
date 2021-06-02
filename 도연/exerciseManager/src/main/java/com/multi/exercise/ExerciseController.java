@@ -16,6 +16,10 @@ public class ExerciseController {
 	@Autowired
 	private STTService sttService;
 	
+	// 음성 파일 DB 저장 테스트
+	@Autowired
+	private JDBCTest jdbcTest;
+	
 	
 	 // 운동 관리 페이지
 	@RequestMapping("exerMain")
@@ -85,4 +89,13 @@ public class ExerciseController {
 	 public String voiceRecord() {
 	 return "voiceRecord"; // voiceRecord.jsp
 	 }
+	
+	
+	
+	// 음성 파일 DB 저장 테스트
+	@RequestMapping("/exer/insert")
+	public String insertSTT(ExerciseVO DayExercise) {
+		service.insertSTT(DayExercise);
+		return "redirect:./exerciseListView";
+	}
 }

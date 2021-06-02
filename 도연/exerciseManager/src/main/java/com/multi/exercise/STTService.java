@@ -78,6 +78,7 @@ public class STTService {
 		return result;
 	}
 
+	// 한국어, 영어, 중국어, 일본어 선택 > 기능 없앨 수 있음 없애기!
 	public String clovaSpeechToText2(String filePathName) {
 		String clientId = "s5nc0h3pnh"; // Application Client ID";
 		String clientSecret = "8OjMY9sT0k17PlVzqcyYW1PZikoQx5ukjOk0yHil"; // Application Client Secret";
@@ -185,4 +186,19 @@ public class STTService {
 		}
 		return resultText;
 	}
+	
+	
+	
+	// 음성 녹음 바로 DB로 보내기 테스트중
+	/*
+	 * public void resultToDbSave(String result) { String fileName =
+	 * Long.valueOf(new Date().getTime()).toString(); String filePathName = "c:/ai/"
+	 * + "stt_" + fileName + ".txt";
+	 * 
+	 * try { OutputStream os = new FileOutputStream(filePathName); byte[] bytes =
+	 * result.getBytes(); os.write(bytes); os.close();
+	 * 
+	 * } catch (Exception e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } }
+	 */
 }
