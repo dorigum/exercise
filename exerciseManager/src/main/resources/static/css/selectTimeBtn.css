@@ -22,6 +22,7 @@ ul.tabs{
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
+	text-align: center;
 }
 .breakfastBtn {
 	background: #232530;
@@ -80,31 +81,31 @@ ul.tabs{
 	background: linear-gradient(#f4e1b7, #d3e9dc);
 	color: #222;
     margin-bottom: 0px;
-    height: 18px;
+    height: 46px !important;
 }
 .lunchBtn.current {
 	background: linear-gradient(#a8d5ea, #72b4ce);
 	color: #222;
     margin-bottom: 0px;
-    height: 18px;
+    height: 46px !important;
 }
 .dinnerBtn.current {
 	background: linear-gradient(#dca09f, #af9cbc);
 	color: #222;
     margin-bottom: 0px;
-    height: 18px;
+    height: 46px !important;
 }
 .nightBtn.current {
 	background: linear-gradient(#66719f, #4a578e);
 	color: #222;
     margin-bottom: 0px;
-    height: 18px;
+    height: 46px !important;
 }
 .snackBtn.current {
 	background: linear-gradient(#F0A880, #F080A8);
 	color: #222;
     margin-bottom: 0px;
-    height: 18px;
+    height: 46px !important;
 }
 
 

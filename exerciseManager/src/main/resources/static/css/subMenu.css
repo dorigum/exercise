@@ -77,8 +77,8 @@
     cursor: pointer;
 }
 
-#menu input{
-	/* margin: 0 auto;	 */
+/* #menu input{
+	margin: 0 auto;	
 	width: 250px;
 	height: 40px;
 	font-size: 20px;
@@ -97,9 +97,10 @@
 #menu table {
 	margin-left: 40px;
 }
-
+ */
+ 
 #dietSearch {
-	position: absolute;
-	bottom: 20px;
+	display: block;
+	margin:0 auto;
 }
 
