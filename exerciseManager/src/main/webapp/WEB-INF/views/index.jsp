@@ -9,7 +9,7 @@
 -->
 <html>
 <head>
-<title>Editorial by HTML5 UP 구상모 김창현3</title>
+<title>Editorial by HTML5 UP 구상모 김창현3 박근주</title>
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
