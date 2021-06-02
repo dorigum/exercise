@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.multi.diet.DietController;
 import com.multi.exercise.ExerciseController;
 import com.multi.exercise.IExerciseDAO;
 import com.multi.member.IMemberDAO;
@@ -14,6 +15,7 @@ import com.multi.member.MemberController;
 @ComponentScan(basePackageClasses = AiController.class)
 @ComponentScan(basePackageClasses = MemberController.class)
 @ComponentScan(basePackageClasses = ExerciseController.class)
+@ComponentScan(basePackageClasses = DietController.class)
 @MapperScan(basePackageClasses=IMemberDAO.class)
 @MapperScan(basePackageClasses=IExerciseDAO.class)
 public class ExerciseManagerApplication {

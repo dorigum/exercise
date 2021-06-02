@@ -62,7 +62,7 @@
 							<p>운동으로 음성기록 가능</p>
 						</article>
 						<article>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+							<a href="dietMain" class="image"><img src="images/pic02.jpg" alt="" /></a>
 							<h3>식단 관리 시스템</h3>
 							<p>달력을 통한 식단관리 가능</p>
 						</article>

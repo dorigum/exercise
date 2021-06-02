@@ -9,11 +9,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.multi.diet.NutriFactVO;
+import com.multi.diet.OCRService;
+
 @RestController
 public class AIRestController {
 	@Autowired
 	private STTService sttService;
 	
+	@Autowired
+	private OCRService ocrService;
 	
 	@RequestMapping("/clovaSTT")
 	public String STT(@RequestParam("uploadFile") MultipartFile file,
@@ -43,5 +48,31 @@ public class AIRestController {
 		}
 
 		return result;
+	}
+	
+	@RequestMapping("/dietOCR")
+	public NutriFactVO dietOCR(@RequestParam("uploadFile") MultipartFile file) {
+		/* String result = ""; */
+		NutriFactVO nfvo = new NutriFactVO();		
+		
+		  try {
+			  String uploadPath =  "c:/ai/";
+			  
+			  String originalFileName = file.getOriginalFilename();  
+			  
+			  String filePathName = uploadPath + originalFileName;
+			  File file1 = new File(filePathName);
+			  
+			  file.transferTo(file1);
+			  
+			  // result = ocrService.clovaOCRService(filePathName);
+			  nfvo = ocrService.clovaOCRService(filePathName);
+			  System.out.println(nfvo);
+			  
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		  
+		return nfvo;
 	}
 }
