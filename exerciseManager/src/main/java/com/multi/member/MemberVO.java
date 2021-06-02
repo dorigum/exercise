@@ -1,5 +1,4 @@
-package com.multi.exercise;
-
+package com.multi.member;
 
 public class MemberVO {
 	private String id;

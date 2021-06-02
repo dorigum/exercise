@@ -14,7 +14,7 @@
 </head>
 <body class="is-preload">
 	<header id="header">
-		<a href="/" class="logo"><strong>ExerciseManager</strong> by 건강에 일조</a>
+		<a href="/" class="logo"><strong>AI Personal </strong>Trainer</a>
 		<ul class="icons">
 			<c:if test="${empty sessionScope.loginId }">
 				<li><a href="<c:url value='/loginForm' />">로그인</a></li>

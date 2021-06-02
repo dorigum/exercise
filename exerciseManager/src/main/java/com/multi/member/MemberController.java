@@ -1,6 +1,4 @@
-package com.multi.exercise;
-
-import java.util.ArrayList;
+package com.multi.member;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

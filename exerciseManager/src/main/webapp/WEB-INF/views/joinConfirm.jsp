@@ -19,7 +19,7 @@
 <body>
 	<div id="main">
 		<div class="inner">
-			${sessionScope.sid } 님 환영합니다! 회원가입이 완료되었습니다. <a href="/">메인 화면으로
+			${sessionScope.id } 님 환영합니다! 회원가입이 완료되었습니다. <a href="/">메인 화면으로
 				이동</a> <br>
 		</div>
 	</div>
