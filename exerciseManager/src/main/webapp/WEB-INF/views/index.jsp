@@ -9,7 +9,7 @@
 -->
 <html>
 <head>
-<title>Editorial by HTML5 UP</title>
+<title>Editorial by HTML5 UP구상모</title>
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
