@@ -43,13 +43,21 @@ i {
 
 #calendar {
 /* 	border: 1px solid #BDBDBD; */
+	position: center;
 	text-align: center;
 	width: 30%;
 	padding-top:10px;
+	margin: 0 auto;
+	
 }
 
+	
 td#yearmonth {
 	font-size: 30px;
+}
+
+table tbody tr td {
+	border: 1px solid white;
 }
 
 #dayLabels {

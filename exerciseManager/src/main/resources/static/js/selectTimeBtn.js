@@ -31,7 +31,7 @@ $(document).ready(function(e){
 		clickTime2.innerHTML = $(this).text();
 		$('ul.tabs li').removeClass('current');
 		$(this).addClass('current');
-		$('.content').css('border-color', '#d3e9dc');
+		$('.content').css('border-top-color', '#d3e9dc');
 		// sql 문에서 eTime에 해당하는 부분 
 
 	});
@@ -42,7 +42,7 @@ $(document).ready(function(e){
 		
 		$('ul.tabs li').removeClass('current');
 		$(this).addClass('current');
-		$('.content').css('border-color', '#72b4ce');
+		$('.content').css('border-top-color', '#72b4ce');
 	});
 	
 	$(".dinnerBtn").click(function(){
@@ -50,7 +50,7 @@ $(document).ready(function(e){
 		clickTime2.innerHTML = $(this).text();
 		$('ul.tabs li').removeClass('current');
 		$(this).addClass('current');
-		$('.content').css('border-color', '#af9cbc');
+		$('.content').css('border-top-color', '#af9cbc');
 	});
 	
 	$(".nightBtn").click(function(){
@@ -58,7 +58,7 @@ $(document).ready(function(e){
 		clickTime2.innerHTML = $(this).text();
 		$('ul.tabs li').removeClass('current');
 		$(this).addClass('current');
-		$('.content').css('border-color', '#4a578e');
+		$('.content').css('border-top-color', '#4a578e');
 	});
 	
 	$(".snackBtn").click(function(){
@@ -66,7 +66,7 @@ $(document).ready(function(e){
 		clickTime2.innerHTML = $(this).text();
 		$('ul.tabs li').removeClass('current');
 		$(this).addClass('current');
-		$('.content').css('border-color', '#F080A8');
+		$('.content').css('border-top-color', '#F080A8');
 	});
 	
 

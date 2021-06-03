@@ -112,6 +112,7 @@ ul.tabs{
 .content {
 	width: 350px;
 	height: 760px;  /* 퍼센트로 구현하는 방법 */
-	border: 5px solid;
-	border-color: #232530;
+	border: 5px solid #F4F1FD;
+	border-top-color: #232530;
+	/* border-color: #232530; */
 }

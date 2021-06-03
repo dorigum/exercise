@@ -42,6 +42,7 @@
 			<div id="main">
 				<div class="inner">
 					<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
+					
 					    <table align="center" id="calendar">
 					        <tr>
 					            <td colspan="2">
