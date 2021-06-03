@@ -10,7 +10,7 @@ CREATE TABLE MEMBER (
     goalWeight Number(30,3)
 );
 
-CREATE TABLE FOOD (
+CREATE TABLE food (
     FCode VARCHAR2(100) NOT NULL Primary key,
     FName VARCHAR2(100) NOT NULL,
     F_category VARCHAR2(50),
@@ -19,11 +19,13 @@ CREATE TABLE FOOD (
     Kcal_per_100 Number(10,3)
 );
 
-CREATE TABLE calandar (
+create table calendar(
     id VARCHAR2(20),
     FCode VARCHAR2(30),
-    eDate DATE,
-    eAmt Number(10,3),
+    eYear VARCHAR2(10),
+    eMonth VARCHAR2(5),
+    eDate VARCHAR2(5),
+    eAmt NUMBER(10,3),
     eTime VARCHAR2(20),
     CONSTRAINT FK_calander_member FOREIGN KEY (id) REFERENCES member (id),
     CONSTRAINT FK_calander_food FOREIGN KEY (FCode) REFERENCES food (FCode)
