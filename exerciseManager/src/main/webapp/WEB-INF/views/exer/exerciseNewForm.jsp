@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.sql.DriverManager"%>
 <%@ page import="java.sql.Connection"%>
 <%@ page import="java.sql.Statement"%>
 <%@ page import="java.sql.ResultSet"%>
-<%@ page import = "java.util.Calendar" %>
-<%@ page import = "java.util.Date" %>
+<%@ page import="java.util.Calendar"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.text.DecimalFormat"%>
 <%!// 변수 선언
 	Connection conn = null;
 	Statement stmt = null;
@@ -16,179 +17,167 @@
 	String url = "jdbc:oracle:thin:@localhost:1521:XE";
 	String sql = "select * from test where id='bbb'";%>
 	
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Exercise index 페이지</title>
-		<!-- 음성 녹음 테스트 -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-		<link rel="stylesheet" type="text/css" href="css/table.css">
-		<!-- 한글 깨짐 인코딩  -->
-		<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> --%>
-		<%
-			Calendar cal = Calendar.getInstance();
-			String[] arr = {"일", "월", "화", "수", "목", "금", "토"};
-		%>
-		
-		<%!
-			public String getDay(int x){
-			String str = "";
-			switch(x){
-			case 1:str="일요일"; break;
-			case 2:str="월요일"; break;
-			case 3:str="화요일"; break;
-			case 4:str="수요일"; break;
-			case 5:str="목요일"; break;
-			case 6:str="금요일"; break;
-			case 7:str="토요일"; break;
-			}
-			return str;
-		}
-		%>
-		
-	</head>
-	<body class="is-preload">
+<head>
+<script src="https://kit.fontawesome.com/8f2ec3fbbc.js"
+	crossorigin="anonymous">
+	
+</script>
+<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<script src="<c:url value='/js/simpleCalendar.js'/>"></script>
+<link href="<c:url value='/css/simpleCalendar.css'/>" rel='stylesheet' />
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
-							<!-- Header -->
-								<!-- <header id="header">
-									<a href="/" class="logo"><strong>AI Personal </strong>Trainer</a>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-									</ul>
-								</header> -->
+<%-- <script src="<c:url value='js/subMenu.js'/>"></script> --%>
+<script src="<c:url value='/js/subMenu.js'/>"></script>
+<link href="<c:url value='/css/subMenu.css'/>" rel="stylesheet">
+<script src="<c:url value='/js/selectTimeBtn.js'/>"></script>
+<link href="<c:url value='/css/selectTimeBtn.css'/>" rel="stylesheet">
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Exercise Text record</h1>
-									</header>
-									
-									<!-- 날짜 및 요일 -->
-										<font size=4px>
-										<%= cal.get(Calendar.YEAR) %>년
-										<%= cal.get(Calendar.MONTH)+1 %>월
-										<%= cal.get(Calendar.DATE) %>일
-										<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동</font><br><br>
-										
-									<!-- 운동 기록 텍스트 입력 폼 -->	
-									<form method="post" action="/exer/insert">
-									<table>
-										<tr><th>운동날짜</th><td><input type="text" name="dayNo"></td></tr>
-										<tr><th>년</th><td><input type="text" name="year"></td></tr>
-										<tr><th>월</th><td><input type="text" name="month"></td></tr>
-										<tr><th>일</th><td><input type="text" name="exdate"></td></tr>
-										<tr><th>요일</th><td><input type="text" name="day"></td></tr>
-										<tr><th>운동번호</th><td><input type="text" name="exNo"></td></tr>
-										<tr><th>무게</th><td><input type="text" name="weight"></td></tr>
-										<tr><th>횟수</th><td><input type="text" name="count"></td></tr>
-										<tr><td colspan="2"><input type="submit" value="등록">
-															<input type="reset" value="취소"></td></tr>
-									</table>
-								</form>
-									
-									<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span> -->
-								</section>
+<script src="<c:url value='/js/selectTimeBtn.js'/>"></script>
+<script src="<c:url value='/js/ocr.js'/>"></script>
+<link href="<c:url value='/css/ocr.css'/>" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css" />
+<meta charset="EUC-KR">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>simple Calender</title>
+<style>
+</style>
+</head>
 
-						</div>
-					</div>
+<body onload="build();">
+	
+	<div class="main">
+		<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
+		<table style="margin-left:auto; margin-right:auto;" id="calendar">
+			<tr>
+				<td colspan="2"><font size=1%; color="#B3B6B3"> <label
+						onclick="beforem()" id="before"></label>
+				</font></td>
+				<td colspan="3" align="center" id="yearmonth"></td>
+				<td colspan="2"><font size=1%; color="#B3B6B3"> <label
+						onclick="nextm()" id="next"></label>
+				</font></td>
+			</tr>
+			<tr id="dayLabels">
+				<td align="center"><font color="#FF9090">Sun.</font></td>
+				<td align="center">Mon.</td>
+				<td align="center">Tue.</td>
+				<td align="center">Wed.</td>
+				<td align="center">Thu.</td>
+				<td align="center">Fri.</td>
+				<td align="center"><font color=#7ED5E4>Sat.</font></td>
+			</tr>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+		</table>
+		<!-- <button type="button" class="mobile-menu"><i class="fas fa-bars"></i></button> -->
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+		<div class="menuwrap">
+			<nav id="menu">
+				<!-- "메뉴목록 표시" -->
+				<h3 align="center" id="monthday" style="font-size: 25px;"></h3>
+				<p>운동 이름</p>
+				<form method="post" action="/exer/insert">
+					<table>
+						<tr>
+							<th>운동날짜</th>
+							<td><input type="text" name="dayNo" required></td>
+						</tr>
+						<tr>
+							<th>년</th>
+							<td><input type="text" name="year" required></td>
+						</tr>
+						<tr>
+							<th>월</th>
+							<td><input type="text" name="month" required></td>
+						</tr>
+						<tr>
+							<th>일</th>
+							<td><input type="text" name="exdate" required></td>
+						</tr>
+						<tr>
+							<th>요일</th>
+							<td><input type="text" name="day" required></td>
+						</tr>
+						<tr>
+							<th>운동번호</th>
+							<td><input type="text" name="exNo" required></td>
+						</tr>
+						<tr>
+							<th>무게</th>
+							<td><input type="text" name="weight"></td>
+						</tr>
+						<tr>
+							<th>횟수</th>
+							<td><input type="text" name="count"></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" value="등록"> <input
+								type="reset" value="취소"></td>
+						</tr>
+					</table>
+				</form>
+			</nav>
+		</div>
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="/">Mainpage</a></li>
-										<li><a href="../exerMain">Exercise Management Main</a></li>
-										<li>
-											<span class="opener">Exercise Management</span>
-											<ul>
-												<li><a href="exerciseListView">Exercise Record List</a></li>
-												<li><a href="../voiceRecord">Voice Record</a></li>
-												<li><a href="../stt">Voice Record File Upload</a></li>
-												<li><a href="exerciseNewForm">Text record</a></li>
-											</ul>
-										<li>
-											<span class="opener">Food Management</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-									</ul>
-								</nav>
-	 	
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Record / File Upload</h2>
-									</header>
-									<ul>
-										<li><a href="exer/exerciseListView">Exercise Record List</a></li>
-										<li><a href="indexTest2">Recode TEST</a></li>
-										<li><a href="voiceRecord">Voice Record</a></li>
-										<li><a href="stt">Voice Record File Upload</a></li>
-										<li><a href="exer/exerciseNewForm">Text record</a></li>
-									</ul>
-								</nav>
-								
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
 
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+		<div class="textSearchMenuwrap">
+			<nav id="textSearchMenu">
+				<h3>운동 기록표</h3>
 
-						</div>
-					</div>
+
+				<div class="content">
+					<p align="center" id="clickDay1"
+						style="font-size: 20px; margin: 5px;"></p>
+					<table class="selectedTable" border="1" width="350">
+						<tr>
+							<td style="">운동명</td>
+							<td>부위</td>
+							<td>시간</td>
+							<td>횟수</td>
+						</tr>
+					</table>
+				</div>
+			</nav>
+		</div>
+
+	</div>
+
+
+	<div class="OCRSearchMenuwrap">
+		<nav id="OCRSearchMenu">
+			<h3>운동 검색</h3>
+			<div class="container">
+
+
+
+				<div class="content">
+
+					<p align="center" id="clickDay2"
+						style="font-size: 15px; margin: 5px;"></p>
+					<p align="center" id="clickTime2"
+						style="font-size: 15px; margin: 5px;">궁금한 운동정보를 검색하세요</p>
+
+
+
+					<input type='text' name='word' value='' placeholder="운동이름을 검색하세요">
+					<button type='submit'>검색</button>
+					<button type='button'
+						onclick="window.open('./create_form.jsp', '', 'width=700, height=630'); return false;">등록</button>
+					<br> <br> <br> <br> <br> <br> <br>
+					<br> <br> <br> <br> <br> <br> <br>
+					<br> <br> <br> <br> <br> <br> <a
+						href="/">index 페이지로 이동</a>
+
+				</div>
 
 			</div>
+		</nav>
+	</div>
 
-		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/browser.min.js"></script>
-			<script src="/assets/js/breakpoints.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<script src="/assets/js/main.js"></script>
 
-	</body>
+</body>
+
 </html>

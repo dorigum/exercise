@@ -13,7 +13,11 @@
 <title>Insert title here</title>
 </head>
 <body class="is-preload">
+<div id="main">
+	<div class="inner">
 	<header id="header">
+	
+		
 		<a href="/" class="logo"><strong>AI Personal </strong>Trainer</a>
 		<ul class="icons">
 			<c:if test="${empty sessionScope.loginId }">
@@ -27,7 +31,9 @@
 				<a href="<c:url value='/myPage/${sessionScope.loginId }'/>">MY Page </a>
 			</c:if>
 		</ul>
+		
 	</header>
-	
+	</div>
+		</div>
 </body>
 </html>

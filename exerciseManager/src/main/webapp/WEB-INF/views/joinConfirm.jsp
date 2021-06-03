@@ -19,7 +19,8 @@
 <body>
 	<div id="main">
 		<div class="inner">
-			${sessionScope.id } 님 환영합니다! 회원가입이 완료되었습니다. <a href="/">메인 화면으로
+			<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
+			${sessionScope.loginId } 님 환영합니다! 회원가입이 완료되었습니다. <a href="/">메인 화면으로
 				이동</a> <br>
 		</div>
 	</div>
