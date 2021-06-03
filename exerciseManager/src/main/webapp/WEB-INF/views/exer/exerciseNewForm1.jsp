@@ -59,6 +59,7 @@
 					<div id="main">
 						<div class="inner">
 							<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
+							
 							<!-- Header -->
 								<!-- <header id="header">
 									<a href="/" class="logo"><strong>AI Personal </strong>Trainer</a>

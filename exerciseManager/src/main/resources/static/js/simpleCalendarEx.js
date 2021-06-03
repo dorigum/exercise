@@ -54,14 +54,14 @@
 						        <h3 class='front'>" + 
 						        mon + "." + dat + 
 						        "</h3> \
-						        <h3 id='cal' style='color:#1c1e26;'>0<br>kcal</h3> \
+						        <h3 id='cal' style='color:#1c1e26;'>select기능이용해서 기록살피기</h3> \
 						    </div> \
 						    <div class='flip-card-back'> \
 						        <h3>" +
 						        (today.getMonth() + 1) + "." + i + 
 						        "</h3> \
-						        <p>권장: 0 Kcal</p> \
-							    <p>섭취: 0 Kcal</p> \
+						        <p>운동</p> \
+						        <p>운동했니</p> \
 						    </div> \
 						</div> \
 					</div> \
@@ -83,14 +83,14 @@
 							        <h3 class='front'>" + 
 							        (today.getMonth() + 1) + "." + i + 
 							        "</h3> \
-							        <h3 id='cal' style='color:#1c1e26;'> <br>0time </h3> \
+							        <h3 id='cal' style='color:#1c1e26;'> 운동했니? <br> </h3> \
 							    </div> \
 							    <div class='flip-card-back'> \
 							        <h3>" +
 							        (today.getMonth() + 1) + "." + i + 
 							        "</h3> \
-							        <p>권장: 0 Kcal</p> \
-							        <p>섭취: 0 Kcal</p> \
+							        <p>오늘의 운동</p> \
+							        <p>운동</p> \
 							    </div> \
 							</div> \
 						</div> \

@@ -9,6 +9,7 @@
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.DecimalFormat"%>
 <%!// 변수 선언
+	String selectedDay =null;
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
@@ -27,7 +28,7 @@
 </script>
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 
-<script src="<c:url value='/js/simpleCalendar.js'/>"></script>
+<script src="<c:url value='/js/simpleCalendarEx.js'/>"></script>
 <link href="<c:url value='/css/simpleCalendar.css'/>" rel='stylesheet' />
 
 <%-- <script src="<c:url value='js/subMenu.js'/>"></script> --%>
@@ -35,10 +36,6 @@
 <link href="<c:url value='/css/subMenu.css'/>" rel="stylesheet">
 <script src="<c:url value='/js/selectTimeBtn.js'/>"></script>
 <link href="<c:url value='/css/selectTimeBtn.css'/>" rel="stylesheet">
-
-<script src="<c:url value='/js/selectTimeBtn.js'/>"></script>
-<script src="<c:url value='/js/ocr.js'/>"></script>
-<link href="<c:url value='/css/ocr.css'/>" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css" />
 <meta charset="EUC-KR">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,12 +79,12 @@
 				<form method="post" action="/exer/insert">
 					<table>
 						<tr>
-							<th>운동날짜</th>
+							<th>운동번호?(삭제해야할듯)(그리고 아이디를 통해 아이디별로 저장)</th>
 							<td><input type="text" name="dayNo" required></td>
 						</tr>
 						<tr>
 							<th>년</th>
-							<td><input type="text" name="year" required></td>
+							<td><input type="text" name="year" required ></td>
 						</tr>
 						<tr>
 							<th>월</th>
@@ -107,11 +104,11 @@
 						</tr>
 						<tr>
 							<th>무게</th>
-							<td><input type="text" name="weight"></td>
+							<td><input type="text" name="weight" value='0'></td>
 						</tr>
 						<tr>
 							<th>횟수</th>
-							<td><input type="text" name="count"></td>
+							<td><input type="text" name="count" value='0'></td>
 						</tr>
 						<tr>
 							<td colspan="2"><input type="submit" value="등록"> <input
