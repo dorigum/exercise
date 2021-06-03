@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.multi.diet.ICalendarDAO">
+
+	<resultMap id="calendarResult" type="com.multi.diet.CalendarVO">
+		<result property="id" column="id" />
+		<result property="FCode" column="FCode" />
+		<result property="eYear" column="eYear" />
+		<result property="eMonth" column="eMonth" />
+		<result property="eDate" column="eDate" />
+		<result property="eAmt" column="eAmt" />
+		<result property="eTime" column="eTime" />
+	</resultMap> 
+	
+	<resultMap id="foodResult" type="com.multi.diet.FoodVO">
+		<result property="id" column="id" />
+		<result property="FCode" column="FCode" />
+		<result property="eYear" column="eYear" />
+		<result property="eMonth" column="eMonth" />
+		<result property="eDate" column="eDate" />
+		<result property="eAmt" column="eAmt" />
+		<result property="eTime" column="eTime" />
+	</resultMap> 
+	
+			<!-- 서브 메뉴에서 시기별 테이블 조회 -->
+ 	<select id="byTimeList" parameterType="com.multi.diet.CalendarVO" 
+ 							resultMap="com.multi.diet.CalendarVO">	  	  	
+		SELECT * FROM 
+	</select>
+	
+	<insert id="insertCalendar" parameterType="com.multi.diet.CalendarVO">
+		INSERT INTO product (prdNo, prdName, prdPrice, prdCompany, prdStock)
+		VALUES (#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock})
+	</insert>
+
+
+</mapper>
+ 

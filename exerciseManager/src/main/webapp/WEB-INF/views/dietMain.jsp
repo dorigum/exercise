@@ -78,7 +78,7 @@
 					            <table class="brkfstTable" border="1" width="300">
 					            	<tr>
 					            		<td style="">음식명</td>
-					            		<td>섭취량</td>
+					            		<td>섭취량(ml/g)</td>
 					            		<td>칼로리</td>
 					            	</tr>
 					            </table>
@@ -88,7 +88,7 @@
 					            <table class="lunchTable" border="1" width="300">
 			    			        <tr>
 					            		<td style="">음식명</td>
-					            		<td>섭취량</td>
+					            		<td>섭취량(ml/g)</td>
 					            		<td>칼로리</td>
 					            	</tr>
 					            </table>
@@ -97,7 +97,7 @@
 					            <table class="dinnerTable" border= "1" width="300">
 					            	<tr>
 					            		<td style="">음식명</td>
-					            		<td>섭취량</td>
+					            		<td>섭취량(ml/g)</td>
 					            		<td>칼로리</td>
 					            	</tr>
 					            </table>
@@ -106,7 +106,7 @@
 					            <table class="nightTable" border= "1" width="300">
 					            	<tr>
 					            		<td style="">음식명</td>
-					            		<td>섭취량</td>
+					            		<td>섭취량(ml/g)</td>
 					            		<td>칼로리</td>
 					            	</tr>
 					            </table>
@@ -115,7 +115,7 @@
 					            <table class="snackTable" border= "1" width="300">
 					            	<tr>
 					            		<td style="">음식명</td>
-					            		<td>섭취량</td>
+					            		<td>섭취량(ml/g)</td>
 					            		<td>칼로리</td>
 					            	</tr>
 					            </table>

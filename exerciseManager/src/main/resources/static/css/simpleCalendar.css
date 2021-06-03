@@ -37,6 +37,10 @@ i {
 	height: 100;
 }
 
+#dayLabels td {
+	color: white;
+}
+
 #before, #next {
 	cursor: pointer;
 }
@@ -67,8 +71,8 @@ table tbody tr td {
 .flip-card {
   display: inline-block;
   background-color: transparent;
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 125px;
   perspective: 1000px;
   /* margin-bottom: 4px; */
   cursor: pointer;
