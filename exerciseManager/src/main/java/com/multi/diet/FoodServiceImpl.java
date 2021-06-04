@@ -3,13 +3,15 @@ package com.multi.diet;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class FoodServiceImpl implements FoodService {
 		//데이터 관련해서는 모두 DAO에 위임
 	 	@Autowired
-	 	FoodDAO foodDAO;
+	 	@Qualifier("IFoodDAO")
+	 	IFoodDAO foodDAO;
 	 
 	 	//전체 내용 조회
 		@Override 

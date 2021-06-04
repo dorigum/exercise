@@ -20,11 +20,12 @@ public class FoodController {
 	@Autowired
 	FoodService foodService;
 
-	@Autowired
-	FoodDAO foodDAO;
+	/*
+	 * @Autowired IFoodDAO foodDAO;
+	 */
 
 	//전체 내용 조회
-	//@RequestMapping("foodList")
+	@RequestMapping("foodList")
 	public String showList(Model model) {
 	  model.addAttribute("list", foodService.getList());
 	  return "food/list";
