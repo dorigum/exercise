@@ -75,8 +75,9 @@
 			<nav id="menu">
 				<!-- "메뉴목록 표시" -->
 				<h3 align="center" id="monthday" style="font-size: 25px;"></h3>
-				<p>운동 이름</p>
+				<p>운동 입력</p>
 				<form method="post" action="/exer/insert">
+				<input type="hidden" name="dayNo" required value='id'>
 					<table>
 						<tr>
 							<th>운동번호?(삭제해야할듯)(그리고 아이디를 통해 아이디별로 저장)</th>

@@ -1,5 +1,5 @@
 CREATE TABLE MEMBER (
-    Id VARCHAR2(20) NOT NULL PRIMARY KEY,
+    id VARCHAR2(20) NOT NULL PRIMARY KEY,
     Pwd VARCHAR2(20),
     Name VARCHAR2(20),
     eMail VARCHAR2(40),
@@ -9,6 +9,32 @@ CREATE TABLE MEMBER (
     weight NUMBER(30,3),
     goalWeight Number(30,3)
 );
+
+insert into member values ('hkd','1234','홍길동','hkd@naverc.om',27,'남',178.5,70,60);
+insert into member values ('key','1234','키다리','key@naverc.om',27,'남',190.5,80.5,50);
+insert into member values ('sch','1234','성춘향','sch@naverc.om',27,'여',160.5,60.5,70);
+insert into member values ('kjh','1234','김지혜','kjh@naverc.om',27,'여',160.5,58.5,50);
+
+
+CREATE TABLE DayExercise (
+    id VARCHAR2(20) NOT NULL,
+    dayNo VARCHAR2(30)  NOT NULL PRIMARY KEY,
+    year VARCHAR2(10),
+    month VARCHAR2(10),
+    exdate VARCHAR2(10),
+    exNo VARCHAR2(10),
+    exWeight NUMBER(10),
+    exMeter NUMBER(10), -- 거리 시간 속성 추가
+    exTime NUMBER(10),
+    count NUMBER(10),
+    CONSTRAINT FK_DayExercise_member FOREIGN KEY (id) REFERENCES member (id),
+    CONSTRAINT FK_DayExercise_exercise FOREIGN KEY (exNo) REFERENCES exercise (exNo)
+);
+
+
+
+
+
 
 CREATE TABLE food (
     FCode VARCHAR2(100) NOT NULL Primary key,
@@ -31,19 +57,5 @@ create table calendar(
     CONSTRAINT FK_calander_food FOREIGN KEY (FCode) REFERENCES food (FCode)
 );
 
-CREATE TABLE exercise (
-    exName VARCHAR2(30) NOT NULL PRIMARY KEY
-);
-
-CREATE TABLE DayExercise (
-    dayNo VARCHAR2(30)  NOT NULL PRIMARY KEY,
-    day DATE,
-    id VARCHAR(30),
-    exName VARCHAR(30),
-    weight NUMBER(10),
-    count NUMBER(10),
-    CONSTRAINT FK_DayExercise_member FOREIGN KEY (id) REFERENCES member (id),
-    CONSTRAINT FK_DayExercise_exercise FOREIGN KEY (exName) REFERENCES exercise (exName)
-);
 
 commit;
