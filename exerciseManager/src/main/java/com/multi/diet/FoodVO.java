@@ -1,5 +1,6 @@
 package com.multi.diet;
 
+
 public class FoodVO {
     private String FCode;
     private String FName;
