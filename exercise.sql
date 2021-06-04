@@ -16,19 +16,18 @@ insert into member values ('sch','1234','성춘향','sch@naverc.om',27,'여',160.5,6
 insert into member values ('kjh','1234','김지혜','kjh@naverc.om',27,'여',160.5,58.5,50);
 
 
+
 CREATE TABLE DayExercise (
     id VARCHAR2(20) NOT NULL,
-    dayNo VARCHAR2(30)  NOT NULL PRIMARY KEY,
     year VARCHAR2(10),
     month VARCHAR2(10),
     exdate VARCHAR2(10),
-    exNo VARCHAR2(10),
+    exName VARCHAR2(10),
     exWeight NUMBER(10),
     exMeter NUMBER(10), -- 거리 시간 속성 추가
     exTime NUMBER(10),
-    count NUMBER(10),
-    CONSTRAINT FK_DayExercise_member FOREIGN KEY (id) REFERENCES member (id),
-    CONSTRAINT FK_DayExercise_exercise FOREIGN KEY (exNo) REFERENCES exercise (exNo)
+    exCount NUMBER(10),
+    CONSTRAINT FK_DayExercise_member FOREIGN KEY (id) REFERENCES member (id)
 );
 
 
