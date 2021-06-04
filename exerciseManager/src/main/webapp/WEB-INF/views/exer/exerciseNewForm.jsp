@@ -77,11 +77,15 @@
 				<h3 align="center" id="monthday" style="font-size: 25px;"></h3>
 				<p>운동 입력</p>
 				<form method="post" action="/exer/insert">
-				<input type="hidden" name="dayNo" required value='id'>
+				 
 					<table>
 						<tr>
-							<th>운동번호?(삭제해야할듯)(그리고 아이디를 통해 아이디별로 저장)</th>
-							<td><input type="text" name="dayNo" required></td>
+							<th>번호</th>
+							<td><input type="text" name="dayNo" ></td>
+						</tr>
+						<tr>
+							<th>아이디</th>
+							<td><input type="text" name="id" value="${loginId }" readonly></td>
 						</tr>
 						<tr>
 							<th>년</th>
@@ -96,20 +100,24 @@
 							<td><input type="text" name="exdate" required></td>
 						</tr>
 						<tr>
-							<th>요일</th>
-							<td><input type="text" name="day" required></td>
+							<th>운동명</th>
+							<td><input type="text" name="exName" required></td>
 						</tr>
 						<tr>
-							<th>운동번호</th>
-							<td><input type="text" name="exNo" required></td>
-						</tr>
-						<tr>
-							<th>무게</th>
-							<td><input type="text" name="weight" value='0'></td>
+							<th>운동무게</th>
+							<td><input type="text" name="exWeight" value='0'></td>
 						</tr>
 						<tr>
 							<th>횟수</th>
-							<td><input type="text" name="count" value='0'></td>
+							<td><input type="text" name="exCount" value='0'></td>
+						</tr>
+						<tr>
+							<th>운동거리</th>
+							<td><input type="text" name="exMeter" value='0'></td>
+						</tr>
+						<tr>
+							<th>운동시간</th>
+							<td><input type="text" name="exTime" value='0'></td>
 						</tr>
 						<tr>
 							<td colspan="2"><input type="submit" value="등록"> <input

@@ -86,14 +86,16 @@
 									<!-- 운동 기록 수정 -->
 									<form method="post" action="/exer/update">
 									<table>
-										<tr><td>운동날짜</td><td><input type="text" name="dayNo" value="${DayExercise.dayNo }" readonly></td></tr>
+										<tr><td>운동번호</td><td><input type="text" name="dayNo" value="${DayExercise.dayNo }" readonly></td></tr>
+										<tr><td>id</td><td><input type="text" name="id" value="${DayExercise.id }" readonly></td></tr>
 										<tr><td>년</td><td><input type="text" name="year" value="${DayExercise.year }"></td></tr>
 										<tr><td>월</td><td><input type="text" name="month" value="${DayExercise.month }"></td></tr>
 										<tr><td>일</td><td><input type="text" name="exdate" value="${DayExercise.exdate }"></td></tr>
-										<tr><td>요일</td><td><input type="text" name="day" value="${DayExercise.day }"></td></tr>
-										<tr><td>운동번호</td><td><input type="text" name="exNo" value="${DayExercise.exNo }"></td></tr>
-										<tr><td>무게</td><td><input type="text" name="weight" value="${DayExercise.weight }"></td></tr>
-										<tr><td>횟수</td><td><input type="text" name="count" value="${DayExercise.count }"></td></tr>
+										<tr><td>운동명</td><td><input type="text" name="exName" value="${DayExercise.exName }"></td></tr>
+										<tr><td>무게</td><td><input type="text" name="exWeight" value="${DayExercise.exWeight }"></td></tr>
+										<tr><td>횟수</td><td><input type="text" name="exCount" value="${DayExercise.exCount }"></td></tr>
+										<tr><td>거리</td><td><input type="text" name="exMeter" value="${DayExercise.exMeter }"></td></tr>
+										<tr><td>시간</td><td><input type="text" name="exTime" value="${DayExercise.exTime }"></td></tr>
 										<tr><td colspan="2"><input type="submit" value="완료">
 															<input type="reset" value="취소"></td></tr>
 									</table>		

@@ -3,7 +3,7 @@ package com.multi.exercise;
 import java.util.ArrayList;
 
 public interface IExerciseService {
-	ArrayList<ExerciseVO> exerciseList();
+	ArrayList<ExerciseVO> exerciseList(String loginId);
 	void insertExercise(ExerciseVO DayExercise);
 	void updateExercise(ExerciseVO DayExercise);
 	void deleteExercise(String dayNo);

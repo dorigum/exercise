@@ -1,20 +1,30 @@
 package com.multi.exercise;
 
 public class ExerciseVO {
-	private String dayNo;
+	private int dayNo;
+	private String id;
 	private String year;
 	private String month;
 	private String exdate;
-	private String day;
-	private String exNo;
-	private int weight;
-	private int count;
+	private String exName;
+	private int exWeight;
+	private int exMeter;
+	private int exTime;
+	private int exCount;
 	
-	public String getDayNo() {
+	
+	
+	public int getDayNo() {
 		return dayNo;
 	}
-	public void setDayNo(String dayNo) {
+	public void setDayNo(int dayNo) {
 		this.dayNo = dayNo;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getYear() {
 		return year;
@@ -34,28 +44,34 @@ public class ExerciseVO {
 	public void setExdate(String exdate) {
 		this.exdate = exdate;
 	}
-	public String getDay() {
-		return day;
+	public String getExName() {
+		return exName;
 	}
-	public void setDay(String day) {
-		this.day = day;
+	public void setExName(String exName) {
+		this.exName = exName;
 	}
-	public String getExNo() {
-		return exNo;
+	public int getExWeight() {
+		return exWeight;
 	}
-	public void setExNo(String exNo) {
-		this.exNo = exNo;
+	public void setExWeight(int exWeight) {
+		this.exWeight = exWeight;
 	}
-	public int getWeight() {
-		return weight;
+	public int getExMeter() {
+		return exMeter;
 	}
-	public void setWeight(int weight) {
-		this.weight = weight;
+	public void setExMeter(int exMeter) {
+		this.exMeter = exMeter;
 	}
-	public int getCount() {
-		return count;
+	public int getExTime() {
+		return exTime;
 	}
-	public void setCount(int count) {
-		this.count = count;
+	public void setExTime(int exTime) {
+		this.exTime = exTime;
+	}
+	public int getExCount() {
+		return exCount;
+	}
+	public void setExCount(int exCount) {
+		this.exCount = exCount;
 	}
 }

@@ -85,14 +85,16 @@
 										
 									<!-- 운동 기록 상세 조회 -->
 									<table border="1" width="400">
-										<tr><td>운동날짜</td><td>${DayExercise.dayNo }</td></tr>
+										<tr><td>No</td><td>${DayExercise.dayNo }</td></tr>
+										<tr><td>id</td><td>${DayExercise.id }</td></tr>
 										<tr><td>년</td><td>${DayExercise.year }</td></tr>
 										<tr><td>월</td><td>${DayExercise.month }</td></tr>
 										<tr><td>일</td><td>${DayExercise.exdate }</td></tr>
-										<tr><td>요일</td><td>${DayExercise.day }</td></tr>
-										<tr><td>운동번호</td><td>${DayExercise.exNo }</td></tr>
-										<tr><td>무게</td><td>${DayExercise.weight }</td></tr>
-										<tr><td>횟수</td><td>${DayExercise.count }</td></tr>
+										<tr><td>운동명</td><td>${DayExercise.exName }</td></tr>
+										<tr><td>무게</td><td>${DayExercise.exWeight }</td></tr>
+										<tr><td>횟수</td><td>${DayExercise.exCount }</td></tr>
+										<tr><td>시간</td><td>${DayExercise.exTime }</td></tr>
+										<tr><td>거리</td><td>${DayExercise.exMeter }</td></tr>
 									</table><br><br>
 									
 									<a href="<c:url value='/'/>">메인 화면으로 이동</a><br><br>
@@ -108,7 +110,7 @@
 										function deleteCheck(){
 											var answer = confirm("삭제하시겠습니까?");
 											if(answer == true){
-												location.href="/exer/delete/${DayExercise.dayNo}";
+												location.href="/exer/delete/${DayExercise.exNo}";
 											}
 										}
 									</script>

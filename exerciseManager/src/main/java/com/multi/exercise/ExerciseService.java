@@ -13,8 +13,8 @@ public class ExerciseService implements IExerciseService {
 	IExerciseDAO dao;
 	
 	@Override
-	public ArrayList<ExerciseVO> exerciseList() {
-		return dao.exerciseList();
+	public ArrayList<ExerciseVO> exerciseList(String loginId) {
+		return dao.exerciseList(loginId);
 	}
 
 	@Override
