@@ -25,7 +25,7 @@
 		<result property="eTime" column="eTime" />
 	</resultMap> 
 	
-			<!-- 서브 메뉴에서 시기별 테이블 조회 -->
+<!-- 			서브 메뉴에서 시기별 테이블 조회
  	<select id="byTimeList" parameterType="com.multi.diet.CalendarVO" 
  							resultMap="com.multi.diet.CalendarVO">	  	  	
 		SELECT * FROM 
@@ -35,7 +35,7 @@
 		INSERT INTO product (prdNo, prdName, prdPrice, prdCompany, prdStock)
 		VALUES (#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock})
 	</insert>
-
+ -->
 
 </mapper>
  
