@@ -20,9 +20,9 @@ insert into member values ('kjh','1234','±èÁöÇý','kjh@naverc.om',27,'¿©',160.5,5
 CREATE TABLE DayExercise (
     dayNo NUMBER(10) NOT NULL PRIMARY KEY,
     id VARCHAR2(20) NOT NULL,
-    year VARCHAR2(10),
-    month VARCHAR2(10),
-    exdate VARCHAR2(10),
+    year NUMBER(5),
+    month NUMBER(5),
+    exdate NUMBER(5),
     exName VARCHAR2(10),
     exWeight NUMBER(10),
     exMeter NUMBER(10), -- °Å¸® ½Ã°£ ¼Ó¼º Ãß°¡
@@ -37,7 +37,7 @@ INCREMENT BY 1
 NOMAXVALUE
 NOCACHE;
 
-SELECT * FROM DayExercise WHERE id='hkd' ORDER BY year, month, exdate desc
+SELECT * FROM DayExercise WHERE id='hkd' ORDER BY year desc, month desc, exdate desc
 
 
 insert into member values ('kjh','1234','±èÁöÇý','kjh@naverc.om',27,'¿©',160.5,58.5,50);

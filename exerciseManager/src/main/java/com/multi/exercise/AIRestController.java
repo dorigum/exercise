@@ -3,6 +3,8 @@ package com.multi.exercise;
 import java.io.File;
 import java.io.IOException;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,15 +17,18 @@ import com.multi.diet.OCRService;
 @RestController
 public class AIRestController {
 	@Autowired
+	ExerciseService service;
+	
+	@Autowired
 	private STTService sttService;
 	
 	@Autowired
 	private OCRService ocrService;
 	
 	@RequestMapping("/clovaSTT")
-	public String STT(@RequestParam("uploadFile") MultipartFile file,
-					  @RequestParam("language") String language) {
-		String result = "";
+	public void STT(@RequestParam("uploadFile") MultipartFile file,
+					  @RequestParam("language") String language, HttpSession session) {
+		ExerciseVO result = new ExerciseVO();
 
 		try {
 			// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
@@ -39,15 +44,13 @@ public class AIRestController {
 			// 4. 서버로 전송
 			file.transferTo(file1);
 
-			result = sttService.clovaSpeechToText(filePathName, language);
-			System.out.println(result);
-
+			result = sttService.clovaSpeechToText(filePathName, language, session);
+			System.out.println(result.getId());
+			service.insertExercise(result);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		return result;
 	}
 	
 	@RequestMapping("/dietOCR")
