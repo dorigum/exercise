@@ -18,6 +18,7 @@ insert into member values ('kjh','1234','±èÁöÇý','kjh@naverc.om',27,'¿©',160.5,5
 
 
 CREATE TABLE DayExercise (
+    dayNo NUMBER(10) NOT NULL PRIMARY KEY,
     id VARCHAR2(20) NOT NULL,
     year VARCHAR2(10),
     month VARCHAR2(10),
@@ -30,7 +31,16 @@ CREATE TABLE DayExercise (
     CONSTRAINT FK_DayExercise_member FOREIGN KEY (id) REFERENCES member (id)
 );
 
+CREATE SEQUENCE SEQ_DayExercise_dayNo
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE
+NOCACHE;
 
+SELECT * FROM DayExercise WHERE id='hkd' ORDER BY year, month, exdate desc
+
+
+insert into member values ('kjh','1234','±èÁöÇý','kjh@naverc.om',27,'¿©',160.5,58.5,50);
 
 
 

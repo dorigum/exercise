@@ -80,10 +80,6 @@
 				 
 					<table>
 						<tr>
-							<th>번호</th>
-							<td><input type="text" name="dayNo" ></td>
-						</tr>
-						<tr>
 							<th>아이디</th>
 							<td><input type="text" name="id" value="${loginId }" readonly></td>
 						</tr>

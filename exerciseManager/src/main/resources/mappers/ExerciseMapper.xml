@@ -19,13 +19,13 @@
   	
   	<!-- 운동 기록 조회 -->
   	<select id="exerciseList" resultMap="exerciseResult">
-  		SELECT * FROM DayExercise WHERE id=#{loginId} ORDER BY year, month, exdate 
+  		SELECT * FROM DayExercise WHERE id=#{loginId} ORDER BY year desc, month desc, exdate desc
   	</select>
   	
 	<!-- 운동 정보 등록 --> <!-- ★★★★★★★★★★수정중★★★★★★★★★ -->
   	<insert id="insertExercise" parameterType="com.multi.exercise.ExerciseVO">
   		INSERT INTO DayExercise (dayNo, id, year, month, exdate, exName, exWeight, exMeter, exTime, exCount)
-  		VALUES (#{dayNo}, #{id}, #{year}, #{month}, #{exdate}, #{exName}, #{exWeight}, #{exMeter}, #{exTime}, #{exCount})
+  		VALUES (SEQ_DayExercise_dayNo.NEXTVAL, #{id}, #{year}, #{month}, #{exdate}, #{exName}, #{exWeight}, #{exMeter}, #{exTime}, #{exCount})
   	</insert>
   	
   	<!-- 운동 상세 기록 조회 -->
