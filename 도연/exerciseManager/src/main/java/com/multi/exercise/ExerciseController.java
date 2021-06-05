@@ -15,10 +15,12 @@ public class ExerciseController {
 	
 	@Autowired
 	private STTService sttService;
-	
+
 	// 음성 파일 DB 저장 테스트
 	@Autowired
-	private JDBCTest jdbcTest;
+	private DBInsert2 dbInsert2;
+	 
+	
 	
 	
 	 // 운동 관리 페이지
@@ -92,8 +94,9 @@ public class ExerciseController {
 	
 	
 	
+	// -----------------------------------------------------------
 	// 음성 파일 DB 저장 테스트
-	@RequestMapping("/exer/insert")
+	@RequestMapping("/exer/insertDB")
 	public String insertSTT(ExerciseVO DayExercise) {
 		service.insertSTT(DayExercise);
 		return "redirect:./exerciseListView";
