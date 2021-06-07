@@ -4,8 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.multi.diet.IFoodDAO">
-
-	
 	
 	<!-- 전체 내용 조회 -->
 	<select id="getList" resultType="com.multi.diet.FoodVO">
