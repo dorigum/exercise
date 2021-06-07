@@ -18,14 +18,22 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
+	<!-- 스프링부트 기본 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+		
+		<!-- 웹 관련 컨트롤러 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
@@ -37,16 +45,25 @@
 			<artifactId>ojdbc8</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- 스프링 JDBC -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		
 		
 		<!-- for jsp -->
 		<dependency>
@@ -60,6 +77,13 @@
 	        <groupId>javax.servlet</groupId>
 	        <artifactId>jstl</artifactId>
 	    </dependency>
+	    
+	    <!-- getter, setter, 생성자 등을 자동으로 생성해주는 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
     
     	<!-- spring boot auto restart(설정, 클래스가 바뀌면 auto restart) -->
         <!-- 스프링레거시프로젝트에서는 자바코드가 바뀌면 자동으로 서버가 다시시작되는데 부트에서는

@@ -18,14 +18,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class FoodController {
 	
 	@Autowired
-	FoodService foodService;
+	IFoodService foodService;
 
 	/*
 	 * @Autowired IFoodDAO foodDAO;
 	 */
 
 	//전체 내용 조회
-	@RequestMapping("foodList")
+	//@RequestMapping("foodList")
 	public String showList(Model model) {
 	  model.addAttribute("list", foodService.getList());
 	  return "food/list";
@@ -44,7 +44,7 @@ public class FoodController {
 		 
 	
 	//검색
-	@RequestMapping("list.do")    //세부적인 url mapping
+	@RequestMapping("foodList")    //세부적인 url mapping
     public ModelAndView list(//RequestParam으로 옵션, 키워드, 페이지의 기본값을 각각 설정해준다.
             
             //초기값을 설정해야 에러가 발생되지 않는다.
