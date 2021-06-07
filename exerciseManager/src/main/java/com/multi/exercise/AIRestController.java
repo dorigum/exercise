@@ -26,9 +26,10 @@ public class AIRestController {
 	private OCRService ocrService;
 	
 	@RequestMapping("/clovaSTT")
-	public void STT(@RequestParam("uploadFile") MultipartFile file,
+	public String STT(@RequestParam("uploadFile") MultipartFile file,
 					  @RequestParam("language") String language, HttpSession session) {
 		ExerciseVO result = new ExerciseVO();
+		String result2="";
 
 		try {
 			// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
@@ -47,10 +48,13 @@ public class AIRestController {
 			result = sttService.clovaSpeechToText(filePathName, language, session);
 			System.out.println(result.getId());
 			service.insertExercise(result);
+			result2="운동이름 : "+result.getExName()+", 운동무게 : "+result.getExWeight()+
+					", 운동횟수 : "+result.getExCount()+", 운동거리 : "+result.getExMeter()+", 운동시간 : "+result.getExTime();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return result2;
 	}
 	
 	@RequestMapping("/dietOCR")
