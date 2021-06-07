@@ -6,6 +6,7 @@
 	$('#ocrForm').on('submit', function(event){
 		event.preventDefault();  // submit 위에 reload 안되게
 		var formData = new FormData($('#ocrForm')[0]);
+		
 		$.ajax({
 			type:"post",
 			enctype:"multipart/form-data",

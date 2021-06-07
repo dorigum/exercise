@@ -13,7 +13,6 @@
 		<script src="<c:url value='js/simpleCalendar.js'/>"></script>
 	    <link href="<c:url value='css/simpleCalendar.css'/>" rel='stylesheet' />
 	    
-	    <%-- <script src="<c:url value='js/subMenu.js'/>"></script> --%>
 	    <script src="<c:url value='js/subMenu.js'/>"></script>
         <link href="<c:url value='css/subMenu.css'/>" rel="stylesheet" >
 	    <script src="<c:url value='js/selectTimeBtn.js'/>"></script>
@@ -23,7 +22,7 @@
         <script src="<c:url value='js/ocr.js'/>"></script>
         <link href="<c:url value='css/ocr.css'/>" rel="stylesheet" >
 		<meta charset="EUC-KR">
-		<title>simple Calender</title> 
+		<title>:: AI Personal Trainer :: 식단달력 ::</title> 
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
@@ -42,7 +41,6 @@
 			<div id="main">
 				<div class="inner">
 					<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
-					
 					    <table align="center" id="calendar">
 					        <tr>
 					            <td colspan="2">
@@ -73,53 +71,13 @@
 					    <div class="menuwrap">
 					        <div id="menu">
 					            <!-- "메뉴목록 표시" -->
+					            <%-- <h3 id="memberId">${sessionScope.loginId}</h3> --%>
 					            <h3 align="center" id="monthday" style="font-size:25px;"></h3>
-					            <p>아침</p>
-					            <table class="brkfstTable" border="1" width="300">
-					            	<tr>
-					            		<td style="">음식명</td>
-					            		<td>섭취량(ml/g)</td>
-					            		<td>칼로리</td>
-					            	</tr>
-					            </table>
 					            
-					            <br>
-					            <p>점심</p>
-					            <table class="lunchTable" border="1" width="300">
-			    			        <tr>
-					            		<td style="">음식명</td>
-					            		<td>섭취량(ml/g)</td>
-					            		<td>칼로리</td>
-					            	</tr>
-					            </table>
-					            <br>
-					            <p>저녁</p>
-					            <table class="dinnerTable" border= "1" width="300">
-					            	<tr>
-					            		<td style="">음식명</td>
-					            		<td>섭취량(ml/g)</td>
-					            		<td>칼로리</td>
-					            	</tr>
-					            </table>
-					            <br>
-					            <p>야식</p>
-					            <table class="nightTable" border= "1" width="300">
-					            	<tr>
-					            		<td style="">음식명</td>
-					            		<td>섭취량(ml/g)</td>
-					            		<td>칼로리</td>
-					            	</tr>
-					            </table>
-					            <br>
-					            <p>간식</p>
-					            <table class="snackTable" border= "1" width="300">
-					            	<tr>
-					            		<td style="">음식명</td>
-					            		<td>섭취량(ml/g)</td>
-					            		<td>칼로리</td>
-					            	</tr>
-					            </table>
-					            <br><br>
+								<div id="byDateDietTable">
+									<!-- Ajax(subMenu.js) 로 Controller => DB 로 데이터 받아서 작성되는 부분 -->
+								</div>	
+					            
 					            
 					            <div id="dietSearch">
 						            <input type="button" id="textSearch" href="#" value="식단 입력: 텍스트로 검색">
@@ -147,16 +105,12 @@
 									<div class="content">
 										<p align="center" id="clickDay1" style="font-size:15px; margin: 5px;"></p>
 										<p align="center" id="clickTime1" style="font-size:15px; margin: 5px;">시간을 클릭하세요 :)</p>
-										<p align="center" style="font-size:15px; margin: 5px;">
+<!-- 										<p align="center" style="font-size:15px; margin: 5px;">
 											현재 식단
-										</p>
-							            <table class="selectedTable" border="1" width="350">
-							            	<tr>
-							            		<td style="">음식명</td>
-							            		<td>섭취량</td>
-							            		<td>칼로리</td>
-							            	</tr>
-							            </table>
+										</p> -->
+									<div class="byTimeDietTable">
+										<!-- Ajax(selectTimeBtn.js) 로 Controller => DB 로 데이터 받아서 작성되는 부분 -->
+									</div>	
 							            
 									</div>
 			
@@ -182,17 +136,14 @@
 									
 										<p align="center" id="clickDay2" style="font-size:15px; margin: 5px;"></p>
 										<p align="center" id="clickTime2" style="font-size:15px; margin: 5px;">시간을 클릭하세요 :)</p>
-										<p align="center" style="font-size:15px; margin: 5px;">
+<!-- 										<p align="center" style="font-size:15px; margin: 5px;">
 											현재 식단
-										</p>
-							            <table class="selectedTable" border="1" width="350">
-							            	<tr>
-							            		<td style="">음식명</td>
-							            		<td>섭취량</td>
-							            		<td>칼로리</td>
-							            	</tr>
-							            </table>
-							            
+										</p> -->
+										
+										<div class="byTimeDietTable">
+											<!-- Ajax(selectTimeBtn.js) 로 Controller => DB 로 데이터 받아서 작성되는 부분 -->
+										</div>	
+										
 					            		<h3>영양 성분표 불러오기</h3>
 					
 										<form id="ocrForm"  method="post" enctype="multipart/form-data">	         
