@@ -100,7 +100,7 @@ public class AIRestController {
 		String condYear = (String)map.get("condYear");
 		String condMonth = (String)map.get("condMonth");
 		String condDate = (String)map.get("condDate");
-		
+		System.out.println(condId + condYear + condMonth + condDate);
 		// int로 변환: int intObj = Integer.parseInt((String)map.get("ObjectObj"));
 		 
 		try {

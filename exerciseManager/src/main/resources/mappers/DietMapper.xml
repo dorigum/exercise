@@ -14,10 +14,10 @@
 		<result property="eAmt" column="eAmt" />
 		<result property="eTime" column="eTime" />
 		<association property="foodVO" javaType="com.multi.diet.FoodVO">
-			<result property="FCode" column="FCode" />
-			<result property="FName" column="FName" />
+			<result property="fCode" column="fCode" />
+			<result property="fName" column="fName" />
 			<result property="servings" column="servings" />
-			<result property="Kcal" column="Kcal" />
+			<result property="kcal" column="kcal" />
 		</association> 
 		
 	</resultMap> 

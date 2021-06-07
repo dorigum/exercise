@@ -6,9 +6,9 @@ public class FoodVO {
     private String fCode;
     private String fName;
     private String f_category;
-    private double servings;
-    private double kcal;
-    private double kcal_per_100;
+    private int servings;
+    private int kcal;
+    private int kcal_per_100;
     
 	public FoodVO() { }
 	
@@ -43,19 +43,19 @@ public class FoodVO {
 	public double getServings() {
 		return servings;
 	}
-	public void setServings(double servings) {
+	public void setServings(int servings) {
 		this.servings = servings;
 	}
 	public double getKcal() {
 		return kcal;
 	}
-	public void setKcal(double kcal) {
+	public void setKcal(int kcal) {
 		this.kcal = kcal;
 	}
 	public double getKcal_per_100() {
 		return kcal_per_100;
 	}
-	public void setKcal_per_100(double kcal_per_100) {
+	public void setKcal_per_100(int kcal_per_100) {
 		this.kcal_per_100 = kcal_per_100;
 	}
     
