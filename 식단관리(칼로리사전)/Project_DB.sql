@@ -1,18 +1,14 @@
 drop table food;
 
 create table food(
-    FCode VARCHAR2(100) NOT NULL Primary key,
-    FName VARCHAR2(100) NOT NULL,
-    F_category VARCHAR2(50),
+    fCode VARCHAR2(100) NOT NULL Primary key,
+    fName VARCHAR2(100) NOT NULL,
+    f_category VARCHAR2(100),
     servings Number (10,3),
-    Kcal Number(10,3),
-    Kcal_per_100 Number(10,3)
+    kcal Number(10,3),
+    kcal_per_100 Number(10,3)
 );
 
-alter table food modify(FCode VARCHAR2(100), FName VARCHAR2(100));
-commit;
-
-alter table food modify(FName NOT NULL);
 
 select *
 from food;

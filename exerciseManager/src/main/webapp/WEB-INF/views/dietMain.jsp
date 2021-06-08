@@ -108,8 +108,39 @@
 <!-- 										<p align="center" style="font-size:15px; margin: 5px;">
 											현재 식단
 										</p> -->
+										
 									<div class="byTimeDietTable">
 										<!-- Ajax(selectTimeBtn.js) 로 Controller => DB 로 데이터 받아서 작성되는 부분 -->
+										<!-- 검색  -->
+											<div style="float: left;">
+												<form name="form1" method="post" action="foodList">
+										
+												    <select name="search_option">
+												    <option value="all" 
+												<c:if test="${map.search_option == 'all'}">selected</c:if>
+												        >전체</option>
+												        
+												        <option value="fCode"
+												<c:if test="${map.search_option == 'fCode'}">selected</c:if>
+												   >식품코드</option>
+												
+												        <option value="fName" 
+												<c:if test="${map.search_option == 'fName'}">selected</c:if>
+												        >식품명</option>
+												
+												        <option value="f_category" 
+												<c:if test="${map.search_option == 'f_category'}">selected</c:if>
+												        >분류</option>
+												
+												        
+												
+												    </select>
+												    <input name="keyword" value="${map.keyword}">
+												    <input type="submit" value="검색">
+												</form>
+										
+											</div>
+									
 									</div>	
 							            
 									</div>
@@ -131,6 +162,9 @@
 										<li class="nightBtn" value="야식">야식</li>
 										<li class="snackBtn" value="간식">간식</li>
 									</ul>
+									
+									
+									
 			
 									<div class="content">
 									

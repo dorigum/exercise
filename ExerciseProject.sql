@@ -25,8 +25,8 @@ CREATE TABLE dayExercise (
     CONSTRAINT FK_DayExercise_exercise FOREIGN KEY (exName) REFERENCES exercise (exName)
 );
 
-create table food(  
-    fCode VARCHAR2(10) NOT NULL Primary key,
+create table food(
+    fCode VARCHAR2(100) NOT NULL Primary key,
     fName VARCHAR2(100) NOT NULL,
     f_category VARCHAR2(100),
     servings Number (10,3),

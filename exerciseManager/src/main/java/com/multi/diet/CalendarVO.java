@@ -2,7 +2,7 @@ package com.multi.diet;
 
 public class CalendarVO {
 	private String id;
-	private String FCode;  // "D000009" 형식
+	private String fCode;  // "D000009" 형식
 	private String eYear;
 	private String eMonth;
 	private String eDate;
@@ -23,10 +23,10 @@ public class CalendarVO {
 		this.id = id;
 	}
 	public String getFCode() {
-		return FCode;
+		return fCode;
 	}
-	public void setFCode(String fCode) {
-		FCode = fCode;
+	public void setfCode(String fCode) {
+		this.fCode = fCode;
 	}
 	public String geteYear() {
 		return eYear;
