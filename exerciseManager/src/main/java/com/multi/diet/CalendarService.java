@@ -25,6 +25,17 @@ public class CalendarService implements ICalendarService {
 	    return dao.byTimeDietList(condId, condYear, condMonth, condDate, condTime); 
     }
     
+    @Override 
+    public void insertFoodVO(FoodVO foodVo) { 
+	    dao.insertFoodVO(foodVo); 
+    }
+    
+    @Override 
+    public void insertCalendarVO(CalendarVO calVo) { 
+	    dao.insertCalendarVO(calVo); 
+    }
+    
+    
 	/*
 	 * @Override public List<FoodVO> searchListFood(String search_option, String
 	 * keyword) throws Exception {

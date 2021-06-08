@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,7 @@ public class DietRestController {
 	
 	@Autowired
 	MemberService memservice;
+	
 	
 	@RequestMapping("/dietOCR")
 	public NutriFactVO dietOCR(@RequestParam("uploadFile") MultipartFile file) {
@@ -104,4 +106,35 @@ public class DietRestController {
 		MemberVO mem = memservice.myPage(loginId);
 		return mem;
 	}
+	
+	@RequestMapping("insertFoodData")
+	public void insertFoodData(Model model, @RequestParam Map<String, Object> map, HttpServletRequest request) {
+		FoodVO foodVo = new FoodVO();
+		
+		foodVo.setfCode((String)map.get("condFCode"));
+		foodVo.setfName((String)map.get("condFName"));
+		foodVo.setF_category((String)map.get("condF_category"));
+		foodVo.setServings(Double.parseDouble((String)map.get("condServings")));
+		foodVo.setKcal(Double.parseDouble((String)map.get("condKcal")));
+		foodVo.setKcal_per_100(Double.parseDouble((String)map.get("condKcal_per_100")));
+		
+		calendarService.insertFoodVO(foodVo);
+	}
+	
+	@RequestMapping("insertCalendarData")
+	public void insertCalendarData(Model model, @RequestParam Map<String, Object> map, HttpServletRequest request, HttpSession session) {
+		CalendarVO calVo = new CalendarVO();
+		
+		calVo.setId((String)session.getAttribute("loginId"));
+		calVo.setfCode((String)map.get("condFCode"));
+		calVo.seteYear((String)map.get("condEYear"));
+		calVo.seteMonth((String)map.get("condEMonth"));
+		calVo.seteDate((String)map.get("condEDate"));
+		calVo.seteAmt(Double.parseDouble((String)map.get("condEAmt")));
+		calVo.seteTime((String)map.get("condETime"));
+		
+		calendarService.insertCalendarVO(calVo);
+	}
+	
+	
 }

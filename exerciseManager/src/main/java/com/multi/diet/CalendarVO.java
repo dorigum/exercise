@@ -59,5 +59,12 @@ public class CalendarVO {
 		this.eTime = eTime;
 	}
 	
+
+	@Override
+	public String toString() {
+		return "CalendarVO [id=" + id + ", fCode=" + fCode + ", eYear=" + eYear + ", eMonth=" + eMonth + ", eDate="
+				+ eDate + ", eAmt=" + eAmt + ", eTime=" + eTime + ", foodVO=" + foodVO + "]";
+	}
+	
 	
 }

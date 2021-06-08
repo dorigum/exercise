@@ -118,7 +118,7 @@
  
 #dietSearch {
 	position: absolute;
-	top: 800px !important;
+	top: 850px !important;
 	display: block;
 	margin:0 auto;
 }
@@ -127,20 +127,65 @@
 	font-family: 'twayfly';
 	width: 300px !important;
 	margin-left: 30px !important;
-	font-size: 20px !important;
+	font-size: 15px !important;
 	padding-left: 35px !important;
 }
 
+input#textSearch {
+	margin: 10px;
+}
 
-input {
+/* input {
 	margin-left: 100px !important;
 	width: 50% !important;
+} */
+
+input#submit {
+    font-family: 'twayfly' !important;
+    font-size: 15px;
+	height: 50px;
+	width: 300px;
 }
 
-#ocrResultForm{
+input#insertDietOCR {
+    font-family: 'twayfly' !important;
+    font-size: 15px;
+	height: 50px;
+	width: 300px;
+}
+
+input#totalAmount {
+	width: 150px;
+	margin: 0 auto;
+}
+input#unitAmount {
+	width: 150px;
+	margin: 0 auto;
+	
+}
+input#unitCalories {
+	width: 150px;
+	margin: 0 auto;
+}
+input#prodName {
+	width: 150px;
+	margin: 0 auto;
+}
+input#intake {
+	width: 150px;
+	margin: 0 auto;
+}
+/* input[type="submit"] {
+	font-family: 'twayfly' !important;
+	
+} */
+div#rnxh{
 	display: inline !important;	
+	text-align: left;
 }
-
+form {
+    margin: 0;
+}
 #OCRSearchMenu {
 	text-align: center !important;
 }

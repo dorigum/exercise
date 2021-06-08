@@ -29,8 +29,8 @@ $(document).ready(function() {
 						"<tr>" +
 		            		"<th>시간</th>" +
 	            			"<th>음식명</th>" +
-		            		"<th>섭취량(ml/g)</th>" +
-		            		"<th>칼로리(Kcal)</th>" +
+		            		"<th>섭취량<br>(ml/g)</th>" +
+		            		"<th>칼로리<br>(Kcal)</th>" +
 		            	"</tr>";
 					            	
 				htmlStr += "<tr>";

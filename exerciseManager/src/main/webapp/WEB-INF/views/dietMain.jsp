@@ -110,7 +110,7 @@
 											현재 식단
 										</p> -->
 										
-									<div class="byTimeDietTable">
+									<div class="byTimeDietTable"></div>	
 										<!-- Ajax(selectTimeBtn.js) 로 Controller => DB 로 데이터 받아서 작성되는 부분 -->
 										<!-- 검색  -->
 											<div style="float: left;">
@@ -142,7 +142,7 @@
 										
 											</div>
 									
-									</div>	
+									
 							            
 									</div>
 			
@@ -185,21 +185,24 @@
 								         	파일 :  <input type="file" id="uploadFile" name="uploadFile"> 
 								         	<br><br>
 								           <input id="submit" type="submit" value="불러오기">
-										</form><br><br>		
+										</form>	
 										
+										<hr>
 										
 										<h3>영양 성분표 분석 결과</h3>
 										
 										<div id="resultDiv"></div>
 										
 										<form id="ocrResultForm" method="post" enctype="multipart/form-data">
-											총 내용량: <input id="totalAmount" type="text" size=10 readonly> <span class="amountUnit"></span> <br>
-											1회 제공량: <input id="unitAmount" type="text" size=10 readonly> <span class="amountUnit"></span> <br>
-											1회 칼로리: <input id="unitCalories" type="text" size=10 readonly> Kcal <br>
-											상품명: <input id="prodName" type="text" size=18 placeholder="상품명 입력"> <br>
-											섭취량: <input id="intake" type="text" size=10 placeholder="섭취량 입력"> <span class="amountUnit"></span> <br>
+											<div id="rnxh">
+												<span>총 내용량:</span> <input id="totalAmount" type="text" size=10 readonly> <!-- <span class="amountUnit"></span> --><br>
+												<span>1회 제공량:</span> <input id="unitAmount" type="text" size=10 readonly> <!-- <span class="amountUnit"></span> --> <br>
+												<span>1회 칼로리:</span> <input id="unitCalories" type="text" size=10 readonly> <!-- Kcal --> <br>
+												<span>상품명:</span> <input id="prodName" type="text" size=18 placeholder="상품명 입력"> <br>
+												<span>섭취량:</span> <input id="intake" type="text" size=10 placeholder="섭취량 입력"> <!-- <span class="amountUnit"></span> --> <br>
+											</div>
+											<input id="insertDietOCR" type="submit" value="식단표에 입력하기"><br>
 											
-											<input type="button" id="insertDietOCR" type="submit" value="식단표에 입력하기"></button> <br>
 										<!-- nutriFactor VO 만들어서 입력 받기 (탄단지 까지만) -->
 										<!-- 나중에 해당 정보를 DB에 넣는 기능까지 넣기 -->
 											<!-- 칼로리사전에 저장 버튼 -> 클릭 (alert("사전에 저장되었습니다 :)") -->

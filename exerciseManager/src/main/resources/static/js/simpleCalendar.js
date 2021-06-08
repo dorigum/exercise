@@ -146,7 +146,7 @@
 				async: false,  // 설정 안하면 셀(플립카드)에 나타나지 않음
 				success:function(arrayListOfCalendarVO){
 					var totalCalPerDay = 0;
-					
+					var secOperand = recommendCal * 2 / 7;
 					for (var idx=0; idx<arrayListOfCalendarVO.length; idx++) {
 						var calVo = arrayListOfCalendarVO[idx];
 						var singleDietCal = calVo.eAmt * calVo.foodVO.kcal / calVo.foodVO.servings;
@@ -159,17 +159,42 @@
 					
 					$('#backUserCal' + i).append(backrecommCalStr);
 					$('#backRecommCal' + i).append(backuserCalStr);
-					if (resultCalories > 0){
+					if (resultCalories >= 0) $('#cal' + i).append("+");
+					
+					if (resultCalories > (recommendCal - secOperand)) {
 						$('#cal' + i).css({"color":"#E84F81"});
-						$('#kcal' + i).css({"color":"#E84F81"});  
-							// 해당 id를 갖는 요소의 css를 동적으로 변경 (color 대신 background-color 사용 가능)
-						$('#cal' + i).append("+" + resultCalories);
+						$('#kcal' + i).css({"color":"#E84F81"}); 
+						
+					} else if ((recommendCal - secOperand) >= resultCalories && 
+							   (recommendCal - 2 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#CE6192"});
+						$('#kcal' + i).css({"color":"#CE6192"});  
+						
+					} else if ((recommendCal - 2 *secOperand) >= resultCalories && 
+							   (recommendCal - 3 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#B574A3"});
+						$('#kcal' + i).css({"color":"#B574A3"});  
+						
+					} else if ((recommendCal - 3 * secOperand) >= resultCalories && 
+							   (recommendCal - 4 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#9B87B4"});
+						$('#kcal' + i).css({"color":"#9B87B4"}); 
+						 
+					} else if ((recommendCal - 4 * secOperand) >= resultCalories && 
+							   (recommendCal - 5 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#8299C5"});
+						$('#kcal' + i).css({"color":"#8299C5"});  
+						
+					} else if ((recommendCal - 5 * secOperand) >= resultCalories && 
+							   (recommendCal - 6 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#68ACD6"});
+						$('#kcal' + i).css({"color":"#68ACD6"});  
+						
 					} else {
 						$('#cal' + i).css({"color":"#4FBFE8"});
-						$('#cal' + i).append(resultCalories);
 						$('#kcal' + i).css({"color":"#4FBFE8"});  
 					}
-					
+					$('#cal' + i).append(resultCalories);
 					// 운동을 했느냐로 셀의 색상을 바꾸고 싶을 때는 ln.122 ~ 129 대신
 					
 /*					if (운동횟수변수 > 5) {

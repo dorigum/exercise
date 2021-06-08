@@ -70,8 +70,8 @@ $(document).ready(function(e){
 					"<table border='1'>" +		            	
 						"<tr>" +
 	            			"<th>음식명</th>" +
-		            		"<th>섭취량(ml/g)</th>" +
-		            		"<th>칼로리(Kcal)</th>" +
+		            		"<th>섭취량<br>(ml/g)</th>" +
+		            		"<th>칼로리<br>(Kcal)</th>" +
 		            	"</tr>";
 					            	
 				htmlStr += "<tr>";

@@ -16,8 +16,10 @@
 		<association property="foodVO" javaType="com.multi.diet.FoodVO">
 			<result property="fCode" column="fCode" />
 			<result property="fName" column="fName" />
+			<result property="f_category" column="f_category" />
 			<result property="servings" column="servings" />
 			<result property="kcal" column="kcal" />
+			<result property="kcal_per_100" column="kcal_per_100" />
 		</association> 
 		
 	</resultMap> 
@@ -46,13 +48,24 @@
 		  	AND eDate=#{condDate}
 		  	AND eTime=#{condTime}
 	</select>
-	
- <!-- 	두 번째 서브메뉴에서 데이터 입력 
-	<insert id="insertCalendar" parameterType="com.multi.diet.CalendarVO">
-		INSERT INTO calendar (id, )
-		VALUES ()
+
+	<!-- FoodVO 삽입 -->
+	<insert id="insertFoodVO" parameterType="com.multi.diet.FoodVO">
+		INSERT INTO food (
+			fCode, fName, f_category, servings, kcal, kcal_per_100
+		) VALUES (
+			#{fCode}, #{fName}, #{f_category}, #{servings}, #{kcal}, #{kcal_per_100} 
+		)
 	</insert>
- -->
+	
+	<!-- CalendarVO 삽입 -->
+	<insert id="insertCalendarVO" parameterType="com.multi.diet.CalendarVO">
+		INSERT INTO calendar (
+			id, fCode, eYear, eMonth, eDate, eAmt, eTime
+		) VALUES (
+			#{id}, #{fCode}, #{eYear}, #{eMonth}, #{eDate}, #{eAmt}, #{eTime}
+		)
+	</insert>
 
 </mapper>
  
