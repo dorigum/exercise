@@ -21,7 +21,7 @@
 }
 
 body {
-  font-family: 'twayfly';
+  font-family: 'twayfly' !important;
 }
 
 input {
@@ -142,8 +142,10 @@ p {
 	text-align: center;
 }
 
-td#monthday {
+#monthday {
 	font-size: 30px;
+	font-family: twayfly;
+	text-align: center;
 }
 
 td a {

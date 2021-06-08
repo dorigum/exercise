@@ -6,23 +6,33 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 <title>칼로리 사전</title>
 </head>
 <style>
 	h2 {
 		text-align: center;
+		font-family:"삼성 고딕체","굴림",Gulim;
+		font-size:46px;
+		font-weight:bold;
+		color:#000000;
 	}
 	table {
 		width: 100%;
 	}
 	#outter {
 		display: block;
-		width: 60%;
+		width: 85%;
 		margin: auto;
 	}
 	a {
 		text-decoration: none;
 	}
+	
 </style>
 
 
@@ -30,19 +40,26 @@
 //아래쪽에서 이 함수를 호출해서 페이지값을 컨트롤러에 맵핑시킨다
 function list(page){
     console.log("페이지를 이동합니다.");
-    location.href="list.do?curPage="+page;
+    location.href="foodList?curPage="+page;
 }
 </script>
 
 <body>
-<center>
-<h2>칼로리 사전</h2>
+<body class="is-preload">
+<div id="main">
+	<div class="inner">
+	<header id="header">
+		<center>
+			<h2><img src="/images/dictionary.png" width="40" height="40"/> 칼로리 사전</h2>
+	</header>
+	</div>
+</div>
 
 <div id="outter">
-	
+	<br><br>
 	<!-- 검색  -->
 	<div style="float: left;">
-		<form name="form1" method="post" action="list.do">
+		<form name="form1" method="post" action="foodList">
 
 		    <select name="search_option">
 		    <option value="all" 
@@ -65,7 +82,7 @@ function list(page){
 		
 		    </select>
 		    <input name="keyword" value="${map.keyword}">
-		    <input type="submit" value="조회">
+		    <input type="submit" value="검색">
 		</form>
 
 	</div>
@@ -91,9 +108,9 @@ function list(page){
 			<td>식품코드</td>
 			<td width="50%">식품명</td>
 			<td>분류</td>
-			<td>1회 제공량</td>
+			<!-- <td>1회 제공량</td>
 			<td>1회 칼로리량</td>
-			<td>100g당 칼로리량</td>
+			<td>100g당 칼로리량</td> -->
 					
 		</tr>
 		<c:forEach items="${map.list}" var="food">
@@ -101,9 +118,9 @@ function list(page){
 				<td><a href="foodDetail?fCode=${food.fCode }">${food.fCode }</a></td>
 				<td>${food.fName }</td>
 				<td>${food.f_category }</td>
-				<td>${food.servings }</td>
+				<%-- <td>${food.servings }</td>
 				<td>${food.kcal }</td>
-				<td>${food.kcal_per_100 }</td>
+				<td>${food.kcal_per_100 }</td> --%>
 			</tr>
 		</c:forEach>
 	
@@ -153,6 +170,7 @@ function list(page){
     
     </center>
 </table>
+
 	
 	
 </div>

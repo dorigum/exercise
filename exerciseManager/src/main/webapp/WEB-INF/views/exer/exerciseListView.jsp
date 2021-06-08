@@ -85,22 +85,21 @@
 										
 									<!-- 운동 기록 전체 조회 -->
 									<table border="1">
-										<tr><th>No</th><th>id</th><th>년</th><th>월</th><th>일</th>
-											<th>운동명</th><th>운동 무게</th><th>운동 횟수</th><th>운동거리</th><th>운동시간</th></tr>
+										<tr><th>id</th><th>년</th><th>월</th><th>일</th>
+											<th>운동명</th><th>운동 무게</th><th>운동 횟수</th><th>운동거리</th><th>운동시간</th><th>삭제</th></tr>
 											
 										<c:forEach items="${exerciseList }" var="DayExercise">
 											<tr>
-												<%-- <td><a href="<c:url value='/exer/exerciseDetailView/${DayExercise.dayNo }'/>">${DayExercise.dayNo }</a></td> --%>
-												<td><a href="<c:url value='/exer/exerciseUpdateForm/${DayExercise.dayNo }' />"> ${DayExercise.dayNo }</a></td>
 												<td>${DayExercise.id }</td>
 												<td>${DayExercise.year }</td>
 												<td>${DayExercise.month }</td>
 												<td>${DayExercise.exdate }</td>
-												<td>${DayExercise.exName }</td>
+												<td><a href="<c:url value='/exer/exerciseUpdateForm/${DayExercise.dayNo }' />">${DayExercise.exName }</a></td>
 												<td>${DayExercise.exWeight }</td>
 												<td>${DayExercise.exCount }</td>
 												<td>${DayExercise.exMeter }</td>
 												<td>${DayExercise.exTime }</td>
+												<td><a href="<c:url value='/exer/delete/${DayExercise.dayNo }' />"> 삭제</a></td>
 											</tr>
 										</c:forEach>
 									</table><br><br>

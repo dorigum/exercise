@@ -2,9 +2,65 @@ $(document).ready(function() {
 
 	$(document).on('click', '.flip-card', function(){
 
-		monthday.innerHTML = $(this).find('.front').text();
-		clickDay1.innerHTML = $(this).find('.front').text();
-		clickDay2.innerHTML = $(this).find('.front').text();
+		var tempStrYYYYMM = $("#yearmonth").text();
+		var tempStrMMDD = $(this).find('.front').text();
+		
+		var currYear = tempStrYYYYMM.slice(0, tempStrYYYYMM.indexOf('.')).trim();
+		var currMonth = tempStrYYYYMM.slice(tempStrYYYYMM.indexOf('.') + 1).trim();
+		var currDate = tempStrMMDD.slice(tempStrMMDD.indexOf('.') + 1).trim();
+		
+		var conditionData = {};
+		conditionData['condYear'] = currYear;
+		conditionData['condMonth'] = currMonth;
+		conditionData['condDate'] = currDate;
+		
+		$("#byDateDietTable").empty();
+		
+		$.ajax({
+			type: "post",
+			data: conditionData,
+			url: "byDateDietList",
+/*			processData:false,  // 필수
+			contentType:false,  // 필수*/
+			success:function(arrayListOfCalendarVO){
+				
+				var htmlStr = 
+					"<table border='1'>" +		            	
+						"<tr>" +
+		            		"<th>시간</th>" +
+	            			"<th>음식명</th>" +
+		            		"<th>섭취량(ml/g)</th>" +
+		            		"<th>칼로리(Kcal)</th>" +
+		            	"</tr>";
+					            	
+				htmlStr += "<tr>";
+				for (var i=0; i<arrayListOfCalendarVO.length; i++){
+					var calVo = arrayListOfCalendarVO[i];
+					htmlStr += 
+						"<tr>" +
+							"<td>" + calVo.eTime + "</td>" + 
+							"<td>" + calVo.foodVO.fName + "</td>" +
+							"<td>" + calVo.eAmt + "</td>" + 
+							"<td>" + 
+								(calVo.eAmt * calVo.foodVO.kcal / calVo.foodVO.servings).toFixed(2) + 
+								/* 사용자의 섭취량에 따른 칼로리, doubleObj.toFixed(n) -> n자리까지 표현 */
+							"</td>" + 
+						"</tr>";
+						
+				}
+				htmlStr += "</table>";
+				$("#byDateDietTable").append(htmlStr);
+			},
+			error:function(e) {
+				alert("subMenu.js에서 오류 발생 :<\n" + "e");
+			}
+		});
+		
+		event.preventDefault();
+		
+		monthday.innerHTML = currMonth + " 월 " + currDate + " 일  식단";
+		clickDay1.innerHTML = currMonth + " 월  " + currDate + " 일";
+		clickDay2.innerHTML = currMonth + " 월  " + currDate + " 일";
 		
 		document.querySelector('.menuwrap').classList.add('on');
 	    let div = document.createElement('div');

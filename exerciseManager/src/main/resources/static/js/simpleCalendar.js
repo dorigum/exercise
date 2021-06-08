@@ -4,7 +4,8 @@
  
     var today = new Date(); // 오늘 날짜
     var date = new Date();
- 
+
+ 	
 	function beforem() { //이전 달을 today에 값을 저장
         today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
         build(); //만들기
@@ -16,6 +17,7 @@
     }
     
     function build() {
+
         var nMonth = new Date(today.getFullYear(), today.getMonth(), 1); //현재달의 첫째 날
         var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); //현재 달의 마지막 날
         var tbcal = document.getElementById("calendar"); // 테이블 달력을 만들 테이블
@@ -43,59 +45,111 @@
  
         // 달력 출력
         for (i = 1; i <= lastDate.getDate(); i++) { // 1일부터 마지막 일까지
-            cell = row.insertCell();{
+        	
+            cell = row.insertCell();
             var mon = (today.getMonth() + 1);
             var dat = i;
-            cell.innerHTML = 
-            	" \
-            		<div class='flip-card'> \
-	            		<div class='flip-card-inner'> \
-						    <div class='flip-card-front'> \
-						        <h3 class='front'>" + 
-						        mon + "." + dat + 
-						        "</h3> \
-						        <h3 id='cal' style='color:#1c1e26;'>0<br>kcal</h3> \
-						    </div> \
-						    <div class='flip-card-back'> \
-						        <h3>" +
-						        (today.getMonth() + 1) + "." + i + 
-						        "</h3> \
-						        <p>권장: 0 Kcal</p> \
-							    <p>섭취: 0 Kcal</p> \
-						    </div> \
-						</div> \
-					</div> \
-				"
-	            
+
+            
             cnt = cnt + 1;
             
             if (cnt % 7 == 0) { // 1주일이 7일 이므로 토요일 계산
                 row = calendar.insertRow();// 줄 추가
             }
-            
-            if(today.getFullYear()==date.getFullYear()&&today.getMonth()==date.getMonth()&&i==date.getDate()) {
-                // cell.bgColor = "#BCF1B1"; //오늘날짜배경색 #EE64AE
-	            cell.innerHTML = 
-	            	" \
-	            		<div class='flip-card'> \
-		            		<div class='flip-card-inner'> \
-							    <div class='flip-card-front' style='background-color:#FCABB9;'> \
-							        <h3 class='front'>" + 
-							        (today.getMonth() + 1) + "." + i + 
-							        "</h3> \
-							        <h3 id='cal' style='color:#1c1e26;'> <br>0time </h3> \
-							    </div> \
-							    <div class='flip-card-back'> \
-							        <h3>" +
-							        (today.getMonth() + 1) + "." + i + 
-							        "</h3> \
-							        <p>권장: 0 Kcal</p> \
-							        <p>섭취: 0 Kcal</p> \
-							    </div> \
-							</div> \
+            /*font-weight:bold*/
+            cell.innerHTML = 
+            	" \
+            		<div class='flip-card'> \
+	            		<div class='flip-card-inner'> \
+						    <div class='flip-card-front' id='flip-card-front" + i + "'> \
+						        <h2 class='front'>" + 
+						        mon + "." + dat + 
+						        "</h2> \
+						        <div class= 'cal' id='cal" + i + 
+						        "' style='font-size:25px; text-align:center;'></div>" 
+						         + "<p id='kcal" + i + "' style='font-size:15px;'>Kcal</p>" + 
+						    "</div> \
+						    <div class='flip-card-back'> \
+						        <h2 style='color:white;'>" +
+						        mon + "." + dat + 
+						        "</h2> \
+						        <div class= 'cal' id='backUserCal" + i + 
+						        "' style='font-size:12.5px; text-align:center;'></div>" +
+						        "<div class= 'cal' id='backRecommCal" + i + 
+						        "' style='font-size:12.5px; text-align:center;'></div>" 
+						    "</div> \
 						</div> \
-					"
+					</div> \
+				"
+            if (today.getFullYear()==date.getFullYear() && today.getMonth()==date.getMonth() && i==date.getDate()) {
+                /*cell.bgColor = "#FCABB9";*/ // 오늘 색상 변경
+                $('#flip-card-front' + i).css({"background-color":"#FCABB9"});
+                // 기존 색상 변경
+                	// <div class='flip-card-front' style='background-color:#FCABB9;'>
             }
-        }
-    }
+
+    	    var tempStrYYYYMM = $("#yearmonth").text();
+			var currYear = tempStrYYYYMM.slice(0, tempStrYYYYMM.indexOf('.')).trim();
+			var currMonth = mon;
+			var currDate = dat;
+			
+			var conditionData = {};  // ajax로 보낼 데이터 만들기
+			conditionData['condYear'] = currYear;
+			conditionData['condMonth'] = currMonth;
+			conditionData['condDate'] = currDate;
+
+	        $.ajax({
+				type: "post",
+				data: conditionData,  // AIRestController로 보낼 데이터
+				url: "byDateDietList",  // AIRestController에서 받을 주소
+				async: false,  // 설정 안하면 셀(플립카드)에 나타나지 않음
+				success:function(arrayListOfCalendarVO){
+					var totalCalPerDay = 0;
+					var recommendCal = 1000;
+					
+					for (var idx=0; idx<arrayListOfCalendarVO.length; idx++) {
+						var calVo = arrayListOfCalendarVO[idx];
+						var singleDietCal = calVo.eAmt * calVo.foodVO.kcal / calVo.foodVO.servings;
+						totalCalPerDay += singleDietCal;
+					}
+					
+					resultCalories = (totalCalPerDay - recommendCal).toFixed(0);
+					var backrecommCalStr = "권장: " + recommendCal.toFixed(0) + " Kcal";
+					var backuserCalStr = "섭취: " + totalCalPerDay.toFixed(0) + " Kcal";
+					
+					$('#backUserCal' + i).append(backrecommCalStr);
+					$('#backRecommCal' + i).append(backuserCalStr);
+					if (resultCalories > 0){
+						$('#cal' + i).css({"color":"#E84F81"});
+						$('#kcal' + i).css({"color":"#E84F81"});  
+							// 해당 id를 갖는 요소의 css를 동적으로 변경 (color 대신 background-color 사용 가능)
+						$('#cal' + i).append("+" + resultCalories);
+					} else {
+						$('#cal' + i).css({"color":"#4FBFE8"});
+						$('#cal' + i).append(resultCalories);
+						$('#kcal' + i).css({"color":"#4FBFE8"});  
+					}
+					
+					// 운동을 했느냐로 셀의 색상을 바꾸고 싶을 때는 ln.122 ~ 129 대신
+					
+/*					if (운동횟수변수 > 5) {
+						$('#flip-card-front' + i).css({"background-color":"green"});
+					} else if (운동횟수변수 > 2) {
+						$('#flip-card-front' + i).css({"background-color":"blue"});
+					} else {
+						$('#flip-card-front' + i).css({"background-color":"red"});
+					} */
+					
+					
+				},
+				error:function(e) {
+					alert("simpleCalendar.js에서 오류 발생 :<\n" + "e");
+				}
+			});  // ajax 종료
+			
+
+    }  // for 문 종료
+    
+    
+
 }

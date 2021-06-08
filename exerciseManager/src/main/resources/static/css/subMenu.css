@@ -12,6 +12,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'twayfly';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayfly.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .menuwrap {
     position: fixed;
     top: 0;
@@ -99,8 +106,53 @@
 }
  */
  
+ 
+ 
+/* 아래부터는 그냥 테스트 나중에 수정해야 됨 */ 
+/* 아래부터는 그냥 테스트 나중에 수정해야 됨 */ 
+/* 아래부터는 그냥 테스트 나중에 수정해야 됨 */ 
+/* 아래부터는 그냥 테스트 나중에 수정해야 됨 */ 
+/* 아래부터는 그냥 테스트 나중에 수정해야 됨 */ 
+
+
+ 
 #dietSearch {
+	position: absolute;
+	top: 800px !important;
 	display: block;
 	margin:0 auto;
 }
 
+#dietSearch input {
+	font-family: 'twayfly';
+	width: 300px !important;
+	margin-left: 30px !important;
+	font-size: 20px !important;
+	padding-left: 35px !important;
+}
+
+
+input {
+	margin-left: 100px !important;
+	width: 50% !important;
+}
+
+#ocrResultForm{
+	display: inline !important;	
+}
+
+#OCRSearchMenu {
+	text-align: center !important;
+}
+
+#OCRSearchMenu h3 {
+	font-family: 'twayfly' !important;
+}
+
+#textSearchMenu {
+	text-align: center !important;
+}
+
+#textSearchMenu h3 {
+	font-family: 'twayfly' !important;
+}

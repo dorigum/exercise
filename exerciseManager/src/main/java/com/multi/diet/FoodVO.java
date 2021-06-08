@@ -2,47 +2,60 @@ package com.multi.diet;
 
 
 public class FoodVO {
-    private String FCode;
-    private String FName;
-    private String F_category;
+	
+    private String fCode;
+    private String fName;
+    private String f_category;
     private double servings;
-    private double Kcal;
+    private double kcal;
     private double kcal_per_100;
     
-	public String getFCode() {
-		return FCode;
+	public FoodVO() { }
+	
+	public FoodVO(String fCode, String fName, String f_category, int servings, int kcal, int kcal_per_100) {
+		this.fCode = fCode;
+		this.fName = fName;
+		this.f_category = f_category;
+		this.servings = servings;
+		this.kcal = kcal;
+		this.kcal_per_100 = kcal_per_100;
 	}
-	public void setFCode(String fCode) {
-		FCode = fCode;
+	
+    
+	public String getfCode() {
+		return fCode;
 	}
-	public String getFName() {
-		return FName;
+	public void setfCode(String fCode) {
+		this.fCode = fCode;
 	}
-	public void setFName(String fName) {
-		FName = fName;
+	public String getfName() {
+		return fName;
+	}
+	public void setfName(String fName) {
+		this.fName = fName;
 	}
 	public String getF_category() {
-		return F_category;
+		return f_category;
 	}
 	public void setF_category(String f_category) {
-		F_category = f_category;
+		this.f_category = f_category;
 	}
 	public double getServings() {
 		return servings;
 	}
-	public void setServings(double servings) {
+	public void setServings(int servings) {
 		this.servings = servings;
 	}
 	public double getKcal() {
-		return Kcal;
+		return kcal;
 	}
-	public void setKcal(double kcal) {
-		Kcal = kcal;
+	public void setKcal(int kcal) {
+		this.kcal = kcal;
 	}
 	public double getKcal_per_100() {
 		return kcal_per_100;
 	}
-	public void setKcal_per_100(double kcal_per_100) {
+	public void setKcal_per_100(int kcal_per_100) {
 		this.kcal_per_100 = kcal_per_100;
 	}
     

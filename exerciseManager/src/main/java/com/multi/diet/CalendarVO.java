@@ -8,7 +8,14 @@ public class CalendarVO {
 	private String eDate;
 	private double eAmt;
 	private String eTime;  // "아침", "점심", "저녁", "야식", "간식" 중 하나
+	private FoodVO foodVO;
 	
+	public FoodVO getFoodVO() {
+		return foodVO;
+	}
+	public void setFoodVO(FoodVO foodVO) {
+		this.foodVO = foodVO;
+	}
 	public String getId() {
 		return id;
 	}

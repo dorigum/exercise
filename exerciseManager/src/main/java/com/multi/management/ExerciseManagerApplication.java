@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.multi.diet.DietController;
 import com.multi.diet.FoodController;
+import com.multi.diet.ICalendarDAO;
 import com.multi.diet.IFoodDAO;
 import com.multi.exercise.ExerciseController;
 import com.multi.exercise.IExerciseDAO;
@@ -23,6 +24,7 @@ import com.multi.member.MemberController;
 @MapperScan(basePackageClasses=IMemberDAO.class)
 @MapperScan(basePackageClasses=IExerciseDAO.class)
 @MapperScan(basePackageClasses=IExerciseDAO.class)
+@MapperScan(basePackageClasses=ICalendarDAO.class)
 @MapperScan(basePackageClasses=IFoodDAO.class)
 
 public class ExerciseManagerApplication {

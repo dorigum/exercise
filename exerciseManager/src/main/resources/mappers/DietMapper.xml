@@ -13,27 +13,44 @@
 		<result property="eDate" column="eDate" />
 		<result property="eAmt" column="eAmt" />
 		<result property="eTime" column="eTime" />
+		<association property="foodVO" javaType="com.multi.diet.FoodVO">
+			<result property="fCode" column="fCode" />
+			<result property="fName" column="fName" />
+			<result property="servings" column="servings" />
+			<result property="kcal" column="kcal" />
+		</association> 
+		
 	</resultMap> 
 	
-	<resultMap id="foodResult" type="com.multi.diet.FoodVO">
-		<result property="id" column="id" />
-		<result property="FCode" column="FCode" />
-		<result property="eYear" column="eYear" />
-		<result property="eMonth" column="eMonth" />
-		<result property="eDate" column="eDate" />
-		<result property="eAmt" column="eAmt" />
-		<result property="eTime" column="eTime" />
-	</resultMap> 
-	
-<!-- 			서브 메뉴에서 시기별 테이블 조회
- 	<select id="byTimeList" parameterType="com.multi.diet.CalendarVO" 
- 							resultMap="com.multi.diet.CalendarVO">	  	  	
-		SELECT * FROM 
+	<!-- 첫 번째 서브메뉴에서 테이블 조회 -->
+ 	<select id="byDateDietList" resultMap="calendarResult">	  	  	
+		SELECT *
+		  FROM calendar C
+		    INNER JOIN food F
+		      ON C.fCode = F.fCode
+    	  WHERE id=#{condId} 
+		  	AND eYear=#{condYear} 
+		  	AND eMonth=#{condMonth} 
+		  	AND eDate=#{condDate}
 	</select>
 	
+	<!-- 두 번째 서브메뉴에서 테이블 조회 -->
+ 	<select id="byTimeDietList" resultMap="calendarResult">	  	  	
+		SELECT *
+		  FROM calendar C
+		    INNER JOIN food F
+		      ON C.fCode = F.fCode
+    	  WHERE id=#{condId} 
+		  	AND eYear=#{condYear} 
+		  	AND eMonth=#{condMonth} 
+		  	AND eDate=#{condDate}
+		  	AND eTime=#{condTime}
+	</select>
+	
+ <!-- 	두 번째 서브메뉴에서 데이터 입력 
 	<insert id="insertCalendar" parameterType="com.multi.diet.CalendarVO">
-		INSERT INTO product (prdNo, prdName, prdPrice, prdCompany, prdStock)
-		VALUES (#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock})
+		INSERT INTO calendar (id, )
+		VALUES ()
 	</insert>
  -->
 
