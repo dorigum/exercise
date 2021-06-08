@@ -18,13 +18,13 @@
 <script type="text/javascript">
  	var indx=${mem.activityIndex}
 	if(indx=="25") {
-		$("#joinForm input:radio[name=activityIndex]:radio[value=25]").attr("checked", true);
+		$("#joinForm input:radio[name='activityIndex']:radio[value=25]").attr("checked", true);
 		}else if(indx=="33") {
-			$("#joinForm input:radio[name=activityIndex]:radio[value=33]").attr("checked", true);
+			$("#joinForm input:radio[name='activityIndex']:radio[value=33]").attr("checked", true);
 		}}else if(indx=="40") {
-			$("#joinForm input:radio[name=activityIndex]:radio[value=40]").attr("checked", true);
+			$("#joinForm input:radio[name='activityIndex']:radio[value=40]").attr("checked", true);
 		}else{
-			$("#joinForm input:radio[name=activityIndex]:radio[value=40]").attr("checked", true);
+			$("#joinForm input:radio[name='activityIndex']:radio[value=40]").attr("checked", true);
 		}
 	}
 </script>
