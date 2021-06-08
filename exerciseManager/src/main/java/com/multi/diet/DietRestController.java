@@ -9,10 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.multi.member.MemberService;
+import com.multi.member.MemberVO;
 
 @RestController
 
@@ -24,6 +28,8 @@ public class DietRestController {
 	@Autowired
 	private CalendarService calendarService;
 	
+	@Autowired
+	MemberService memservice;
 	
 	@RequestMapping("/dietOCR")
 	public NutriFactVO dietOCR(@RequestParam("uploadFile") MultipartFile file) {
@@ -90,5 +96,12 @@ public class DietRestController {
 			System.out.println("DB 불러오기 실패 :( - AIRestController.byTimeDietList -");
 		}
 		return dietList;
+	}
+	
+	@RequestMapping("getMemberInfo")
+	public MemberVO myPage(Model model, HttpServletRequest request, HttpSession session) {
+		String loginId = (String)session.getAttribute("loginId");
+		MemberVO mem = memservice.myPage(loginId);
+		return mem;
 	}
 }

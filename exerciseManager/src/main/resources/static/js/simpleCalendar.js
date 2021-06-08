@@ -17,7 +17,38 @@
     }
     
     function build() {
-
+		$("#greetings").empty();
+		var greetingsStr = "";
+		var recommendCal;
+		var userActIdx;
+		var userId;
+		/*25, 33, 40*/
+        $.ajax({
+			type: "post",
+			async: false, 
+			url: "getMemberInfo",  // AIRestController에서 받을 주소
+			success:function(memberVO){
+				userActIdx = memberVO.activityIndex;
+				userId = memberVO.id;
+				recommendCal = memberVO.activityIndex * (memberVO.height - 100) * 0.9;
+			},
+			error:function(e) {
+				alert("getMemberInfo에서 오류 발생 :<\n" + "e");
+			}
+		});
+		
+		
+		if (userActIdx == 40) {
+			greetingsStr += "<i class='fas fa-laugh-beam' style='color:#7f888f;'></i>  폭발적인 활동량  <i class='fas fa-laugh-beam' style='color:#7f888f;'></i>  의  ";
+		} else if (userActIdx == 33) {
+			greetingsStr += "<i class='fas fa-smile-beam' style='color:#7f888f;'></i>  건강하고 밝은  <i class='fas fa-smile-beam' style='color:#7f888f;'></i>  ";
+		} else if (userActIdx == 25) {
+			greetingsStr += "<i class='fas fa-grin-beam-sweat' style='color:#7f888f;'></i>  지적 활동이 활발한 <i class='fas fa-grin-beam-sweat' style='color:#7f888f;'></i>  ";
+		}
+		greetingsStr += userId + " 님의 하루 권장 칼로리는 <p style='font-size: 25px; margin-bottom:2px;'>" + recommendCal + "Kcal 입니다</p>";
+		
+		$('#greetings').append(greetingsStr);
+		
         var nMonth = new Date(today.getFullYear(), today.getMonth(), 1); //현재달의 첫째 날
         var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); //현재 달의 마지막 날
         var tbcal = document.getElementById("calendar"); // 테이블 달력을 만들 테이블
@@ -105,7 +136,6 @@
 				async: false,  // 설정 안하면 셀(플립카드)에 나타나지 않음
 				success:function(arrayListOfCalendarVO){
 					var totalCalPerDay = 0;
-					var recommendCal = 1000;
 					
 					for (var idx=0; idx<arrayListOfCalendarVO.length; idx++) {
 						var calVo = arrayListOfCalendarVO[idx];
