@@ -59,7 +59,7 @@ function list(page){
 	<br><br>
 	<!-- 검색  -->
 	<div style="float: left;">
-		<form name="form1" method="post" action="list.do">
+		<form name="form1" method="post" action="foodList">
 
 		    <select name="search_option">
 		    <option value="all" 
@@ -82,7 +82,7 @@ function list(page){
 		
 		    </select>
 		    <input name="keyword" value="${map.keyword}">
-		    <input type="submit" value="조회">
+		    <input type="submit" value="검색">
 		</form>
 
 	</div>

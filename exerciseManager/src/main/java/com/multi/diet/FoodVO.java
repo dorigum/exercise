@@ -6,9 +6,9 @@ public class FoodVO {
     private String fCode;
     private String fName;
     private String f_category;
-    private int servings;
-    private int kcal;
-    private int kcal_per_100;
+    private double servings;
+    private double kcal;
+    private double kcal_per_100;
     
 	public FoodVO() { }
 	

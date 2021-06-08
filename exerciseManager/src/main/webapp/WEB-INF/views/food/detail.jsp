@@ -47,13 +47,13 @@
 			<td>분류: ${food.f_category}</td> 
 		</tr>
 		<tr>
-			<td>1회 제공량: ${food.servings}</td> 
+			<td>1회 제공량(g): ${food.servings}</td> 
 		</tr>
 		<tr>
-			<td>1회 칼로리량: ${food.kcal}</td> 
+			<td>1회 칼로리량(g): ${food.kcal}</td> 
 		</tr>
 		<tr>
-			<td>100g당 칼로리량: ${food.kcal_per_100}</td> 
+			<td>100g당 칼로리량(g): ${food.kcal_per_100}</td> 
 		</tr>
 	</table>
 	<input type="button" value="칼로리사전" style="float: right;" onclick="location.href='foodList';"> 
