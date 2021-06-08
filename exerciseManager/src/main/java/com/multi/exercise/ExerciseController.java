@@ -90,4 +90,13 @@ public class ExerciseController {
 	 public String voiceRecord() {
 	 return "voiceRecord"; // voiceRecord.jsp
 	 }
+	
+	
+	
+	// --------------------------------------------
+	// 음성->DB 전송 테스트!!!!!!
+	@RequestMapping("voiceRecord2")
+	 public String voiceRecord2() {
+	 return "voiceRecord2"; // voiceRecord2.jsp
+	 }
 }
