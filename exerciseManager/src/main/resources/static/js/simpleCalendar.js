@@ -70,7 +70,7 @@
 						         + "<p id='kcal" + i + "' style='font-size:15px;'>Kcal</p>" + 
 						    "</div> \
 						    <div class='flip-card-back'> \
-						        <h2>" +
+						        <h2 style='color:white;'>" +
 						        mon + "." + dat + 
 						        "</h2> \
 						        <div class= 'cal' id='backUserCal" + i + 
