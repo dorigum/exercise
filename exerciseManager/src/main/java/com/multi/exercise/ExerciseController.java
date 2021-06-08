@@ -29,6 +29,9 @@ public class ExerciseController {
 	@RequestMapping("/exer/exerciseListView")
 	public String viewExerciseList(Model model, HttpSession session) {
 		String loginId=(String) session.getAttribute("loginId");
+		if(loginId==null) {
+			return "loginForm";
+		}
 		ArrayList<ExerciseVO> exerciseList = service.exerciseList(loginId);
 		model.addAttribute("exerciseList", exerciseList);
 		return "exer/exerciseListView";
@@ -38,7 +41,9 @@ public class ExerciseController {
 	@RequestMapping("/exer/exerciseNewForm")
 	public String viewExerciseForm(HttpSession session) {
 		String loginId=(String) session.getAttribute("loginId");
-		System.out.println(loginId);
+		if(loginId==null) {
+			return "loginForm";
+		}
 		return "exer/exerciseNewForm";
 	}
 
@@ -81,13 +86,21 @@ public class ExerciseController {
 		
 	// 음성 파일 등록
 	@RequestMapping("/stt")
-	public String STT() {
+	public String STT(HttpSession session) {
+		String loginId=(String) session.getAttribute("loginId");
+		if(loginId==null) {
+			return "loginForm";
+		}
 		return "sttResult";
 	}
 	
 	// 음성 녹음
 	@RequestMapping("voiceRecord")
-	 public String voiceRecord() {
-	 return "voiceRecord"; // voiceRecord.jsp
+	 public String voiceRecord(HttpSession session) {
+		String loginId=(String) session.getAttribute("loginId");
+		if(loginId==null) {
+			return "loginForm";
+		}
+		return "voiceRecord"; // voiceRecord.jsp
 	 }
 }
