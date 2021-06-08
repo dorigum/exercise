@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.multi.diet.NutriFactVO;
-import com.multi.diet.OCRService;
-
 @RestController
 public class AIRestController {
 	@Autowired
