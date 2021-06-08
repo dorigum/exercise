@@ -40,9 +40,9 @@ NOMAXVALUE
 NOCACHE;
 
 --일자별 운동 번호 예제
-insert into member values (1,'hkd',2021,6,5,'스쿼트',100,0,0,2);
-insert into member values (2,'key',2021,4,5,'달리기',0,2,30,0);
-insert into member values (3,'key',2021,3,5,'스쿼트',120,0,0,2);
+insert into DayExercise values (1,'hkd',2021,6,5,'스쿼트',100,0,0,2);
+insert into DayExercise values (2,'key',2021,4,5,'달리기',0,2,30,0);
+insert into DayExercise values (3,'key',2021,3,5,'스쿼트',120,0,0,2);
 
 
 create table food(
