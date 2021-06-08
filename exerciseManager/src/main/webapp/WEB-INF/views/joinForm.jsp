@@ -110,7 +110,7 @@
 						<div class="invalid-feedback">Please fill out this field.</div>
 					</div>
 					<div class="form-group">
-						<label for="height">몸무게</label> <input type="text"
+						<label for="weight">몸무게</label> <input type="text"
 							class="form-control" id="weight" placeholder="Enter weight"
 							name="weight" required>
 						<div class="valid-feedback">Valid.</div>

@@ -9,7 +9,7 @@
 -->
 <html>
 <head>
-<title>Editorial by HTML5 UP 구상모 김창현3 박근주 노광훈 구도연</title>
+<title>AI Personal Trainer</title>
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -57,9 +57,9 @@
 					</header>
 					<div class="posts">
 						<article>
-							<a href="exerMain" class="image"><img src="images/pic01.jpg" alt="" /></a>
-							<h3>음성 운동기록 시스템</h3>
-							<p>운동으로 음성기록 가능</p>
+							<a href="exer/exerciseListView" class="image"><img src="images/pic01.jpg" alt="" /></a>
+							<h3>Exercise Management</h3>
+							<p>Voice Record Page</p>
 						</article>
 						<article>
 							<a href="dietMain" class="image"><img src="images/pic02.jpg" alt="" /></a>
@@ -109,12 +109,13 @@
 									</header>
 									<ul>
 										<li><a href="/">Mainpage</a></li>
-										<li><a href="exerMain">Exercise Management Main</a></li>
+										<!-- <li><a href="exerMain">Exercise Management Main</a></li> -->
 										<li>
 											<span class="opener">Exercise Management</span>
 											<ul>
 												<li><a href="exer/exerciseListView">Exercise Record List</a></li>
 												<li><a href="voiceRecord">Voice Record</a></li>
+												<li><a href="voiceRecord2">Voice Record TEST!!!!!!!!!!</a></li> <!-- 음성 DB 테스트용 -->
 												<li><a href="stt">Voice Record File Upload</a></li>
 												<li><a href="exer/exerciseNewForm">Text record</a></li>
 											</ul>
@@ -131,7 +132,7 @@
 									</ul>
 								</nav>
 	 	
-							<!-- Menu -->
+<!-- 							Menu
 								<nav id="menu">
 									<header class="major">
 										<h2>Record / File Upload</h2>
@@ -143,7 +144,7 @@
 										<li><a href="stt">Voice Record File Upload</a></li>
 										<li><a href="exer/exerciseNewForm">Text record</a></li>
 									</ul>
-								</nav>
+								</nav> -->
 
 							<!-- Section -->
 								<section>

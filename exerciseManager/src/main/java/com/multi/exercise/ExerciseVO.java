@@ -11,6 +11,7 @@ public class ExerciseVO {
 	private int exMeter;
 	private int exTime;
 	private int exCount;
+	
 	public int getDayNo() {
 		return dayNo;
 	}
@@ -71,6 +72,4 @@ public class ExerciseVO {
 	public void setExCount(int exCount) {
 		this.exCount = exCount;
 	}
-	
-	
 }
