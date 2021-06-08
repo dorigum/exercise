@@ -22,16 +22,16 @@ public class FoodVO {
 	}
 	
     
-	public String getFCode() {
+	public String getfCode() {
 		return fCode;
 	}
-	public void setFCode(String fCode) {
+	public void setfCode(String fCode) {
 		this.fCode = fCode;
 	}
-	public String getFName() {
+	public String getfName() {
 		return fName;
 	}
-	public void setFName(String fName) {
+	public void setfName(String fName) {
 		this.fName = fName;
 	}
 	public String getF_category() {
