@@ -22,9 +22,6 @@ public class AIRestController {
 	@Autowired
 	private STTService sttService;
 	
-	@Autowired
-	private OCRService ocrService;
-	
 	@RequestMapping("/clovaSTT")
 	public void STT(@RequestParam("uploadFile") MultipartFile file,
 					  @RequestParam("language") String language, HttpSession session) {
@@ -52,35 +49,7 @@ public class AIRestController {
 			e.printStackTrace();
 		}
 	}
-	
-	@RequestMapping("/dietOCR")
-	public NutriFactVO dietOCR(@RequestParam("uploadFile") MultipartFile file) {
-		/* String result = ""; */
-		NutriFactVO nfvo = new NutriFactVO();		
-		
-		  try {
-			  String uploadPath =  "c:/ai/";
-			  
-			  String originalFileName = file.getOriginalFilename();  
-			  
-			  String filePathName = uploadPath + originalFileName;
-			  File file1 = new File(filePathName);
-			  
-			  file.transferTo(file1);
-			  
-			  // result = ocrService.clovaOCRService(filePathName);
-			  nfvo = ocrService.clovaOCRService(filePathName);
-			  System.out.println(nfvo);
-			  
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		  
-		return nfvo;
-	}
-	
-	
-	
+
 	// --------------------------------------------
 	// 음성 메시지를 텍스트로 변환
 	// 음성 DB 저장 테스트!!!!!!!!!!!!!!!!
