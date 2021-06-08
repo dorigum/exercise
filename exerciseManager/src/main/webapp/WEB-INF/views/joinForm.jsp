@@ -119,16 +119,16 @@
 					<div class="form-group">
 						<div class="col-4 col-12-small">
 							<label for="activityIndex">평소 운동량(활동지수)</label><input type="radio"
-								id="demo-priority-low" name="activityIndex" checked value='25'>
+								id="demo-priority-low" name="activityIndex" value='25'>
 							<label for="demo-priority-low">Low</label>
 						</div>
 						<div class="col-4 col-12-small">
 							<input type="radio" id="demo-priority-normal"
-								name="demo-priority" value='33'> <label
+								name="activityIndex" value='33'> <label
 								for="demo-priority-normal">Normal</label>
 						</div>
 						<div class="col-4 col-12-small">
-							<input type="radio" id="demo-priority-high" name="demo-priority"
+							<input type="radio" id="demo-priority-high" name="activityIndex"
 								value=40> <label for="demo-priority-high">High</label>
 						</div>
 					</div>
