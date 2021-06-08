@@ -45,7 +45,17 @@
 		} else if (userActIdx == 25) {
 			greetingsStr += "<i class='fas fa-grin-beam-sweat' style='color:#7f888f;'></i>  지적 활동이 활발한 <i class='fas fa-grin-beam-sweat' style='color:#7f888f;'></i>  ";
 		}
-		greetingsStr += userId + " 님의 하루 권장 칼로리는 <p style='font-size: 25px; margin-bottom:2px;'>" + recommendCal + "Kcal 입니다</p>";
+		greetingsStr += userId + " 님의 <div id='tooltip'> \
+											<div> <span style='font-size: 25px; margin-bottom:2px;'>하루 권장 칼로리는" + recommendCal + "Kcal 입니다</span> \
+												<p class='arrow_box'> \
+													하루 권장 칼로리 <br>  - 표준 체중(kg) X 활동 지수 <br><br> \
+													표준 체중 <br>  - (자신의 키 - 100) X 0.9 <br><br> \
+													활동 지수  <br> \
+													  - 적은 활동량: 25 <br> \
+													  - 중간 활동량: 30 ~ 35 <br> \
+													  - 많은 활동량: 40 <br> \
+												</p> \
+											</div></div>";
 		
 		$('#greetings').append(greetingsStr);
 		
