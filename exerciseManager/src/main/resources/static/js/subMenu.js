@@ -39,7 +39,7 @@ $(document).ready(function() {
 					htmlStr += 
 						"<tr>" +
 							"<td>" + calVo.eTime + "</td>" + 
-							"<td>" + calVo.foodVO.fname + "</td>" +
+							"<td>" + calVo.foodVO.fName + "</td>" +
 							"<td>" + calVo.eAmt + "</td>" + 
 							"<td>" + 
 								(calVo.eAmt * calVo.foodVO.kcal / calVo.foodVO.servings).toFixed(2) + 

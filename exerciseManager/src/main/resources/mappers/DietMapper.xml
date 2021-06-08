@@ -27,7 +27,7 @@
 		SELECT *
 		  FROM calendar C
 		    INNER JOIN food F
-		      ON C.FCode = F.FCode
+		      ON C.fCode = F.fCode
     	  WHERE id=#{condId} 
 		  	AND eYear=#{condYear} 
 		  	AND eMonth=#{condMonth} 
@@ -39,7 +39,7 @@
 		SELECT *
 		  FROM calendar C
 		    INNER JOIN food F
-		      ON C.FCode = F.FCode
+		      ON C.fCode = F.fCode
     	  WHERE id=#{condId} 
 		  	AND eYear=#{condYear} 
 		  	AND eMonth=#{condMonth} 

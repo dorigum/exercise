@@ -100,7 +100,7 @@
 
 	        $.ajax({
 				type: "post",
-				data: conditionData,
+				data: conditionData,  // AIRestController로 보낼 데이터
 				url: "byDateDietList",  // AIRestController에서 받을 주소
 				async: false,  // 설정 안하면 셀(플립카드)에 나타나지 않음
 				success:function(arrayListOfCalendarVO){
