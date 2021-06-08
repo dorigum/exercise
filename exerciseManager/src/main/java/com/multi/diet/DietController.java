@@ -1,6 +1,7 @@
 package com.multi.diet;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class DietController {
 	
 	@Autowired
-	CalendarService calendarSerive;
+	CalendarService calendarService;
 	
 	@RequestMapping("/dietMain")
 	public String viewDietMain(HttpSession session) {

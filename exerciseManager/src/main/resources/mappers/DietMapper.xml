@@ -7,7 +7,7 @@
 
 	<resultMap id="calendarResult" type="com.multi.diet.CalendarVO">
 		<result property="id" column="id" />
-		<result property="FCode" column="FCode" />
+		<result property="fCode" column="fCode" />
 		<result property="eYear" column="eYear" />
 		<result property="eMonth" column="eMonth" />
 		<result property="eDate" column="eDate" />

@@ -22,7 +22,7 @@ public class CalendarVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getFCode() {
+	public String getfCode() {
 		return fCode;
 	}
 	public void setfCode(String fCode) {

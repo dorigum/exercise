@@ -23,7 +23,6 @@ import com.multi.member.MemberController;
 
 @MapperScan(basePackageClasses=IMemberDAO.class)
 @MapperScan(basePackageClasses=IExerciseDAO.class)
-@MapperScan(basePackageClasses=IExerciseDAO.class)
 @MapperScan(basePackageClasses=ICalendarDAO.class)
 @MapperScan(basePackageClasses=IFoodDAO.class)
 
