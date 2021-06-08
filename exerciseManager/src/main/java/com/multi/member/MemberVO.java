@@ -9,6 +9,7 @@ public class MemberVO {
 	private String gender;
 	private float height;
 	private float weight;
+	private int activityIndex;
 	
 	public int getAge() {
 		return age;
@@ -57,5 +58,11 @@ public class MemberVO {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public int getActivityIndex() {
+		return activityIndex;
+	}
+	public void setActivityIndex(int activityIndex) {
+		this.activityIndex = activityIndex;
 	}
 }

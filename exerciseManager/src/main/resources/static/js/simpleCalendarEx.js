@@ -43,59 +43,56 @@
  
         // 달력 출력
         for (i = 1; i <= lastDate.getDate(); i++) { // 1일부터 마지막 일까지
-            cell = row.insertCell();{
+        	
+            cell = row.insertCell();
             var mon = (today.getMonth() + 1);
             var dat = i;
-            cell.innerHTML = 
-            	" \
-            		<div class='flip-card'> \
-	            		<div class='flip-card-inner'> \
-						    <div class='flip-card-front'> \
-						        <h3 class='front'>" + 
-						        mon + "." + dat + 
-						        "</h3> \
-						        <h3 id='cal' style='color:#1c1e26;'>select기능이용해서 기록살피기</h3> \
-						    </div> \
-						    <div class='flip-card-back'> \
-						        <h3>" +
-						        (today.getMonth() + 1) + "." + i + 
-						        "</h3> \
-						        <p>운동</p> \
-						        <p>운동했니</p> \
-						    </div> \
-						</div> \
-					</div> \
-				"
-	            
+
+            
             cnt = cnt + 1;
             
             if (cnt % 7 == 0) { // 1주일이 7일 이므로 토요일 계산
                 row = calendar.insertRow();// 줄 추가
             }
-            
-            if(today.getFullYear()==date.getFullYear()&&today.getMonth()==date.getMonth()&&i==date.getDate()) {
-                // cell.bgColor = "#BCF1B1"; //오늘날짜배경색 #EE64AE
-	            cell.innerHTML = 
-	            	" \
-	            		<div class='flip-card'> \
-		            		<div class='flip-card-inner'> \
-							    <div class='flip-card-front' style='background-color:#FCABB9;'> \
-							        <h3 class='front'>" + 
-							        (today.getMonth() + 1) + "." + i + 
-							        "</h3> \
-							        <h3 id='cal' style='color:#1c1e26;'> 운동했니? <br> </h3> \
-							    </div> \
-							    <div class='flip-card-back'> \
-							        <h3>" +
-							        (today.getMonth() + 1) + "." + i + 
-							        "</h3> \
-							        <p>오늘의 운동</p> \
-							        <p>운동</p> \
-							    </div> \
-							</div> \
+            /*font-weight:bold*/
+            cell.innerHTML = 
+            	" \
+            		<div class='flip-card'> \
+	            		<div class='flip-card-inner'> \
+						    <div class='flip-card-front' id='flip-card-front" + i + "'> \
+						        <h2 class='front'>" + 
+						        mon + "." + dat + 
+						        "</h2> \
+						        <div class= 'cal' id='cal" + i + 
+						        "' style='font-size:25px; text-align:center;'></div>" 
+						         + "<p id='kcal" + i + "' style='font-size:15px;'>Kcal</p>" + 
+						    "</div> \
+						    <div class='flip-card-back'> \
+						        <h2 style='color:white;'>" +
+						        mon + "." + dat + 
+						        "</h2> \
+						        <div class= 'cal' id='backUserCal" + i + 
+						        "' style='font-size:12.5px; text-align:center;'></div>" +
+						        "<div class= 'cal' id='backRecommCal" + i + 
+						        "' style='font-size:12.5px; text-align:center;'></div>" 
+						    "</div> \
 						</div> \
-					"
+					</div> \
+				"
+            if (today.getFullYear()==date.getFullYear() && today.getMonth()==date.getMonth() && i==date.getDate()) {
+                /*cell.bgColor = "#FCABB9";*/ // 오늘 색상 변경
+                $('#flip-card-front' + i).css({"background-color":"#FCABB9"});
+                // 기존 색상 변경
+                	// <div class='flip-card-front' style='background-color:#FCABB9;'>
             }
-        }
-    }
+            var tempStrYYYYMM = $("#yearmonth").text();
+			var currYear = tempStrYYYYMM.slice(0, tempStrYYYYMM.indexOf('.')).trim();
+			var currMonth = mon;
+			var currDate = dat;
+			
+			var conditionData = {};  // ajax로 보낼 데이터 만들기
+			conditionData['condYear'] = currYear;
+			conditionData['condMonth'] = currMonth;
+			conditionData['condDate'] = currDate;
+      }
 }

@@ -7,13 +7,14 @@ CREATE TABLE MEMBER (
     Gender VARCHAR2(5),
     height NUMBER(30,3),
     weight NUMBER(30,3),
-    goalWeight Number(30,3)
+    goalWeight Number(30,3),
+    activityIndex Number(4)
 );
 
-insert into member values ('hkd','1234','È«±æµ¿','hkd@naverc.om',27,'³²',178.5,70,60);
-insert into member values ('key','1234','Å°´Ù¸®','key@naverc.om',27,'³²',190.5,80.5,50);
-insert into member values ('sch','1234','¼ºÃáÇâ','sch@naverc.om',27,'¿©',160.5,60.5,70);
-insert into member values ('kjh','1234','±èÁöÇý','kjh@naverc.om',27,'¿©',160.5,58.5,50);
+insert into member values ('hkd','1234','È«±æµ¿','hkd@naverc.om',27,'³²',178.5,70,60,33);
+insert into member values ('key','1234','Å°´Ù¸®','key@naverc.om',27,'³²',190.5,80.5,50,25);
+insert into member values ('sch','1234','¼ºÃáÇâ','sch@naverc.om',27,'¿©',160.5,60.5,70,40);
+insert into member values ('kjh','1234','±èÁöÇý','kjh@naverc.om',27,'¿©',160.5,58.5,50,30);
 
 
 
@@ -40,7 +41,6 @@ NOCACHE;
 SELECT * FROM DayExercise WHERE id='hkd' ORDER BY year desc, month desc, exdate desc
 
 
-insert into member values ('kjh','1234','±èÁöÇý','kjh@naverc.om',27,'¿©',160.5,58.5,50);
 
 
 

@@ -29,7 +29,7 @@ public class MemberService  {
 		return memdao.idCheck(id);
 	}
 	
-	public MemberVO join(String id, String pwd, String name, String email, int age, String gender, float height, float weight) {
+	public MemberVO join(String id, String pwd, String name, String email, int age, String gender, float height, float weight, int activityIndex) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("id", id);
 		map.put("pwd", pwd);
@@ -39,6 +39,7 @@ public class MemberService  {
 		map.put("gender", gender);
 		map.put("height", height);
 		map.put("weight", weight);
+		map.put("activityIndex", activityIndex);
 		
 		return memdao.join(map);
 	}

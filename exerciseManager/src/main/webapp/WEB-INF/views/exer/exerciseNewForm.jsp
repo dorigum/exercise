@@ -1,23 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="java.sql.DriverManager"%>
-<%@ page import="java.sql.Connection"%>
-<%@ page import="java.sql.Statement"%>
-<%@ page import="java.sql.ResultSet"%>
-<%@ page import="java.util.Calendar"%>
-<%@ page import="java.util.Date"%>
-<%@ page import="java.text.DecimalFormat"%>
-<%!// 변수 선언
-	String selectedDay =null;
-	Connection conn = null;
-	Statement stmt = null;
-	ResultSet rs = null;
-	String uid = "exercise";
-	String pwd = "1234";
-	String url = "jdbc:oracle:thin:@localhost:1521:XE";
-	String sql = "select * from test where id='bbb'";%>
-	
 
 <!DOCTYPE html>
 <html>
@@ -32,23 +15,21 @@
 <link href="<c:url value='/css/simpleCalendar.css'/>" rel='stylesheet' />
 
 <%-- <script src="<c:url value='js/subMenu.js'/>"></script> --%>
-<script src="<c:url value='/js/subMenu.js'/>"></script>
+<script src="<c:url value='/js/subMenuEx.js'/>"></script>
 <link href="<c:url value='/css/subMenu.css'/>" rel="stylesheet">
-<script src="<c:url value='/js/selectTimeBtn.js'/>"></script>
-<link href="<c:url value='/css/selectTimeBtn.css'/>" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css" />
 <meta charset="EUC-KR">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>simple Calender</title>
+<title>:: AI Personal Trainer :: 운동달력 ::</title>
 <style>
 </style>
 </head>
 
 <body onload="build();">
-	
+
 	<div class="main">
 		<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
-		<table style="margin-left:auto; margin-right:auto;" id="calendar">
+		<table style="margin-left: auto; margin-right: auto;" id="calendar">
 			<tr>
 				<td colspan="2"><font size=1%; color="#B3B6B3"> <label
 						onclick="beforem()" id="before"></label>
@@ -77,15 +58,16 @@
 				<h3 align="center" id="monthday" style="font-size: 25px;"></h3>
 				<p>운동 입력</p>
 				<form method="post" action="/exer/insert">
-				 
+
 					<table>
 						<tr>
 							<th>아이디</th>
-							<td><input type="text" name="id" value="${loginId }" readonly></td>
+							<td><input type="text" name="id" value="${loginId }"
+								readonly></td>
 						</tr>
 						<tr>
 							<th>년</th>
-							<td><input type="text" name="year" required ></td>
+							<td><input type="text" name="year" required></td>
 						</tr>
 						<tr>
 							<th>월</th>

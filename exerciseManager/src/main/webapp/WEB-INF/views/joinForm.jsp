@@ -46,7 +46,7 @@
 			<div class="container">
 				<form id="joinForm" name="joinForm" method="post" action="/join">
 					<div class="form-group">
-						<br><label for="id">id:</label> <input type="text"
+						<br> <label for="id">id:</label> <input type="text"
 							class="form-control" id="id" placeholder="Enter username"
 							name="id" required>
 						<div class="valid-feedback">Valid.</div>
@@ -54,7 +54,7 @@
 					</div>
 					<button type="button" id="idCheck" value="ID 중복 체크">ID 중복
 						체크</button>
-						<input type="hidden" name="checked_id" value=0>
+					<input type="hidden" name="checked_id" value=0>
 
 					<div class="form-group">
 						<label for="name">이름:</label> <input type="text"
@@ -87,7 +87,7 @@
 							</select>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
 						<label for="email">이메일:</label> <input type="text"
 							class="form-control" id="email" placeholder="Enter email"
@@ -116,6 +116,23 @@
 						<div class="valid-feedback">Valid.</div>
 						<div class="invalid-feedback">Please fill out this field.</div>
 					</div>
+					<div class="form-group">
+						<div class="col-4 col-12-small">
+							<label for="activityIndex">평소 운동량(활동지수)</label><input type="radio"
+								id="demo-priority-low" name="activityIndex" checked value='25'>
+							<label for="demo-priority-low">Low</label>
+						</div>
+						<div class="col-4 col-12-small">
+							<input type="radio" id="demo-priority-normal"
+								name="demo-priority" value='33'> <label
+								for="demo-priority-normal">Normal</label>
+						</div>
+						<div class="col-4 col-12-small">
+							<input type="radio" id="demo-priority-high" name="demo-priority"
+								value=40> <label for="demo-priority-high">High</label>
+						</div>
+					</div>
+
 					<button id="submit" type="submit">Submit</button>
 				</form>
 			</div>

@@ -80,7 +80,10 @@ public class MemberController {
 		String gender = request.getParameter("gender");
 		float height = Float.parseFloat(request.getParameter("height"));
 		float weight = Float.parseFloat(request.getParameter("weight"));
-		MemberVO vo = memservice.join(id, pwd, name, email, age, gender, height, weight);
+		int activityIndex = Integer.parseInt(request.getParameter("activityIndex"));
+		System.out.println("activityIndex");
+		System.out.println(activityIndex);
+		MemberVO vo = memservice.join(id, pwd, name, email, age, gender, height, weight, activityIndex);
 		session.setAttribute("loginId", id);
 		// 조인 컨펌으로 이동
 		return "joinConfirm"; //

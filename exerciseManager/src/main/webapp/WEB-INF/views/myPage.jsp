@@ -68,6 +68,22 @@
 						<div class="valid-feedback">Valid.</div>
 						<div class="invalid-feedback">Please fill out this field.</div>
 					</div>
+					<div class="form-group">
+						<div class="col-4 col-12-small">
+							<label for="activityIndex">평소 운동량(활동지수)</label><input type="radio"
+								id="demo-priority-low" name="activityIndex"  value='25' required>
+							<label for="demo-priority-low">Low</label>
+						</div>
+						<div class="col-4 col-12-small">
+							<input type="radio" id="demo-priority-normal"
+								name="activityIndex" value='33' required> <label
+								for="demo-priority-normal">Normal</label>
+						</div>
+						<div class="col-4 col-12-small">
+							<input type="radio" id="demo-priority-high" name="activityIndex"
+								value=40 required> <label for="demo-priority-high">High</label>
+						</div>
+					</div>
 					<button id="submit" type="submit">Submit</button>
 				</form>
 			</div>

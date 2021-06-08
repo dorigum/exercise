@@ -13,6 +13,7 @@
   			<result property="gender" column="gender"  />
   			<result property="height" column="height"  />
   			<result property="weight" column="weight"  />
+  			<result property="activityIndex" column="activityIndex"  />
   			
   		</resultMap>  
  
@@ -31,8 +32,8 @@
   		<!-- 회원가입 확인 -->
   		<select id="join" resultMap="memResult" parameterType="hashmap">
   			<![CDATA[
-  				INSERT INTO member (id, pwd, name, email, age, gender, height, weight) 
-  				VALUES (#{id},#{pwd},#{name},#{email},#{age},#{gender},#{height},#{weight})
+  				INSERT INTO member (id, pwd, name, email, age, gender, height, weight, activityIndex) 
+  				VALUES (#{id},#{pwd},#{name},#{email},#{age},#{gender},#{height},#{weight}, #{activityIndex})
   			]]>
   		</select>
   		
@@ -45,7 +46,7 @@
   		<update id="updateMember" parameterType="com.multi.member.MemberVO">
   			UPDATE member
   			SET age=#{age}, height=#{height},
-  				   weight=#{weight}
+  				   weight=#{weight}, activityIndex= #{activityIndex}
   			WHERE id=#{id}	   	
   		</update>
   </mapper>
