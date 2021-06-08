@@ -26,72 +26,72 @@ CREATE TABLE dayExercise (
 );
 
 create table food(
-    FCode VARCHAR2(10) NOT NULL Primary key,
-    FName VARCHAR2(100) NOT NULL,
-    F_category VARCHAR2(100),
+    fCode VARCHAR2(10) NOT NULL Primary key,
+    fName VARCHAR2(100) NOT NULL,
+    f_category VARCHAR2(100),
     servings Number (10,3),
-    Kcal Number(10,3),
-    Kcal_per_100 Number(10,3)
+    kcal Number(10,3),
+    kcal_per_100 Number(10,3)
 );
 
-/* food data ª¿‘ */
-/* food data ª¿‘ */
-/* food data ª¿‘ */
-/* food data ª¿‘ */
-/* food data ª¿‘ */
-/* food data ª¿‘ */
+/* food data ÏÇΩÏûÖ */
+/* food data ÏÇΩÏûÖ */
+/* food data ÏÇΩÏûÖ */
+/* food data ÏÇΩÏûÖ */
+/* food data ÏÇΩÏûÖ */
+/* food data ÏÇΩÏûÖ */
 
 
 
 create table calendar(
     id VARCHAR2(20),
-    FCode VARCHAR2(30),
+    fCode VARCHAR2(30),
     eYear VARCHAR2(10),
     eMonth VARCHAR2(5),
     eDate VARCHAR2(5),
     eAmt NUMBER(10,3),
     eTime VARCHAR2(20),
     CONSTRAINT FK_calander_member FOREIGN KEY (id) REFERENCES member (id),
-    CONSTRAINT FK_calander_food FOREIGN KEY (FCode) REFERENCES food (FCode)
+    CONSTRAINT FK_calander_food FOREIGN KEY (fCode) REFERENCES food (fCode)
 );
 
-INSERT INTO member VALUES ('rang', '1234', 'rang', 'rang@show.com', 12, '≥≤', 123, 45, 32);
-INSERT INTO member VALUES ('show', '1234', 'show', 'show@rang.com', 34, 'ø©', 123, 45, 32);
+INSERT INTO member VALUES ('rang', '1234', 'rang', 'rang@show.com', 12, 'ÎÇ®', 123, 45, 32);
+INSERT INTO member VALUES ('show', '1234', 'show', 'show@rang.com', 34, 'Ïó¨', 123, 45, 32);
 
 INSERT INTO calendar (id, FCode, eYear, eMonth, eDate, eAmt, eTime) 
-                     VALUES ('rang', 'D000124', '2021', '6', '1', 300, 'æ∆ƒß');
-INSERT INTO calendar VALUES ('rang', 'D000125', '2021', '6', '1', 450, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000126', '2021', '6', '1', 500, '¿˙≥·');
-INSERT INTO calendar VALUES ('rang', 'D000129', '2021', '6', '2', 650, '¿˙≥·');
-INSERT INTO calendar VALUES ('show', 'D000131', '2021', '6', '2', 120, 'æ∆ƒß');
-INSERT INTO calendar VALUES ('show', 'D000136', '2021', '6', '3', 650, '∞£Ωƒ');
-INSERT INTO calendar VALUES ('rang', 'D000137', '2021', '6', '1', 450, '¿˙≥·');
-INSERT INTO calendar VALUES ('rang', 'D000138', '2021', '6', '1', 140, 'æ∆ƒß');
-INSERT INTO calendar VALUES ('rang', 'D000139', '2021', '6', '1', 450, 'æﬂΩƒ');
-INSERT INTO calendar VALUES ('rang', 'D000140', '2021', '6', '1', 650, '∞£Ωƒ');
-INSERT INTO calendar VALUES ('rang', 'D000141', '2021', '6', '1', 450, '¿˙≥·');
-INSERT INTO calendar VALUES ('rang', 'D000142', '2021', '6', '2', 650, '∞£Ωƒ');
-INSERT INTO calendar VALUES ('rang', 'D000143', '2021', '6', '9', 300, '¿˙≥·');
-INSERT INTO calendar VALUES ('rang', 'D000152', '2021', '6', '5', 375, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000153', '2021', '6', '29', 1000, '¿˙≥·');
-INSERT INTO calendar VALUES ('rang', 'D000154', '2021', '6', '12', 800, '∞£Ωƒ');
-INSERT INTO calendar VALUES ('rang', 'D000156', '2021', '6', '11', 650, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000157', '2021', '6', '4', 375, 'æ∆ƒß');
-INSERT INTO calendar VALUES ('rang', 'D000158', '2021', '6', '18', 385, '∞£Ωƒ');
-INSERT INTO calendar VALUES ('rang', 'D000159', '2021', '6', '11', 800, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000161', '2021', '6', '10', 300, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000162', '2021', '6', '7', 650, 'æ∆ƒß');
-INSERT INTO calendar VALUES ('rang', 'D000163', '2021', '6', '5', 300, '¿˙≥·'); 
-INSERT INTO calendar VALUES ('rang', 'D000164', '2021', '6', '21', 450, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000167', '2021', '6', '22', 300, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000052', '2021', '6', '21', 385, '¿˙≥·');
-INSERT INTO calendar VALUES ('rang', 'D000054', '2021', '6', '5', 525, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000062', '2021', '6', '2', 300, 'æ∆ƒß');
-INSERT INTO calendar VALUES ('rang', 'D000063', '2021', '6', '10', 450, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000064', '2021', '6', '5', 300, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000066', '2021', '6', '24', 375, 'æ∆ƒß');
-INSERT INTO calendar VALUES ('rang', 'D000067', '2021', '6', '21', 525, '¿˙≥·');
-INSERT INTO calendar VALUES ('rang', 'D000068', '2021', '6', '11', 300, '¡°Ω…');
-INSERT INTO calendar VALUES ('rang', 'D000070', '2021', '6', '10', 1000, '∞£Ωƒ');
+                     VALUES ('rang', 'D000124', '2021', '6', '1', 300, 'ÏïÑÏπ®');
+INSERT INTO calendar VALUES ('rang', 'D000125', '2021', '6', '1', 450, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000126', '2021', '6', '1', 500, 'Ï†ÄÎÖÅ');
+INSERT INTO calendar VALUES ('rang', 'D000129', '2021', '6', '2', 650, 'Ï†ÄÎÖÅ');
+INSERT INTO calendar VALUES ('show', 'D000131', '2021', '6', '2', 120, 'ÏïÑÏπ®');
+INSERT INTO calendar VALUES ('show', 'D000136', '2021', '6', '3', 650, 'Í∞ÑÏãù');
+INSERT INTO calendar VALUES ('rang', 'D000137', '2021', '6', '1', 450, 'Ï†ÄÎÖÅ');
+INSERT INTO calendar VALUES ('rang', 'D000138', '2021', '6', '1', 140, 'ÏïÑÏπ®');
+INSERT INTO calendar VALUES ('rang', 'D000139', '2021', '6', '1', 450, 'ÏïºÏãù');
+INSERT INTO calendar VALUES ('rang', 'D000140', '2021', '6', '1', 650, 'Í∞ÑÏãù');
+INSERT INTO calendar VALUES ('rang', 'D000141', '2021', '6', '1', 450, 'Ï†ÄÎÖÅ');
+INSERT INTO calendar VALUES ('rang', 'D000142', '2021', '6', '2', 650, 'Í∞ÑÏãù');
+INSERT INTO calendar VALUES ('rang', 'D000143', '2021', '6', '9', 300, 'Ï†ÄÎÖÅ');
+INSERT INTO calendar VALUES ('rang', 'D000152', '2021', '6', '5', 375, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000153', '2021', '6', '29', 1000, 'Ï†ÄÎÖÅ');
+INSERT INTO calendar VALUES ('rang', 'D000154', '2021', '6', '12', 800, 'Í∞ÑÏãù');
+INSERT INTO calendar VALUES ('rang', 'D000156', '2021', '6', '11', 650, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000157', '2021', '6', '4', 375, 'ÏïÑÏπ®');
+INSERT INTO calendar VALUES ('rang', 'D000158', '2021', '6', '18', 385, 'Í∞ÑÏãù');
+INSERT INTO calendar VALUES ('rang', 'D000159', '2021', '6', '11', 800, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000161', '2021', '6', '10', 300, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000162', '2021', '6', '7', 650, 'ÏïÑÏπ®');
+INSERT INTO calendar VALUES ('rang', 'D000163', '2021', '6', '5', 300, 'Ï†ÄÎÖÅ'); 
+INSERT INTO calendar VALUES ('rang', 'D000164', '2021', '6', '21', 450, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000167', '2021', '6', '22', 300, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000052', '2021', '6', '21', 385, 'Ï†ÄÎÖÅ');
+INSERT INTO calendar VALUES ('rang', 'D000054', '2021', '6', '5', 525, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000062', '2021', '6', '2', 300, 'ÏïÑÏπ®');
+INSERT INTO calendar VALUES ('rang', 'D000063', '2021', '6', '10', 450, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000064', '2021', '6', '5', 300, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000066', '2021', '6', '24', 375, 'ÏïÑÏπ®');
+INSERT INTO calendar VALUES ('rang', 'D000067', '2021', '6', '21', 525, 'Ï†ÄÎÖÅ');
+INSERT INTO calendar VALUES ('rang', 'D000068', '2021', '6', '11', 300, 'Ï†êÏã¨');
+INSERT INTO calendar VALUES ('rang', 'D000070', '2021', '6', '10', 1000, 'Í∞ÑÏãù');
 
 commit; 
