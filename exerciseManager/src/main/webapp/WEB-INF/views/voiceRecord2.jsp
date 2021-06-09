@@ -97,10 +97,6 @@
 									
 									<!-- 음성 DB 테스트중!!!!!!!!!!!!!! -->
 									<div id = "resultMsg"></div>
-									
-									
-									<!--  -->
-									<input type="text" name="dayNo">
 								</section>
 
 						</div>
