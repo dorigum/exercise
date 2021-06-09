@@ -57,33 +57,33 @@
 					</header>
 					<div class="posts">
 						<article>
-							<a href="exer/exerciseListView" class="image"><img src="images/pic01.jpg" alt="" /></a>
+							<a href="exer/exerciseNewForm" class="image"><img src="images/pic01.jpg" alt="" /></a>
 							<h3>Exercise Management</h3>
-							<p>Voice Record Page</p>
+							<p>오늘의 운동 기록하기</p>
 						</article>
 						<article>
 							<a href="dietMain" class="image"><img src="images/pic02.jpg" alt="" /></a>
-							<h3>식단 관리 시스템</h3>
-							<p>달력을 통한 식단관리 가능</p>
+							<h3>Diet Management</h3>
+							<p>오늘의 식단 기록하기</p>
 						</article>
 					</div>
 				</section>
 				<!-- Section -->
 				<section>
 					<header class="major">
-						<h2>하루 현황</h2>
+						<h2>TODAY's Record</h2>
 					</header>
 					<div class="features">
 						<article>
 							<div class="content">
-								<h3>오늘 운동량</h3>
-								<p>오늘 운동량</p>
+								<h3>Today Exercise</h3>
+								<p>Today Exercise</p>
 							</div>
 						</article>
 						<article>
 							<div class="content">
-								<h3>오늘 식단 현황</h3>
-								<p>오늘 식단 현황</p>
+								<h3>Today Diet</h3>
+								<p>Today Diet</p>
 							</div>
 						</article>
 					</div>
@@ -117,22 +117,22 @@
 												<li><a href="voiceRecord">Voice Record</a></li>
 												<li><a href="voiceRecord2">Voice Record TEST!!!!!!!!!!</a></li> <!-- 음성 DB 테스트용 -->
 												<li><a href="stt">Voice Record File Upload</a></li>
-												<li><a href="exer/exerciseNewForm">Text record</a></li>
+												<li><a href="exer/exerciseNewForm">Exercise Calender</a></li>
 											</ul>
 										</li>
 										<li>
-											<span class="opener">Food Management</span>
+											<span class="opener">Diet Management</span>
 											<ul>
 												<li><a href="foodList">Calorie Dictionary</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li><a href="dietMain">Diet Calender</a></li>
+												<!-- <li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li> -->
 											</ul>
 										</li>
 									</ul>
 								</nav>
 	 	
-<!-- 							Menu
+ 							<!--Menu
 								<nav id="menu">
 									<header class="major">
 										<h2>Record / File Upload</h2>

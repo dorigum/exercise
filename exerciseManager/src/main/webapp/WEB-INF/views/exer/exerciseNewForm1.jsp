@@ -137,17 +137,17 @@
 										<li>
 											<span class="opener">Food Management</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li><a href="foodList">Calorie Dictionary</a></li>
+												<li><a href="dietMain">Diet Calender</a></li>
+												<!-- <li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li> -->
 											</ul>
 										</li>
 									</ul>
 								</nav>
 	 	
 							<!-- Menu -->
-								<nav id="menu">
+								<!-- <nav id="menu">
 									<header class="major">
 										<h2>Record / File Upload</h2>
 									</header>
@@ -158,7 +158,7 @@
 										<li><a href="stt">Voice Record File Upload</a></li>
 										<li><a href="exer/exerciseNewForm">Text record</a></li>
 									</ul>
-								</nav>
+								</nav> -->
 								
 							<!-- Section -->
 								<section>
