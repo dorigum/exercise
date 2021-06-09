@@ -11,6 +11,11 @@ CREATE TABLE member (
     activityIndex Number(4)
 );
 
+insert into member values ('hkd','1234','홍길동','hkd@naverc.om',27,'남',178.5,70,60,33);
+insert into member values ('key','1234','키다리','key@naverc.om',27,'남',190.5,80.5,50,25);
+insert into member values ('sch','1234','성춘향','sch@naverc.om',27,'여',160.5,60.5,70,40);
+insert into member values ('kjh','1234','김지혜','kjh@naverc.om',27,'여',160.5,58.5,50,30);
+
 CREATE TABLE DayExercise (
     dayNo NUMBER(10) NOT NULL PRIMARY KEY,
     id VARCHAR2(20) NOT NULL,
