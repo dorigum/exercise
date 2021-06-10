@@ -75,6 +75,7 @@ public class AIRestController {
 			  
 			  result = sttService.clovaSpeechToText2(filePathName);
 			  System.out.println(result);
+			  System.out.println(originalFileName);
 			  
 		}catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -92,7 +92,7 @@ $(function() {
 		// 파일 업로드 부분 추가
 		var formData = new FormData();
 		formData.append('uploadFile', blob, clipName+".mp3");
-		
+		/* 사용자 세션ID를 찾아서 어펜드 시킴 */
 		$.ajax({
 			type:"post",
 			url:"ExerSTT",
