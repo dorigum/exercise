@@ -50,7 +50,7 @@
  	<select id="byExerciseList" resultMap="exerciseResult">	  	  	
 		SELECT *
 		  FROM dayExercise
-    	  WHERE id=#{condId} 
+    	  WHERE id=#{loginId} 
 		  	AND year=#{condYear} 
 		  	AND month=#{condMonth} 
 		  	AND exdate=#{condDate}

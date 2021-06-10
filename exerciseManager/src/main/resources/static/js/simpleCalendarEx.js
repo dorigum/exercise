@@ -102,31 +102,65 @@
 				url: "/byExerciseList",  // AIRestController에서 받을 주소
 				async: false,  // 설정 안하면 셀(플립카드)에 나타나지 않음
 				success:function(arrayListOfExerciseVO){
-					var secOperand =  1;
-					var recommendCal =2;
-					var exRecord =3;
+					var totalCalPerDay = 0;
+					var secOperand = recommendCal * 2 / 7;
 					for (var idx=0; idx<arrayListOfExerciseVO.length; idx++) {
-						var calVo = arrayListOfExerciseVO[idx];
-						var singleDietCal = 4;
+						var exVo = arrayListOfExerciseVO[idx];
+						var singleDietCal =exVo.
+						calVo.eAmt * calVo.foodVO.kcal / calVo.foodVO.servings;
 						totalCalPerDay += singleDietCal;
 					}
+					resultCalories = (totalCalPerDay - recommendCal).toFixed(0);
+					var backrecommCalStr = "권장: " + recommendCal.toFixed(0) + " Kcal";
+					var backuserCalStr = "섭취: " + totalCalPerDay.toFixed(0) + " Kcal";
 					
-					var goalRecord = "목표횟수: " + 2 + "회";
-					var realRecord = "수행횟수: " + 3 + " Kcal";
+					$('#backUserCal' + i).append(backrecommCalStr);
+					$('#backRecommCal' + i).append(backuserCalStr);
+					if (resultCalories >= 0) $('#cal' + i).append("+");
 					
-					$('#backUserCal' + i).append(goalRecord);
-					$('#backRecommCal' + i).append(realRecord);
-					if (exRecord >= 0) $('#cal' + i).append("+");
-					
+					if (resultCalories > (recommendCal - secOperand)) {
+						$('#cal' + i).css({"color":"#E84F81"});
+						$('#kcal' + i).css({"color":"#E84F81"}); 
+						
+					} else if ((recommendCal - secOperand) >= resultCalories && 
+							   (recommendCal - 2 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#CE6192"});
+						$('#kcal' + i).css({"color":"#CE6192"});  
+						
+					} else if ((recommendCal - 2 *secOperand) >= resultCalories && 
+							   (recommendCal - 3 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#B574A3"});
+						$('#kcal' + i).css({"color":"#B574A3"});  
+						
+					} else if ((recommendCal - 3 * secOperand) >= resultCalories && 
+							   (recommendCal - 4 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#9B87B4"});
+						$('#kcal' + i).css({"color":"#9B87B4"}); 
+						 
+					} else if ((recommendCal - 4 * secOperand) >= resultCalories && 
+							   (recommendCal - 5 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#8299C5"});
+						$('#kcal' + i).css({"color":"#8299C5"});  
+						
+					} else if ((recommendCal - 5 * secOperand) >= resultCalories && 
+							   (recommendCal - 6 * secOperand) <= resultCalories) {
+						$('#cal' + i).css({"color":"#68ACD6"});
+						$('#kcal' + i).css({"color":"#68ACD6"});  
+						
+					} else {
+						$('#cal' + i).css({"color":"#4FBFE8"});
+						$('#kcal' + i).css({"color":"#4FBFE8"});  
+					}
+					$('#cal' + i).append(resultCalories);
 					// 운동을 했느냐로 셀의 색상을 바꾸고 싶을 때는 ln.122 ~ 129 대신
 					
-					if (exRecord > 5) {
-						$('#flip-card-front' + i).css({"background-color":"red"});
-					} else if (exRecord > 3) {
-						$('#flip-card-front' + i).css({"background-color":"#FCABB9"});
-					} else {
+/*					if (운동횟수변수 > 5) {
+						$('#flip-card-front' + i).css({"background-color":"green"});
+					} else if (운동횟수변수 > 2) {
 						$('#flip-card-front' + i).css({"background-color":"blue"});
-					} 
+					} else {
+						$('#flip-card-front' + i).css({"background-color":"red"});
+					} */
 					
 					
 				},

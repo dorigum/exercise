@@ -96,6 +96,8 @@ public class AIRestController {
 		int condYear = Integer.parseInt(request.getParameter("condYear"));
 		int condMonth = Integer.parseInt(request.getParameter("condMonth"));
 		int condDate = Integer.parseInt(request.getParameter("condDate"));
+		System.out.println(loginId+condYear+condMonth+condDate);
+		
 		
 		// int로 변환: int intObj = Integer.parseInt((String)map.get("ObjectObj"));
 		 
@@ -105,6 +107,7 @@ public class AIRestController {
 		} catch (Exception e) {
 			System.out.println("DB 불러오기 실패 :( - AIRestController.byDateDietList -");
 		}
+		System.out.println(exerList);
 		return exerList;
 	}
 	@RequestMapping("/byExerciseList1")
