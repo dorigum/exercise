@@ -65,7 +65,7 @@
 						        "</h2> \
 						        <div class= 'cal' id='cal" + i + 
 						        "' style='font-size:25px; text-align:center;'></div>" 
-						         + "<p id='kcal" + i + "' style='font-size:15px;'>Kcal</p>" + 
+						         + "<p id='kcal" + i + "' style='font-size:15px;'>운동</p>" + 
 						    "</div> \
 						    <div class='flip-card-back'> \
 						        <h2 style='color:white;'>" +
@@ -94,5 +94,45 @@
 			conditionData['condYear'] = currYear;
 			conditionData['condMonth'] = currMonth;
 			conditionData['condDate'] = currDate;
+			
+			
+			$.ajax({
+				type: "post",
+				data: conditionData,  // AIRestController로 보낼 데이터
+				url: "/byExerciseList",  // AIRestController에서 받을 주소
+				async: false,  // 설정 안하면 셀(플립카드)에 나타나지 않음
+				success:function(arrayListOfExerciseVO){
+					var secOperand =  1;
+					var recommendCal =2;
+					var exRecord =3;
+					for (var idx=0; idx<arrayListOfExerciseVO.length; idx++) {
+						var calVo = arrayListOfExerciseVO[idx];
+						var singleDietCal = 4;
+						totalCalPerDay += singleDietCal;
+					}
+					
+					var goalRecord = "목표횟수: " + 2 + "회";
+					var realRecord = "수행횟수: " + 3 + " Kcal";
+					
+					$('#backUserCal' + i).append(goalRecord);
+					$('#backRecommCal' + i).append(realRecord);
+					if (exRecord >= 0) $('#cal' + i).append("+");
+					
+					// 운동을 했느냐로 셀의 색상을 바꾸고 싶을 때는 ln.122 ~ 129 대신
+					
+					if (exRecord > 5) {
+						$('#flip-card-front' + i).css({"background-color":"red"});
+					} else if (exRecord > 3) {
+						$('#flip-card-front' + i).css({"background-color":"#FCABB9"});
+					} else {
+						$('#flip-card-front' + i).css({"background-color":"blue"});
+					} 
+					
+					
+				},
+				error:function(e) {
+					alert("simpleCalendar.js에서 오류 발생 :<\n" + "e");
+				}
+			});  // ajax 종료
       }
 }

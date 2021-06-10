@@ -39,5 +39,10 @@ public class ExerciseService implements IExerciseService {
 	public ExerciseVO exerciseDetailView(String dayNo) {
 		return dao.exerciseDetailView(dayNo);
 	}
+	
+	@Override 
+    public ArrayList<ExerciseVO> byExerciseList(String loginId, int condYear, int condMonth, int condDate) { 
+	    return dao.byExerciseList(loginId, condYear, condMonth, condDate); 
+    }
 
 }

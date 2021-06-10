@@ -8,4 +8,5 @@ public interface IExerciseService {
 	void updateExercise(ExerciseVO DayExercise);
 	void deleteExercise(String dayNo);
 	ExerciseVO exerciseDetailView(String dayNo);
+	ArrayList<ExerciseVO> byExerciseList(String loginId, int condYear, int condMonth, int condDate);
 }

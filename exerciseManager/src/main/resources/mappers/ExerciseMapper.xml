@@ -45,4 +45,14 @@
   	<delete id="deleteExercise" parameterType="String">
   		DELETE FROM DayExercise WHERE dayNo=#{dayNo}
   	</delete>
+  	
+  		<!-- 첫 번째 서브메뉴에서 테이블 조회 -->
+ 	<select id="byExerciseList" resultMap="exerciseResult">	  	  	
+		SELECT *
+		  FROM dayExercise
+    	  WHERE id=#{condId} 
+		  	AND year=#{condYear} 
+		  	AND month=#{condMonth} 
+		  	AND exdate=#{condDate}
+	</select>
  </mapper>

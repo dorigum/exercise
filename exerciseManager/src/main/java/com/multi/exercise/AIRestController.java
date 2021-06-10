@@ -2,7 +2,10 @@ package com.multi.exercise;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+
 
 @RestController
 public class AIRestController {
@@ -77,5 +82,35 @@ public class AIRestController {
 		}
 		
 		return result;
+	}
+	
+	
+	@RequestMapping("/byExerciseList")
+	public ArrayList<ExerciseVO> viewExerciseListByDate(HttpServletRequest request,
+													HttpSession session,
+												    @RequestParam Map<String, Object> map) {
+		ArrayList<ExerciseVO> exerList = null;
+		
+		String loginId = (String)session.getAttribute("loginId");
+		int condYear = Integer.parseInt(request.getParameter("condYear"));
+		int condMonth = Integer.parseInt(request.getParameter("condMonth"));
+		int condDate = Integer.parseInt(request.getParameter("condDate"));
+		
+		// int로 변환: int intObj = Integer.parseInt((String)map.get("ObjectObj"));
+		 
+		try {
+			System.out.println("불러오기 실행1");
+			exerList = service.byExerciseList(loginId, condYear, condMonth, condDate);
+		} catch (Exception e) {
+			System.out.println("DB 불러오기 실패 :( - AIRestController.byDateDietList -");
+		}
+		return exerList;
+	}
+	@RequestMapping("/byExerciseList1")
+	public void viewExerciseListByDate1(HttpServletRequest request,
+			HttpSession session,
+		    @RequestParam Map<String, Object> map) {
+		System.out.println("1");
+		
 	}
 }

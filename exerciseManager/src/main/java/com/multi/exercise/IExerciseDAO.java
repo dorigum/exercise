@@ -8,6 +8,8 @@ public interface IExerciseDAO {
 	public void updateExercise(ExerciseVO DayExercise);
 	public void deleteExercise(String dayNo);
 	public ExerciseVO exerciseDetailView(String dayNo);
+	public ArrayList<ExerciseVO> byExerciseList(String loginId, int condYear, int condMonth, int condDate);
+	
 	
 	
 	// ---------------------------------------------------------------

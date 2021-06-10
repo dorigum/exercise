@@ -14,36 +14,37 @@ $(document).ready(function() {
 		conditionData['condMonth'] = currMonth;
 		conditionData['condDate'] = currDate;
 		
-		$("#byDateDietTable").empty();
-		
+		$("#byexerciseTable").empty();
+		alert("나누기1");
 		$.ajax({
 			type: "post",
 			data: conditionData,
-			url: "byDateDietList",
+			url: "byExerciseList",
 /*			processData:false,  // 필수
 			contentType:false,  // 필수*/
-			success:function(arrayListOfCalendarVO){
-				
+			
+			success:function(arrayListOfdayExerciseVO){
+				alert("나누기2");
 				var htmlStr = 
 					"<table border='1'>" +		            	
 						"<tr>" +
 		            		"<th>시간</th>" +
-	            			"<th>음식명</th>" +
-		            		"<th>섭취량(ml/g)</th>" +
-		            		"<th>칼로리(Kcal)</th>" +
+	            			"<th>운동이름</th>" +
+		            		"<th>운동무게(ml/g)</th>" +
+		            		"<th>횟수(Kcal)</th>" +
 		            	"</tr>";
 					            	
 				htmlStr += "<tr>";
-				for (var i=0; i<arrayListOfCalendarVO.length; i++){
-					var calVo = arrayListOfCalendarVO[i];
+				for (var i=0; i<arrayListOfdayExerciseVO.length; i++){
+					var exVo = arrayListOfdayExerciseVO[i];
 					htmlStr += 
 						"<tr>" +
-							"<td>" + calVo.eTime + "</td>" + 
-							"<td>" + calVo.foodVO.fName + "</td>" +
-							"<td>" + calVo.eAmt + "</td>" + 
+							"<td>" + exVo.eTime + "</td>" + 
+							"<td>" + exVo.foodVO.fName + "</td>" +
+							"<td>" + exVo.eAmt + "</td>" + 
 							"<td>" + 
-								(calVo.eAmt * calVo.foodVO.kcal / calVo.foodVO.servings).toFixed(2) + 
-								/* 사용자의 섭취량에 따른 칼로리, doubleObj.toFixed(n) -> n자리까지 표현 */
+								(exVo.eAmt * exVo.foodVO.kcal / exVo.foodVO.servings).toFixed(2) + 
+								/*사용자의 섭취량에 따른 칼로리, doubleObj.toFixed(n) -> n자리까지 표현 */
 							"</td>" + 
 						"</tr>";
 						
@@ -52,13 +53,13 @@ $(document).ready(function() {
 				$("#byDateDietTable").append(htmlStr);
 			},
 			error:function(e) {
-				alert("subMenu.js에서 오류 발생 :<\n" + "e");
-			}
+				alert("subMenuEx.js에서 오류 발생 :<\n" + "e");
+			} 
 		});
 		
 		event.preventDefault();
 		
-		monthday.innerHTML = currMonth + " 월 " + currDate + " 일  식단";
+		monthday.innerHTML = currMonth + " 월 " + currDate + " 일  운동";
 		clickDay1.innerHTML = currMonth + " 월  " + currDate + " 일";
 		clickDay2.innerHTML = currMonth + " 월  " + currDate + " 일";
 		
