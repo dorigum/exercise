@@ -57,12 +57,12 @@
 					</header>
 					<div class="posts">
 						<article>
-							<a href="exer/exerciseNewForm" class="image"><img src="images/pic01.jpg" alt="" /></a>
+							<a href="exer/exerciseNewForm" class="image"><img src="images/exerPic01.jpg" alt="" /><!-- <img src="images/pic01.jpg" alt="" /> --></a>
 							<h3>Exercise Management</h3>
 							<p>오늘의 운동 기록하기</p>
 						</article>
 						<article>
-							<a href="dietMain" class="image"><img src="images/pic02.jpg" alt="" /></a>
+							<a href="dietMain" class="image"><img src="images/dietPic01.jpg" alt="" /><!-- <img src="images/pic02.jpg" alt="" /> --></a>
 							<h3>Diet Management</h3>
 							<p>오늘의 식단 기록하기</p>
 						</article>
