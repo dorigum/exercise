@@ -37,7 +37,7 @@ i {
 }
 
 label#before, label#next {
-	color: #e95678;
+	color: #f56a6a;
 }
 #greetings {
 	color: #BC8F8F !important;
@@ -77,7 +77,7 @@ table tbody tr td {
 }
 
 #dayLabels {
-	background-color: #e95678;
+	background-color: #f56a6a;
 }
 
 .flip-card {
