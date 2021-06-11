@@ -74,10 +74,14 @@ td#yearmonth {
 
 table tbody tr td {
 	border: 1px solid white;
+	background-color: white;
 }
 
-#dayLabels {
-	background-color: #f56a6a;
+
+
+#dayLabels td {
+	background-color: #f56a6a !important;
+	width: 400px;
 }
 
 .flip-card {
