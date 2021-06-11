@@ -34,7 +34,7 @@
 								<option value="조미식품">조미식품</option>
 								<option value="기타식품류" selected>기타식품류</option>
 							</select> <br><br>
-							<span style="font-size:17px;">음식명:</span> <input id="foodName" type="text" size=10 > <!-- <span class="amountUnit"></span> --> <br><br>
+							<span style="font-size:17px;">음식명:</span> <input id="foodName" type="text" size=10 placeholder="음식명 입력"> <!-- <span class="amountUnit"></span> --> <br><br>
 							<span style="font-size:17px;">음식량 (ml/g):</span> <input id="foodServ" type="text" size=10 placeholder="음식량 입력 (단위: ml, g)"> <br><br>
 							<span style="font-size:17px;">칼로리 (Kcal):</span> <input id="foodCalo" type="text" size=10 placeholder="칼로리 입력 (단위: Kcal)"> <br><br>
 						<input id="insertFoodBtn" type="submit" value="음식 정보 입력 완료">
