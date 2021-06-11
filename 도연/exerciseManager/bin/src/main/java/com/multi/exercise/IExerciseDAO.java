@@ -11,7 +11,7 @@ public interface IExerciseDAO {
 	
 	
 	// ---------------------------------------------------------------
-	public ArrayList<ExerciseVO> exerRecordList(String recRes);
+	public ArrayList<ExerciseVO> exerRecordList(String loginId);
 	
 	// ---------------------------------------------------------------
 	// 음성 파일 DB 저장 테스트중!!!!!

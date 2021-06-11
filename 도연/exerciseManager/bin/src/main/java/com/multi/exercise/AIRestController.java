@@ -51,7 +51,7 @@ public class AIRestController {
 	// 음성 메시지를 텍스트로 변환
 	// 음성 DB 저장 테스트!!!!!!!!!!!!!!!!
 	@RequestMapping("/ExerSTT")
-	public String STT2(@RequestParam("uploadFile") MultipartFile file) {
+	public String STT2(@RequestParam("uploadFile") MultipartFile file, HttpSession session) {
 		String result = "";
 		
 		try {
@@ -68,7 +68,7 @@ public class AIRestController {
 			// 4. 서버로 전송
 			file.transferTo(file1);
 			  
-			result = sttService.clovaSpeechToText2(filePathName);
+			result = sttService.clovaSpeechToText2(filePathName, session);
 			System.out.println(result);
 			
 			

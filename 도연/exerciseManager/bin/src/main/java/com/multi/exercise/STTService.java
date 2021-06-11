@@ -26,10 +26,6 @@ public class STTService {
 	public ExerciseVO clovaSpeechToText(String filePathName, String language, HttpSession session) {
 		ExerciseVO result2 = new ExerciseVO();	
 		
-		// 테스트중!!!!!!!!!!!!
-		ExerciseVO exrec = new ExerciseVO();
-		
-		
 		String clientId = "s5nc0h3pnh"; // Application Client ID";
 		String clientSecret = "8OjMY9sT0k17PlVzqcyYW1PZikoQx5ukjOk0yHil"; // Application Client Secret";
 		String result = "";
@@ -100,11 +96,13 @@ public class STTService {
 		}
 
 		return result2;
-		//return exrec;
+
 	}
 
-	// 한국어, 영어, 중국어, 일본어 선택 > 기능 없앨 수 있음 없애기!
-	public String clovaSpeechToText2(String filePathName) {
+	public String clovaSpeechToText2(String filePathName, HttpSession session) {
+		// 테스트중!!!!!!!!!!!!!!!!!!
+		ExerciseVO result3 = new ExerciseVO();
+		
 		String clientId = "s5nc0h3pnh"; // Application Client ID";
 		String clientSecret = "8OjMY9sT0k17PlVzqcyYW1PZikoQx5ukjOk0yHil"; // Application Client Secret";
 		String result = "";
@@ -153,6 +151,11 @@ public class STTService {
 				System.out.println(response.toString()); // 결과 출력 (JSON 형식의 문자열)
 				result = jsonToString(response.toString());
 				
+				// 테스트중!!!!!!!!!!!!!!!!!!!
+				System.out.println("음성을 데이터베이스에 저장중");
+				resultToFileSave2(result);
+				result3=recordDB(result, session); // DB저장, sessionID 넘기기
+				
 			} else {
 				System.out.println("error !!!");
 			}
@@ -181,15 +184,14 @@ public class STTService {
 	
 	public ExerciseVO recordDB(String recText, HttpSession session) {		
 		Calendar cal = Calendar.getInstance(); // 오늘의 날짜
-		ExerciseVO exvo = new ExerciseVO();
-		String[] recordRes;
+		ExerciseVO recvo = new ExerciseVO();
+		String[] resultRec;
 		String[] indexString = { "개", "번", "분", "시간", "키로", "회"};
 
 		// StringBuffer : 문자열의 추가,수정,삭제가 빈번하게 발생할 경우에 사용
 		StringBuffer sb = new StringBuffer();
 		String str = recText; // 입력 String 문자
 		String str2 = str.replaceAll("\\s+", ""); // 모든 공백 제거
-		
 		sb.append(str2);
 		
 		// 문자열에서 숫자와 글자 사이에 공백넣기
@@ -200,26 +202,51 @@ public class STTService {
 					j++;
 					}
 				}
-			//String str3 = sb.toString();
+		String str3 = sb.toString();
 		
 		// 공백(" ")으로 문자열 잘라서 배열에 넣기
-		String[] array = str.split(" ");
+		resultRec = str3.split(" ");
 		
-		// 출력		
-		for(int i=0;i<array.length;i++) {
-			System.out.println(array[i]);			
+		// 음성 데이터 입력 받기
+		recvo.setExName(resultRec[0]);
+		if (resultRec[2].equals(indexString[0])) {
+			recvo.setExCount(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[2].equals(indexString[1])) {
+			recvo.setExCount(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[2].equals(indexString[2])) {
+			recvo.setExTime(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[2].equals(indexString[3])) {
+			recvo.setExTime(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[2].equals(indexString[4])) {
+			recvo.setExWeight(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[2].equals(indexString[5])) {
+			recvo.setExCount(Integer.parseInt(resultRec[1]));
+		}
+
+		if (resultRec[4].equals(indexString[0])) {
+			recvo.setExCount(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[4].equals(indexString[1])) {
+			recvo.setExCount(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[4].equals(indexString[2])) {
+			recvo.setExTime(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[4].equals(indexString[3])) {
+			recvo.setExTime(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[4].equals(indexString[4])) {
+			recvo.setExWeight(Integer.parseInt(resultRec[1]));
+		} else if (resultRec[4].equals(indexString[5])) {
+			recvo.setExCount(Integer.parseInt(resultRec[1]));
 		}
 		
 		// 세션 ID 받기
-		exvo.setId((String) session.getAttribute("loginId"));
-		exvo.setDayNo(10);
+		recvo.setId((String) session.getAttribute("loginId"));
+		recvo.setDayNo(10);
 		
 		// 오늘 날짜
-		exvo.setYear(cal.get(Calendar.YEAR));
-		exvo.setMonth(cal.get(Calendar.MONTH)+1);
-		exvo.setExdate(cal.get(Calendar.DAY_OF_MONTH));
+		recvo.setYear(cal.get(Calendar.YEAR));
+		recvo.setMonth(cal.get(Calendar.MONTH)+1);
+		recvo.setExdate(cal.get(Calendar.DAY_OF_MONTH));
 		
-		return exvo;
+		return recvo;
 	}
 		
 		// 예제
@@ -288,7 +315,7 @@ public class STTService {
 		
 		return recList;
 	}
-	 
+	// -------------------------------------------------여기까지
 	
 	
 	
