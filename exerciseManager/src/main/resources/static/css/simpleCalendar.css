@@ -74,9 +74,13 @@ td#yearmonth {
 
 table tbody tr td {
 	border: 1px solid white;
-	background-color: white;
+	/* background-color: white; */
 }
 
+table#calendar tbody tr td {
+	border: 1px solid white;
+	background-color: white;
+}
 
 
 #dayLabels td {
