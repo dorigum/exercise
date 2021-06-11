@@ -4,6 +4,7 @@
 
 $(function() {
 	/* 음성 질문 녹음 */
+	/* 음성 파일 생성할까 말까 고민중.......... */
 	const record = document.getElementById("record");
     const stop = document.getElementById("stop");
     const soundClips = document.getElementById("sound-clips");
@@ -34,11 +35,13 @@ $(function() {
             
             mediaRecorder.onstop = e => {
                 
-                const clipName = "voiceMsg"; // 파일명 : 확장자 안 붙었음
+                const clipName = "voiceTEST"; // 파일명 : 확장자 안 붙었음
+				
 				// 태그 3개 생성
                 const clipContainer = document.createElement('article');                     
                 //const audio = document.createElement('audio');
                 const a = document.createElement('a');
+				
 				// 속성 컨텐츠 설정
                 //clipContainer.classList.add('clip');
                 //audio.setAttribute('controls', '');                        
@@ -94,6 +97,8 @@ $(function() {
 		formData.append('uploadFile', blob, clipName+".mp3");
 		/* 사용자 세션ID를 찾아서 어펜드 시킴 */
 		
+		// 예시
+		// $("#list").append("<li>새로 추가된 아이템</li>");
 		
 		$.ajax({
 			type:"post",
