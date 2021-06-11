@@ -21,8 +21,11 @@ public class DietController {
 	
 	@RequestMapping("/dietMain")
 	public String viewDietMain(HttpSession session) {
-		
-		return "dietMain";
+		String loginId=(String) session.getAttribute("loginId");
+		if(loginId==null) {
+			return "loginForm";
+		}
+		return "diet/dietMain";
 	}
 	
 	/*

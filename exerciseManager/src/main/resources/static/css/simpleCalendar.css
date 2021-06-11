@@ -34,6 +34,9 @@ input {
 
 i {
 	font-size: 30px;
+}
+
+label#before, label#next {
 	color: #e95678;
 }
 #greetings {
@@ -188,7 +191,7 @@ td a {
   color: #F08080;
   font-size: 20px;
   text-align: left;
-   z-index: 500;
+  z-index: 900;
 }
 
 .arrow_box:after {

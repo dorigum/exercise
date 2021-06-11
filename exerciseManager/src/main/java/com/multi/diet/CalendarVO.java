@@ -1,6 +1,9 @@
 package com.multi.diet;
 
 public class CalendarVO {
+
+
+	private String calCode;
 	private String id;
 	private String fCode;  // "D000009" 형식
 	private String eYear;
@@ -15,6 +18,12 @@ public class CalendarVO {
 	}
 	public void setFoodVO(FoodVO foodVO) {
 		this.foodVO = foodVO;
+	}
+	public String getCalCode() {
+		return calCode;
+	}
+	public void setCalCode(String calCode) {
+		this.calCode = calCode;
 	}
 	public String getId() {
 		return id;

@@ -1,13 +1,13 @@
 /**
  *  ocr.js
  */
-
- 
- $(function(){
+$(document).ready(function(){
 	$('#ocrForm').on('submit', function(event){
 		event.preventDefault();  // submit 위에 reload 안되게
 		var formData = new FormData($('#ocrForm')[0]);
-		
+		$('#imageIndicator').css({'visibility':'visible'});
+     	
+      
 		$.ajax({
 			type:"post",
 			enctype:"multipart/form-data",
@@ -44,8 +44,8 @@
 	// food에 넣기
 	$('#ocrResultForm').on('submit', function(event){
 		event.preventDefault();  // submit 위에 reload 안되게
-		
-		var randNum = Math.floor(Math.random() * 10000000);
+		var randNum1 = Math.floor(Math.random() * 10000000);
+		var randNum2 = Math.floor(Math.random() * 10000000000);
  		var tempStrYYYYMM = $("#yearmonth").text();
 		var tempStrMMDD = $("#clickDay2").text();
 		
@@ -57,9 +57,9 @@
 		
 		
 		var foodConditionData = {};
-		foodConditionData['condFCode'] = "Z" + randNum;
+		foodConditionData['condFCode'] = "O" + randNum1;
 		foodConditionData['condFName'] = document.getElementById('prodName').value.trim();
-		foodConditionData['condF_category'] = "사용자 입력";
+		foodConditionData['condF_category'] = "OCR 입력";
 		foodConditionData['condServings'] = document.getElementById('unitAmount').value.trim();
 		foodConditionData['condKcal'] = document.getElementById('unitCalories').value.trim();
 		foodConditionData['condKcal_per_100'] =  
@@ -68,7 +68,8 @@
 				
 		var calendarConditionData = {};
 		// id 는 session 으로 받아온다
-		calendarConditionData['condFCode'] = "Z" + randNum;
+		calendarConditionData['condCalCode'] = "" + randNum2;
+		calendarConditionData['condFCode'] = "O" + randNum1;
 		calendarConditionData['condEYear'] = currYear.trim();
 		calendarConditionData['condEMonth'] = currMonth.trim();
 		calendarConditionData['condEDate'] = currDate.trim();
