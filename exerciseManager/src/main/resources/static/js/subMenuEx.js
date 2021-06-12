@@ -38,11 +38,13 @@ $(document).ready(function() {
 					var exVo = arrayListOfExerciseVO[i];
 					htmlStr += 
 						"<tr>" +
-							"<td>" + exVo.exName + "</td>" + 
+							"<td>" +
+							"<a href=\"exerciseUpdateForm/"+exVo.dayNo+"\">"+
+							exVo.exName+"</a></td>"+
 							"<td>" + exVo.exWeight + "</td>" +
-							"<td>" + exVo.exMeter + "</td>" + 
+							"<td>" + exVo.exCount  + "</td>" + 
 							"<td>" + exVo.exTime + "</td>" + 
-							"<td>" + exVo.exCount + "</td>" + 
+							"<td>" + exVo.exMeter + "</td>" + 
 						"</tr>";
 				}
 				htmlStr += "</table>";

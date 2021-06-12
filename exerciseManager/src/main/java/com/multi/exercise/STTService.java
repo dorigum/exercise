@@ -200,11 +200,11 @@ public class STTService {
 		String[] result;
 		String[] indexString = { "개", "번", "분", "시간", "키로", "회" };
 		StringBuffer sb = new StringBuffer();
-		String str = message; // 입력 String 문자
-		String str2 = str.replaceAll("\\s+", ""); // 모든 공백 제거
+		String str = message; // 입력 String 문자 받아온 메세지 입력 /스 쿼트 3회 3키로
+		String str2 = str.replaceAll("\\s+", ""); // 모든 공백 제거  / 스쿼트3회3키로
 		sb.append(str2);
 
-		// 문자열에서 숫자와 글자 사이에 공백넣기
+		// 문자열에서 숫자와 글자 사이에 공백넣기 / 하나씩 살펴가면서 숫자인지 아닌지 판단  다음것이 숫자면 띄어쓰기
 		int j = 0;
 		for (int i = 0; i < (str2.length() - 1); i++) {
 			if (chknum(sb.charAt(i + j)) != chknum(sb.charAt(i + j + 1))) {
@@ -212,14 +212,16 @@ public class STTService {
 				j++;
 			}
 		}
-		String str3 = sb.toString();
+		String str3 = sb.toString();  //스쿼트 3 회 3 키로   스쿼트 3키로 3회
 
 		// 공백 기준으로 나누기 (운동이름/ 자료형1/ 구분형1/ 자료형2/ 구분형2)
-		result = str3.split(" ");
+		result = str3.split(" ");  // 스트링타입 -> array // result[0] = 스쿼트  result[1] =3
 
 		// 무식하게 때려박기..
-		exvo.setExName(result[0]);// 운동이름은 exName
-		if (result[2].equals(indexString[0])) {
+		exvo.setExName(result[0]);// 운동이름은 exName에 result[0] 넣어라
+		
+		// 구분형 1이  indexString에 있다면 넣을 변수 조정(ExCount, ExTime,ExWeight)
+		if (result[2].equals(indexString[0])) {    
 			exvo.setExCount(Integer.parseInt(result[1]));
 		} else if (result[2].equals(indexString[1])) {
 			exvo.setExCount(Integer.parseInt(result[1]));
@@ -233,6 +235,7 @@ public class STTService {
 			exvo.setExCount(Integer.parseInt(result[1]));
 		}
 
+		// 구분형 2이  indexString에 있다면 넣을 변수 조정(ExCount, ExTime,ExWeight)
 		if (result[4].equals(indexString[0])) {
 			exvo.setExCount(Integer.parseInt(result[1]));
 		} else if (result[4].equals(indexString[1])) {
@@ -246,6 +249,7 @@ public class STTService {
 		} else if (result[4].equals(indexString[5])) {
 			exvo.setExCount(Integer.parseInt(result[1]));
 		}
+		
 		//아이디 담기
 		exvo.setId((String) session.getAttribute("loginId"));
 		exvo.setDayNo(10);

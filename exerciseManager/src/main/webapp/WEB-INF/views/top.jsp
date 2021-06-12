@@ -23,7 +23,6 @@
 			<c:if test="${empty sessionScope.loginId }">
 				<li><a href="<c:url value='/loginForm' />">로그인</a></li>
 				<li><a href="<c:url value='/joinForm' />">회원가입</a></li>
-				<li><a href="<c:url value='/test' />">test 삭제예정</a></li>
 			</c:if>
 			<c:if test="${not empty sessionScope.loginId }">
             			${sessionScope.loginId } 님 환영합니다! 
