@@ -34,7 +34,10 @@ input {
 
 i {
 	font-size: 30px;
-	color: #e95678;
+}
+
+label#before, label#next {
+	color: #f56a6a;
 }
 #greetings {
 	color: #BC8F8F !important;
@@ -71,10 +74,18 @@ td#yearmonth {
 
 table tbody tr td {
 	border: 1px solid white;
+	/* background-color: white; */
 }
 
-#dayLabels {
-	background-color: #e95678;
+table#calendar tbody tr td {
+	border: 1px solid white;
+	background-color: white;
+}
+
+
+#dayLabels td {
+	background-color: #f56a6a !important;
+	width: 400px;
 }
 
 .flip-card {
@@ -188,7 +199,7 @@ td a {
   color: #F08080;
   font-size: 20px;
   text-align: left;
-   z-index: 500;
+  z-index: 900;
 }
 
 .arrow_box:after {

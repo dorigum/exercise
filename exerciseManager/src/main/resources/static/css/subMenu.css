@@ -61,6 +61,27 @@
     background-color: #F4F1FD;
 }
 
+.insertFoodVOwrap {
+    position: fixed;
+    top: 0;
+    left: -400px; /* 너비 300px 인 사이드바를 왼쪽으로 300px 이동시켜 화면에 보이지 않게 함 */
+    z-index: 390;
+    overflow: auto;
+    width: 400px; /* 너비 */
+    height: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    transition: left .3s ease-in-out; /* 0.3초 동안 이동 애니메이션 */
+    background-color: #F4F1FD;
+}
+
+.dataRow {
+	background-color: '#FF69B4 !important';
+}
+
+.on {
+	background-color: '#FF69B4';
+}
 
 .menuwrap.on {
     left: 0;
@@ -73,6 +94,10 @@
 .OCRSearchMenuwrap.on {
     left: 400px;
 }
+
+.insertFoodVOwrap.on {
+    left: 400px;
+}
 #dimmed {
     position: fixed;
     top: 0;
@@ -82,6 +107,13 @@
     height: 100%;
     background-color: rgba(0,0,0,0.5);
     cursor: pointer;
+}
+
+
+#deleteParaphr { /* 삭제 문구 */
+	font-family: 'twayfly';
+	text-align: center;
+	color: #FF69B4;
 }
 
 /* #menu input{
@@ -118,33 +150,44 @@
  
 #dietSearch {
 	position: absolute;
-	top: 850px !important;
+	top: 700px !important;
 	display: block;
 	margin:0 auto;
 }
 
+
+/* 서브 메뉴 아랫쪽 버튼들 */ 
 #dietSearch input {
 	font-family: 'twayfly';
 	width: 300px !important;
 	margin-left: 30px !important;
-	font-size: 15px !important;
+	font-size: 15px;
 	padding-left: 35px !important;
+	margin-bottom: 3px !important;
 }
 
 input#textSearch {
-	margin: 10px;
+	
+}
+input#OCRSearch {
+	/* margin-bottom: 20px !important; */
+}
+input#insertFoodBtn {
+	border-color: '#4FBFE8 !impotant';
+	color: '#4FBFE8 !impotant';
+	/* margin-bottom: 20px !important; */
+}
+input#deletDiet {
+	
 }
 
-/* input {
-	margin-left: 100px !important;
-	width: 50% !important;
-} */
-
-input#submit {
-    font-family: 'twayfly' !important;
-    font-size: 15px;
-	height: 50px;
-	width: 300px;
+input#deleteChecker {
+	margin-top: 20px;
+	color: #FF69B4;
+    border-color: #FF69B4;
+    box-shadow: inset 0 0 0 2px #FF69B4;
+    font-size: 18px;
+    border: 2.5px solid;
 }
 
 input#insertDietOCR {
@@ -154,26 +197,47 @@ input#insertDietOCR {
 	width: 300px;
 }
 
+input#submit {
+    font-family: 'twayfly' !important;
+    font-size: 15px;
+	height: 50px;
+	width: 300px;
+}
+#ocrResultForm input {
+	font-size: 15px;
+}
+
+#ocrResultForm span {
+	font-size: 15px;
+}
+
 input#totalAmount {
-	width: 150px;
+	width: 75px;
 	margin: 0 auto;
+	display: inline;
 }
 input#unitAmount {
-	width: 150px;
+	width: 75px;
 	margin: 0 auto;
-	
+	display: inline;
 }
 input#unitCalories {
-	width: 150px;
+	width: 75px;
 	margin: 0 auto;
+	display: inline;
+	
 }
 input#prodName {
 	width: 150px;
 	margin: 0 auto;
+	display: inline;
+	
 }
 input#intake {
 	width: 150px;
 	margin: 0 auto;
+	display: inline;
+	
 }
 /* input[type="submit"] {
 	font-family: 'twayfly' !important;
@@ -200,4 +264,31 @@ form {
 
 #textSearchMenu h3 {
 	font-family: 'twayfly' !important;
+}
+
+#insertFoodVO {
+	text-align: center !important;
+}
+
+#insertFoodVO h3 {
+	font-family: 'twayfly' !important;
+}
+
+ /* insertFoodVOwrap */
+ 
+#foodCateg {
+	height:335px; 
+	font-size: 20px !important;
+	font-family: 'twayfly' !important;
+	padding: 15px;
+	overflow-y: none;
+	overflow : auto;
+}
+
+#insertFoodBtn {
+	font-family: 'twayfly';
+	width: 300px !important;
+	font-size: 15px;
+	padding-left: 35px !important;
+	margin-bottom: 3px !important;
 }

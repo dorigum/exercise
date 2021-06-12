@@ -3,6 +3,7 @@ package com.multi.diet;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -58,7 +58,7 @@ public class DietRestController {
 		return nfvo;
 	}
 	
-	@RequestMapping("byDateDietList")
+	@RequestMapping("/byDateDietList")
 	public ArrayList<CalendarVO> viewDietListByDate(HttpServletRequest requst,
 													HttpSession session,
 												    @RequestParam Map<String, Object> map) {
@@ -79,7 +79,7 @@ public class DietRestController {
 		return dietList;
 	}
 	
-	@RequestMapping("byTimeDietList")
+	@RequestMapping("/byTimeDietList")
 	public ArrayList<CalendarVO> viewDietListByTime(HttpServletRequest requst,
 													@RequestParam Map<String, Object> map,
 													HttpSession session) {
@@ -100,14 +100,14 @@ public class DietRestController {
 		return dietList;
 	}
 	
-	@RequestMapping("getMemberInfo")
+	@RequestMapping("/getMemberInfo")
 	public MemberVO myPage(Model model, HttpServletRequest request, HttpSession session) {
 		String loginId = (String)session.getAttribute("loginId");
 		MemberVO mem = memservice.myPage(loginId);
 		return mem;
 	}
 	
-	@RequestMapping("insertFoodData")
+	@RequestMapping("/insertFoodData")
 	public void insertFoodData(Model model, @RequestParam Map<String, Object> map, HttpServletRequest request) {
 		FoodVO foodVo = new FoodVO();
 		
@@ -121,10 +121,12 @@ public class DietRestController {
 		calendarService.insertFoodVO(foodVo);
 	}
 	
-	@RequestMapping("insertCalendarData")
+	@RequestMapping("/insertCalendarData")
 	public void insertCalendarData(Model model, @RequestParam Map<String, Object> map, HttpServletRequest request, HttpSession session) {
 		CalendarVO calVo = new CalendarVO();
 		
+		calVo.setCalCode((String)map.get("condCalCode"));
+		System.out.println(calVo.getCalCode());
 		calVo.setId((String)session.getAttribute("loginId"));
 		calVo.setfCode((String)map.get("condFCode"));
 		calVo.seteYear((String)map.get("condEYear"));
@@ -136,5 +138,19 @@ public class DietRestController {
 		calendarService.insertCalendarVO(calVo);
 	}
 	
+	@RequestMapping("/deleteCalendarData")
+	public void deleteCalendarData(@RequestParam(value="deleteList[]") List<String> delCalList, HttpServletRequest request) {
+		String calCode = "";
+		
+		for (String singleCode : delCalList) {
+			try {
+				calCode = singleCode;
+				calendarService.deleteCalendarVO(calCode);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
 	
 }

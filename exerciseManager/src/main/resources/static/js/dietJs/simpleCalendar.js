@@ -103,15 +103,15 @@
             		<div class='flip-card'> \
 	            		<div class='flip-card-inner'> \
 						    <div class='flip-card-front' id='flip-card-front" + i + "'> \
-						        <h2 class='front'>" + 
+						        <h2 class='front' id='frontDate" + i + "'>" + 
 						        mon + "." + dat + 
 						        "</h2> \
 						        <div class= 'cal' id='cal" + i + 
 						        "' style='font-size:25px; text-align:center;'></div>" 
-						         + "<p id='kcal" + i + "' style='font-size:15px;'>Kcal</p>" + 
+						         + "<p id='kcal" + i + "' style='font-size:15px; margin-bottom: 2px;'><p id='kcalUnit" + i + "' style='font-size:20px;'></p>" + 
 						    "</div> \
 						    <div class='flip-card-back'> \
-						        <h2 style='color:white;'>" +
+						        <h2 style='color:white;' id='backDate" + i + "'>" +
 						        mon + "." + dat + 
 						        "</h2> \
 						        <div class= 'cal' id='backUserCal" + i + 
@@ -157,54 +157,72 @@
 					var backrecommCalStr = "권장: " + recommendCal.toFixed(0) + " Kcal";
 					var backuserCalStr = "섭취: " + totalCalPerDay.toFixed(0) + " Kcal";
 					
-					$('#backUserCal' + i).append(backrecommCalStr);
-					$('#backRecommCal' + i).append(backuserCalStr);
 					if (resultCalories >= 0) $('#cal' + i).append("+");
 					
 					if (resultCalories > (recommendCal - secOperand)) {
 						$('#cal' + i).css({"color":"#E84F81"});
 						$('#kcal' + i).css({"color":"#E84F81"}); 
+						$('#frontDate' + i).css({"color":"#E84F81"}); 
+						$('#kcalUnit' + i).css({"color":"#E84F81"}); 
 						
 					} else if ((recommendCal - secOperand) >= resultCalories && 
 							   (recommendCal - 2 * secOperand) <= resultCalories) {
 						$('#cal' + i).css({"color":"#CE6192"});
-						$('#kcal' + i).css({"color":"#CE6192"});  
+						$('#kcal' + i).css({"color":"#CE6192"}); 
+						$('#frontDate' + i).css({"color":"#CE6192"}); 
+						$('#kcalUnit' + i).css({"color":"#CE6192"}); 
+ 
 						
 					} else if ((recommendCal - 2 *secOperand) >= resultCalories && 
 							   (recommendCal - 3 * secOperand) <= resultCalories) {
 						$('#cal' + i).css({"color":"#B574A3"});
 						$('#kcal' + i).css({"color":"#B574A3"});  
+						$('#frontDate' + i).css({"color":"#B574A3"});
+						$('#kcalUnit' + i).css({"color":"#B574A3"}); 
 						
 					} else if ((recommendCal - 3 * secOperand) >= resultCalories && 
 							   (recommendCal - 4 * secOperand) <= resultCalories) {
 						$('#cal' + i).css({"color":"#9B87B4"});
-						$('#kcal' + i).css({"color":"#9B87B4"}); 
+						$('#kcal' + i).css({"color":"#9B87B4"});
+						$('#frontDate' + i).css({"color":"#9B87B4"}); 
+						$('#kcalUnit' + i).css({"color":"#9B87B4"}); 
 						 
 					} else if ((recommendCal - 4 * secOperand) >= resultCalories && 
 							   (recommendCal - 5 * secOperand) <= resultCalories) {
 						$('#cal' + i).css({"color":"#8299C5"});
 						$('#kcal' + i).css({"color":"#8299C5"});  
+						$('#frontDate' + i).css({"color":"#8299C5"});
+						$('#kcalUnit' + i).css({"color":"#8299C5"}); 
 						
 					} else if ((recommendCal - 5 * secOperand) >= resultCalories && 
 							   (recommendCal - 6 * secOperand) <= resultCalories) {
 						$('#cal' + i).css({"color":"#68ACD6"});
 						$('#kcal' + i).css({"color":"#68ACD6"});  
+						$('#frontDate' + i).css({"color":"#68ACD6"});
+						$('#kcalUnit' + i).css({"color":"#68ACD6"}); 
 						
 					} else {
 						$('#cal' + i).css({"color":"#4FBFE8"});
 						$('#kcal' + i).css({"color":"#4FBFE8"});  
+						$('#frontDate' + i).css({"color":"#4FBFE8"});
+						$('#kcalUnit' + i).css({"color":"#4FBFE8"}); 
 					}
-					$('#cal' + i).append(resultCalories);
-					// 운동을 했느냐로 셀의 색상을 바꾸고 싶을 때는 ln.122 ~ 129 대신
 					
-/*					if (운동횟수변수 > 5) {
-						$('#flip-card-front' + i).css({"background-color":"green"});
-					} else if (운동횟수변수 > 2) {
-						$('#flip-card-front' + i).css({"background-color":"blue"});
+					// 칼로리 입력란
+					
+					if (totalCalPerDay == 0) {
+						$('#cal' + i).append('<i class="far fa-edit"></i>');
+						$('#cal' + i).css({'color':'#8E756F'});
+						$('#frontDate' + i).css({"color":"#8E756F"});
+						$('#backUserCal' + i).append("식단을");
+						$('#backRecommCal' + i).append("입력해주세요");
+
 					} else {
-						$('#flip-card-front' + i).css({"background-color":"red"});
-					} */
-					
+						$('#cal' + i).append(resultCalories);
+						$('#kcalUnit' + i).append('&nbsp;&nbsp;Kcal');
+						$('#backUserCal' + i).append(backrecommCalStr);
+						$('#backRecommCal' + i).append(backuserCalStr);
+					}
 					
 				},
 				error:function(e) {

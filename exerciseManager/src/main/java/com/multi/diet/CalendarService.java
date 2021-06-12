@@ -35,6 +35,10 @@ public class CalendarService implements ICalendarService {
 	    dao.insertCalendarVO(calVo); 
     }
     
+    @Override
+    public void deleteCalendarVO(String calCode) {
+    	dao.deleteCalendarVO(calCode);
+    }
     
 	/*
 	 * @Override public List<FoodVO> searchListFood(String search_option, String

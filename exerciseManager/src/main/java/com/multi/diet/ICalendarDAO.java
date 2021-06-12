@@ -7,6 +7,8 @@ public interface ICalendarDAO {
 	public ArrayList<CalendarVO> byTimeDietList(String condId, String condYear, String condMonth, String condDate, String condTime);
 	public void insertFoodVO(FoodVO foodVo);
 	public void insertCalendarVO(CalendarVO calVo);
+	public void deleteCalendarVO(String calCode);
+
 	/*
 	 * public List<FoodVO> searchListFood(String search_option, String keyword)
 	 * throws Exception;

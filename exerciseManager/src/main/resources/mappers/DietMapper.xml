@@ -6,6 +6,7 @@
 <mapper namespace="com.multi.diet.ICalendarDAO">
 
 	<resultMap id="calendarResult" type="com.multi.diet.CalendarVO">
+		<result property="calCode" column="calCode" />
 		<result property="id" column="id" />
 		<result property="fCode" column="fCode" />
 		<result property="eYear" column="eYear" />
@@ -48,6 +49,7 @@
 		  	AND eDate=#{condDate}
 		  	AND eTime=#{condTime}
 	</select>
+	
 
 	<!-- FoodVO 삽입 -->
 	<insert id="insertFoodVO" parameterType="com.multi.diet.FoodVO">
@@ -61,11 +63,18 @@
 	<!-- CalendarVO 삽입 -->
 	<insert id="insertCalendarVO" parameterType="com.multi.diet.CalendarVO">
 		INSERT INTO calendar (
-			id, fCode, eYear, eMonth, eDate, eAmt, eTime
+			calCode, id, fCode, eYear, eMonth, eDate, eAmt, eTime
 		) VALUES (
-			#{id}, #{fCode}, #{eYear}, #{eMonth}, #{eDate}, #{eAmt}, #{eTime}
+			#{calCode}, #{id}, #{fCode}, #{eYear}, #{eMonth}, #{eDate}, #{eAmt}, #{eTime}
 		)
 	</insert>
+	
+	<!-- CalendarVO 삭제 -->
+	<delete id="deleteCalendarVO" parameterType="String">
+		DELETE FROM calendar WHERE calCode=#{calCode}
+	</delete>
+	
+	
 
 </mapper>
  
