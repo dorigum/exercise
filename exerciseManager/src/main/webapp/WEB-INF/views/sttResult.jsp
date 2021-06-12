@@ -20,7 +20,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Exercise index 페이지</title>
+		<title>AI Personal Trainer :: voiceFileUpload</title>
 		<!-- STT : 음성 파일 업로드 -->
 		<script src="<c:url value='js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='js/stt.js'/>"></script>
@@ -117,12 +117,12 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
+							<!-- Search --> <!-- 메뉴 위 검색창 -->
+								<!-- <section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
-								</section>
+								</section> -->
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -180,9 +180,9 @@
 								</section>
 
 							<!-- Footer -->
-								<footer id="footer">
+								<!-- <footer id="footer">
 									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+								</footer> -->
 
 						</div>
 					</div>

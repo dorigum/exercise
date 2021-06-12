@@ -20,7 +20,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>운동 기록 수정</title>
+		<title>AI Personal Trainer :: exerListUpdate</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>

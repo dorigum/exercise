@@ -58,7 +58,7 @@
 					<div class="posts">
 						<article>
 							<a href="exer/exerciseNewForm" class="image"><img src="images/exerPic01.jpg" alt="" /><!-- <img src="images/pic01.jpg" alt="" /> --></a>
-							<h3>Exercise Management</h3>
+							<h3>Exercise Management :: Main</h3>
 							<p>오늘의 운동 기록하기</p>
 						</article>
 						<article>
@@ -69,7 +69,7 @@
 					</div>
 				</section>
 				<!-- Section -->
-				<section>
+				<!-- <section>
 					<header class="major">
 						<h2>TODAY's Record</h2>
 					</header>
@@ -87,7 +87,7 @@
 							</div>
 						</article>
 					</div>
-				</section>
+				</section> -->
 			</div>
 		</div>
 	
@@ -95,12 +95,12 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
+							<!-- Search --> <!-- 메뉴 위 검색창 -->
+								<!-- <section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
-								</section>
+								</section> -->
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -161,9 +161,9 @@
 								</section>
 
 							<!-- Footer -->
-								<footer id="footer">
+								<!-- <footer id="footer">
 									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+								</footer> -->
 
 						</div>
 					</div>

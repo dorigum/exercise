@@ -87,14 +87,12 @@
 										<%= cal.get(Calendar.DATE) %>일
 										<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동</font><br><br>
 										
-										
+																				
 									<!-- 녹음 버튼 추가!!!!!!!!!!!!!!!!!! -->
 									<button id="record">녹음</button>
 									<button id="stop">정지</button><br><br>
 									<div id="sound-clips"></div><br><br>
-									
-									
-									
+
 									<!-- 음성 DB 테스트중!!!!!!!!!!!!!! -->
 									<div id = "resultMsg"></div>
 								</section>

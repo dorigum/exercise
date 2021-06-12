@@ -20,7 +20,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Exercise index 페이지</title>
+		<title>AI Personal Trainer :: exerVoiceRerord</title>
 		<!-- 음성 녹음 -->
 		<script src="<c:url value='js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='js/voiceRecord.js'/>"></script>
@@ -102,12 +102,12 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
+							<!-- Search --> <!-- 메뉴 위 검색창 -->
+								<!-- <section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
-								</section>
+								</section> -->
 
 							<!-- Menu -->
 								<nav id="menu">

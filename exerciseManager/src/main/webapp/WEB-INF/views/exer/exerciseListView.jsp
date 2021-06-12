@@ -20,7 +20,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>운동 기록 전체 조회</title>
+		<title>AI Personal Trainer :: exerList</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
@@ -112,12 +112,12 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
+							<!-- Search --> <!-- 메뉴 위 검색창 -->
+								<!-- <section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
-								</section>
+								</section> -->
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -175,9 +175,9 @@
 								</section>
 
 							<!-- Footer -->
-								<footer id="footer">
+								<!-- <footer id="footer">
 									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+								</footer> -->
 
 						</div>
 					</div>
