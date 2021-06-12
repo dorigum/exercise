@@ -14,16 +14,16 @@
 	String uid = "exercise";
 	String pwd = "1234";
 	String url = "jdbc:oracle:thin:@localhost:1521:XE";
-	String sql = "select * from test where id='bbb'";%>
+	String sql = "";%>
 	
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>AI Personal Trainer :: exerVoiceRerord</title>
+		<title>Exercise index 페이지</title>
 		<!-- 음성 녹음 -->
 		<script src="<c:url value='js/jquery-3.6.0.min.js'/>"></script>
-		<script src="<c:url value='js/voiceRecord.js'/>"></script>
+		<script src="<c:url value='js/RecordDB.js'/>"></script>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
@@ -75,7 +75,7 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Voice Record</h1>
+										<h1>Voice Record TEST PAGE~!~!~!</h1>
 									</header>
 									
 									<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span> -->
@@ -87,12 +87,30 @@
 										<%= cal.get(Calendar.DATE) %>일
 										<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동</font><br><br>
 										
-										
+																				
 									<!-- 녹음 버튼 추가!!!!!!!!!!!!!!!!!! -->
 									<button id="record">녹음</button>
 									<button id="stop">정지</button><br><br>
-									<div id="sound-clips"></div><br><br>
-									
+									<div id="sound-clips"></div><br>
+
+									<!-- 음성 DB 테스트중!!!!!!!!!!!!!! -->
+									<form id="recForm" method="post" enctype="multipart/form-data">
+										<span>운동명</span>
+										<input id="exName" type="text" size=10 readonly>&nbsp; 
+										
+										<span>무게(kg)</span>
+										<input id="exWeight" type="text" size=10 readonly>&nbsp; 
+										
+										<span>횟수(개)</span>
+										<input id="exCount" type="text" size=10 readonly>&nbsp;
+										
+										<span>거리(km)</span>
+										<input id="exMeter" type="text" size=10 readonly>&nbsp;
+										
+										<span>시간(분)</span>
+										<input id="exTime" type="text" size=10 readonly>&nbsp; <br>
+										
+										<input type="submit" value="운동 기록하기">
 								</section>
 
 						</div>
@@ -102,11 +120,11 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search --> <!-- 메뉴 위 검색창 -->
+							<!-- Search -->
 								<section id="search" class="alt">
-									<!-- <form method="post" action="#">
+									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
-									</form> -->
+									</form>
 								</section>
 
 							<!-- Menu -->
@@ -116,30 +134,30 @@
 									</header>
 									<ul>
 										<li><a href="/">Mainpage</a></li>
-										<!-- <li><a href="exerMain">Exercise Management Main</a></li> -->
+										<li><a href="exerMain">Exercise Management Main</a></li>
 										<li>
 											<span class="opener">Exercise Management</span>
 											<ul>
 												<li><a href="exer/exerciseListView">Exercise Record List</a></li>
 												<li><a href="voiceRecord">Voice Record</a></li>
 												<li><a href="stt">Voice Record File Upload</a></li>
-												<li><a href="exer/exerciseNewForm">Exercise Calender</a></li>
+												<li><a href="exer/exerciseNewForm">Text record</a></li>
 											</ul>
 										</li>
 										<li>
-											<span class="opener">Diet Management</span>
+											<span class="opener">Food Management</span>
 											<ul>
-												<li><a href="foodList">Calorie Dictionary</a></li>
-												<li><a href="dietMain">Diet Calender</a></li>
-												<!-- <li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li> -->
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
 											</ul>
 										</li>
 									</ul>
 								</nav>
 	 	
 							<!-- Menu -->
-								<!-- <nav id="menu">
+								<nav id="menu">
 									<header class="major">
 										<h2>Record / File Upload</h2>
 									</header>
@@ -150,7 +168,7 @@
 										<li><a href="stt">Voice Record File Upload</a></li>
 										<li><a href="exer/exerciseNewForm">Text record</a></li>
 									</ul>
-								</nav> -->
+								</nav>
 
 							<!-- Section -->
 								<section>

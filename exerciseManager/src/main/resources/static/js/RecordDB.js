@@ -84,26 +84,27 @@ $(function() {
         })
 	}
 	
-	//-------------------------------------------------------------
-	
+	//-------------------------------------------------------------	
 	/* 서버에 업로드 */
 	/* 음성을 텍스트로 변환한 결과가 콘솔에 출력됨 */
 	function fileUpload(blob, clipName){
 		// 파일 업로드 부분 추가
+		$('#resultMsg').empty();
 		var formData = new FormData();
 		formData.append('uploadFile', blob, clipName+".mp3");
-		/* 사용자 세션ID를 찾아서 어펜드 시킴 */
+		
 		$.ajax({
 			type:"post",
 			url:"ExerSTT",
 			data: formData, // 폼 데이터 전송
 			processData:false, // 필수
 			contentType:false, // 필수
-			success:function(result){
-									 
-			$('#resultMsg').val(result);
-			//callAjax();
-			//$('#message').val('');
+			success:function(exerVO){				 
+				$("#exName").val(exerVO.exName); // 운동명
+				$("#exWeight").val(exerVO.exWeight); // 무게
+				$("#exCount").val(exerVO.exCount); // 횟수
+				$("#exMeter").val(exerVO.exMeter); // 거리
+				$("#exTime").val(exerVO.exTime); // 시간
 			},
 			error:function(e){
 				alert("에러 발생" + e);

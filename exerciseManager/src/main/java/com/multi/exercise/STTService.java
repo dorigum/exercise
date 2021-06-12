@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 public class STTService {
 	public ExerciseVO clovaSpeechToText(String filePathName, String language, HttpSession session) {
 		ExerciseVO result2 = new ExerciseVO();
+		
 		String clientId = "s5nc0h3pnh"; // Application Client ID";
 		String clientSecret = "8OjMY9sT0k17PlVzqcyYW1PZikoQx5ukjOk0yHil"; // Application Client Secret";
 		String result = "";
@@ -84,69 +85,71 @@ public class STTService {
 		return result2;
 	}
 
-	// 한국어, 영어, 중국어, 일본어 선택 > 기능 없앨 수 있음 없애기!
-	public String clovaSpeechToText2(String filePathName) {
-		String clientId = "s5nc0h3pnh"; // Application Client ID";
-		String clientSecret = "8OjMY9sT0k17PlVzqcyYW1PZikoQx5ukjOk0yHil"; // Application Client Secret";
-		String result = "";
+	 public ExerciseVO clovaSpeechToText2(String filePathName, HttpSession session) {
+		 ExerciseVO exerVO = new ExerciseVO();
+		 
+		 String clientId = "s5nc0h3pnh"; // Application Client ID";
+	     String clientSecret = "8OjMY9sT0k17PlVzqcyYW1PZikoQx5ukjOk0yHil"; // Application Client Secret";
+	     String result = "";
 
-		try {
-			String imgFile = filePathName;
-			File voiceFile = new File(imgFile);
+	      try {
+	         String imgFile = filePathName;
+	         File voiceFile = new File(imgFile);
 
-			String language = "Kor"; // 언어 코드 ( Kor, Jpn, Eng, Chn )
-			String apiURL = "https://naveropenapi.apigw.ntruss.com/recog/v1/stt?lang=" + language;
-			URL url = new URL(apiURL);
+	         String language = "Kor"; // 언어 코드 ( Kor, Jpn, Eng, Chn )
+	         String apiURL = "https://naveropenapi.apigw.ntruss.com/recog/v1/stt?lang=" + language;
+	         URL url = new URL(apiURL);
 
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setUseCaches(false);
-			conn.setDoOutput(true);
-			conn.setDoInput(true);
-			conn.setRequestProperty("Content-Type", "application/octet-stream");
-			conn.setRequestProperty("X-NCP-APIGW-API-KEY-ID", clientId);
-			conn.setRequestProperty("X-NCP-APIGW-API-KEY", clientSecret);
+	         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+	         conn.setUseCaches(false);
+	         conn.setDoOutput(true);
+	         conn.setDoInput(true);
+	         conn.setRequestProperty("Content-Type", "application/octet-stream");
+	         conn.setRequestProperty("X-NCP-APIGW-API-KEY-ID", clientId);
+	         conn.setRequestProperty("X-NCP-APIGW-API-KEY", clientSecret);
 
-			OutputStream outputStream = conn.getOutputStream();
-			FileInputStream inputStream = new FileInputStream(voiceFile);
-			byte[] buffer = new byte[4096];
-			int bytesRead = -1;
-			while ((bytesRead = inputStream.read(buffer)) != -1) {
-				outputStream.write(buffer, 0, bytesRead);
-			}
-			outputStream.flush();
-			inputStream.close();
-			BufferedReader br = null;
-			int responseCode = conn.getResponseCode();
-			if (responseCode == 200) { // 정상 호출
-				br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			} else { // 오류 발생
-				System.out.println("error!!!!!!! responseCode= " + responseCode);
-				br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			}
-			String inputLine;
+	         OutputStream outputStream = conn.getOutputStream();
+	         FileInputStream inputStream = new FileInputStream(voiceFile);
+	         byte[] buffer = new byte[4096];
+	         int bytesRead = -1;
+	         while ((bytesRead = inputStream.read(buffer)) != -1) {
+	            outputStream.write(buffer, 0, bytesRead);
+	         }
+	         outputStream.flush();
+	         inputStream.close();
+	         BufferedReader br = null;
+	         int responseCode = conn.getResponseCode();
+	         if (responseCode == 200) { // 정상 호출
+	            br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	         } else { // 오류 발생
+	            System.out.println("error!!!!!!! responseCode= " + responseCode);
+	            br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	         }
+	         String inputLine;
 
-			if (br != null) {
-				StringBuffer response = new StringBuffer();
-				while ((inputLine = br.readLine()) != null) {
-					response.append(inputLine);
-				}
-				br.close();
-				System.out.println(response.toString()); // 결과 출력 (JSON 형식의 문자열)
-				result = jsonToString(response.toString());
-				// resultToFileSave(result);
-				//resultToFileSave2(result);
-				
-			} else {
-				System.out.println("error !!!");
-			}
+	         if (br != null) {
+	            StringBuffer response = new StringBuffer();
+	            while ((inputLine = br.readLine()) != null) {
+	               response.append(inputLine);
+	            }
+	            br.close();
+	            System.out.println(response.toString()); // 결과 출력 (JSON 형식의 문자열)
+	            result = jsonToString(response.toString());
+	            // resultToFileSave(result);
+	            //resultToFileSave2(result);
+	            exerVO = resultToDB(result, session);
+	            
+	         } else {
+	            System.out.println("error !!!");
+	         }
 
-			//voiceFile.delete(); // 텍스트로 변환된 후 녹음된 음성 파일 삭제
-		} catch (Exception e) {
-			System.out.println(e);
-		}
+	         //voiceFile.delete(); // 텍스트로 변환된 후 녹음된 음성 파일 삭제
+	      } catch (Exception e) {
+	         System.out.println(e);
+	      }
 
-		return result;
-	}
+	      return exerVO;
+	   }
 	
 	// 결과로 받은 텍스트를 파일로 저장하는 기능 추가
 	public void resultToFileSave(String result) {
@@ -198,13 +201,13 @@ public class STTService {
 		Calendar cal = Calendar.getInstance();
 		ExerciseVO exvo= new ExerciseVO();
 		String[] result;
-		String[] indexString = { "개", "번", "분", "시간", "키로", "회" };
+		String[] indexString = { "개", "번", "분", "시간", "키로", "회" }; // kg, km 구분해놓기!!
 		StringBuffer sb = new StringBuffer();
-		String str = message; // 입력 String 문자 받아온 메세지 입력 /스 쿼트 3회 3키로
-		String str2 = str.replaceAll("\\s+", ""); // 모든 공백 제거  / 스쿼트3회3키로
+		String str = message; // 입력 String 문자
+		String str2 = str.replaceAll("\\s+", ""); // 모든 공백 제거
 		sb.append(str2);
 
-		// 문자열에서 숫자와 글자 사이에 공백넣기 / 하나씩 살펴가면서 숫자인지 아닌지 판단  다음것이 숫자면 띄어쓰기
+		// 문자열에서 숫자와 글자 사이에 공백넣기
 		int j = 0;
 		for (int i = 0; i < (str2.length() - 1); i++) {
 			if (chknum(sb.charAt(i + j)) != chknum(sb.charAt(i + j + 1))) {
@@ -212,16 +215,14 @@ public class STTService {
 				j++;
 			}
 		}
-		String str3 = sb.toString();  //스쿼트 3 회 3 키로   스쿼트 3키로 3회
+		String str3 = sb.toString();
 
 		// 공백 기준으로 나누기 (운동이름/ 자료형1/ 구분형1/ 자료형2/ 구분형2)
-		result = str3.split(" ");  // 스트링타입 -> array // result[0] = 스쿼트  result[1] =3
+		result = str3.split(" ");
 
 		// 무식하게 때려박기..
-		exvo.setExName(result[0]);// 운동이름은 exName에 result[0] 넣어라
-		
-		// 구분형 1이  indexString에 있다면 넣을 변수 조정(ExCount, ExTime,ExWeight)
-		if (result[2].equals(indexString[0])) {    
+		exvo.setExName(result[0]);// 운동이름은 exName
+		if (result[2].equals(indexString[0])) {
 			exvo.setExCount(Integer.parseInt(result[1]));
 		} else if (result[2].equals(indexString[1])) {
 			exvo.setExCount(Integer.parseInt(result[1]));
@@ -235,7 +236,6 @@ public class STTService {
 			exvo.setExCount(Integer.parseInt(result[1]));
 		}
 
-		// 구분형 2이  indexString에 있다면 넣을 변수 조정(ExCount, ExTime,ExWeight)
 		if (result[4].equals(indexString[0])) {
 			exvo.setExCount(Integer.parseInt(result[1]));
 		} else if (result[4].equals(indexString[1])) {
@@ -249,7 +249,6 @@ public class STTService {
 		} else if (result[4].equals(indexString[5])) {
 			exvo.setExCount(Integer.parseInt(result[1]));
 		}
-		
 		//아이디 담기
 		exvo.setId((String) session.getAttribute("loginId"));
 		exvo.setDayNo(10);

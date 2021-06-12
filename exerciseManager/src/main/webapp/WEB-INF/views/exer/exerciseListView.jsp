@@ -85,12 +85,12 @@
 										
 									<!-- 운동 기록 전체 조회 -->
 									<table border="1">
-										<tr><th>id</th><th>년</th><th>월</th><th>일</th>
-											<th>운동명</th><th>운동 무게</th><th>운동 횟수</th><th>운동거리</th><th>운동시간</th><th>삭제</th></tr>
+										<tr><!-- <th>id</th> --><th>년</th><th>월</th><th>일</th>
+											<th>운동명</th><th>운동무게(kg)</th><th>운동횟수(개)</th><th>운동거리(km)</th><th>운동시간(분)</th><th> </th></tr>
 											
 										<c:forEach items="${exerciseList }" var="DayExercise">
 											<tr>
-												<td>${DayExercise.id }</td>
+												<%-- <td>${DayExercise.id }</td> --%>
 												<td>${DayExercise.year }</td>
 												<td>${DayExercise.month }</td>
 												<td>${DayExercise.exdate }</td>

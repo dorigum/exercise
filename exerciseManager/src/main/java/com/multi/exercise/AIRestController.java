@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-
-
 @RestController
 public class AIRestController {
 	@Autowired
@@ -56,35 +54,37 @@ public class AIRestController {
 	// 음성 메시지를 텍스트로 변환
 	// 음성 DB 저장 테스트!!!!!!!!!!!!!!!!
 	@RequestMapping("/ExerSTT")
-	public String STT2(@RequestParam("uploadFile") MultipartFile file) {
-		String result = "";
-		
-		try {
-			//1. 파일 저장 경로 설정 : 실제 서비스 되는 위치 (프로젝트 외부에 저장)
-			  String uploadPath =  "c:/ai/";
-			  
-			  //2.원본 파일 이름
-			  String originalFileName = file.getOriginalFilename();  
-			  
-			  //3. 파일 생성 
-			  String filePathName = uploadPath + originalFileName;
-			  File file1 = new File(filePathName);
-			  
-			  //4. 서버로 전송
-			  file.transferTo(file1);
-			  
-			  result = sttService.clovaSpeechToText2(filePathName);
-			  System.out.println(result);
-			  System.out.println(originalFileName);
-			  
-		}catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return result;
-	}
-	
+	   public ExerciseVO STT2(@RequestParam("uploadFile") MultipartFile file, HttpSession session) {
+	      String result = "";
+	      
+	      ExerciseVO exerVO = new ExerciseVO();
+	      
+	      try {
+	         //1. 파일 저장 경로 설정 : 실제 서비스 되는 위치 (프로젝트 외부에 저장)
+	           String uploadPath =  "C:/ai/";
+	           
+	           //2.원본 파일 이름
+	           String originalFileName = file.getOriginalFilename();  
+	           
+	           //3. 파일 생성 
+	           String filePathName = uploadPath + originalFileName;
+	           File file1 = new File(filePathName);
+	           
+	           //4. 서버로 전송
+	           file.transferTo(file1);
+	           
+	           exerVO = sttService.clovaSpeechToText2(filePathName, session);
+	           System.out.println(result);
+	           System.out.println(originalFileName);
+	           //System.out.println(filePathName);
+	           
+	      }catch (IOException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }
+	      
+	      return exerVO;
+	  }
 	
 	@RequestMapping("/byExerciseList")
 	public ArrayList<ExerciseVO> viewExerciseListByDate(HttpServletRequest request,

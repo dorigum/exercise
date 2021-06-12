@@ -91,10 +91,26 @@
 									<!-- 녹음 버튼 추가!!!!!!!!!!!!!!!!!! -->
 									<button id="record">녹음</button>
 									<button id="stop">정지</button><br><br>
-									<div id="sound-clips"></div><br><br>
+									<div id="sound-clips"></div><br>
 
 									<!-- 음성 DB 테스트중!!!!!!!!!!!!!! -->
-									<div id = "resultMsg"></div>
+									<form id="recForm" method="post" enctype="multipart/form-data">
+										<span>운동명</span>
+										<input id="exName" type="text" size=10 readonly>&nbsp; 
+										
+										<span>무게(kg)</span>
+										<input id="exWeight" type="text" size=10 readonly>&nbsp; 
+										
+										<span>횟수(개)</span>
+										<input id="exCount" type="text" size=10 readonly>&nbsp;
+										
+										<span>거리(km)</span>
+										<input id="exMeter" type="text" size=10 readonly>&nbsp;
+										
+										<span>시간(분)</span>
+										<input id="exTime" type="text" size=10 readonly>&nbsp; <br>
+										
+										<input type="submit" value="운동 기록하기">
 								</section>
 
 						</div>

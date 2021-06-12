@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.Statement"%>
+<%@ page import="java.sql.ResultSet"%>
+<%@ page import = "java.util.Calendar" %>
+<%@ page import = "java.util.Date" %>
 <!DOCTYPE HTML>
 <!--
 	Editorial by HTML5 UP
@@ -9,13 +16,33 @@
 -->
 <html>
 <head>
-<title>AI Personal Trainer</title>
+<title>AI Personal Trainer :: Main</title>
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="/css/main.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+<%
+	Calendar cal = Calendar.getInstance();
+	String[] arr = {"일", "월", "화", "수", "목", "금", "토"};
+%>
+		
+<%!
+	public String getDay(int x){
+	String str = "";
+	switch(x){
+	case 1:str="일요일"; break;
+	case 2:str="월요일"; break;
+	case 3:str="화요일"; break;
+	case 4:str="수요일"; break;
+	case 5:str="목요일"; break;
+	case 6:str="금요일"; break;
+	case 7:str="토요일"; break;
+	}
+	return str;
+}
+%>
 </head>
 <body class="is-preload">
 
@@ -53,7 +80,12 @@
 				<!-- Section -->
 				<section>
 					<header class="major">
-						
+						<!-- 날짜 및 요일 -->
+									<font size=4px>
+										<%= cal.get(Calendar.YEAR) %>년
+										<%= cal.get(Calendar.MONTH)+1 %>월
+										<%= cal.get(Calendar.DATE) %>일
+										<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동</font><br><br>
 					</header>
 					<div class="posts">
 						<article>
