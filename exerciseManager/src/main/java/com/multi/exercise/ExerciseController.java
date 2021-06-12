@@ -51,7 +51,7 @@ public class ExerciseController {
 	@RequestMapping("/exer/insert")
 	public String insertExercise(ExerciseVO DayExercise) {
 		service.insertExercise(DayExercise);
-		return "redirect:./exerciseListView";
+		return "redirect:./exerciseNewForm";
 	}
 
 	// 운동 상세 기록 조회

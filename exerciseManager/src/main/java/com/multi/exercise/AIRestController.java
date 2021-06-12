@@ -102,12 +102,10 @@ public class AIRestController {
 		// int로 변환: int intObj = Integer.parseInt((String)map.get("ObjectObj"));
 		 
 		try {
-			System.out.println("불러오기 실행1");
 			exerList = service.byExerciseList(loginId, condYear, condMonth, condDate);
 		} catch (Exception e) {
 			System.out.println("DB 불러오기 실패 :( - AIRestController.byDateDietList -");
 		}
-		System.out.println(exerList);
 		return exerList;
 	}
 }

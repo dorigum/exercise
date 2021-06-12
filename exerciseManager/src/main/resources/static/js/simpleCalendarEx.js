@@ -16,6 +16,7 @@
     }
     
     function build() {
+		$('#greetings').empty();
 		var greetingsStr ="운동 테이블입니다.<br>오늘도 힘찬 하루되세요.";
 		$('#greetings').append(greetingsStr);
 		
@@ -115,16 +116,13 @@
 					if(exRecordPerDay!=0){
 						$('#cal' + i).append(exRecordPerDay);
 					}
-					if (exRecordPerDay > 1) {
-						$('#cal' + i).css({"color":"black"});
-						$('#kcal' + i).css({"color":"black"}); 
-					} else {
-						$('#cal' + i).css({"color":"red"});
-						$('#kcal' + i).css({"color":"red"});  
-					}
+					
+					$('#cal' + i).css({"color":"blue"});
+					$('#kcal' + i).css({"color":"blue"}); 
+					
 				
 					if (exRecordPerDay > 0) {
-						$('#flip-card-front' + i).css({"background-color":"blue"});
+						$('#flip-card-front' + i).css({"background-color":"#FCABB9"});
 					} else {
 						$('#flip-card-front' + i).css({"background-color":"white"});
 					} 
