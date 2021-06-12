@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.multi.member.MemberService;
 import com.multi.member.MemberVO;
@@ -152,5 +153,33 @@ public class DietRestController {
 		}
 		
 	}
+	
+	@RequestMapping("bySearchList")
+	public ModelAndView searchFoodList(//RequestParam으로 옵션, 키워드, 페이지의 기본값을 각각 설정해준다.
+			@RequestParam Map<String, Object> map,
+    		@RequestParam(defaultValue="fCode") String search_option,
+            @RequestParam(defaultValue="") String keyword) throws Exception{
+
+	    ArrayList<FoodVO> list = null;
+	    ModelAndView mav = new ModelAndView();
+	    
+        
+		
+		list = (ArrayList<FoodVO>) calendarService.bySearchList(search_option, keyword);
+		
+        
+        map.put("list", list);                         //map에 list(식품 목록)을 list라는 이름의 변수로 자료를 저장함.
+        
+        map.put("search_option", search_option);
+        map.put("keyword", keyword);
+        mav.addObject("map", map);                    //modelandview에 map를 저장
+        mav.setViewName("dietMain");  
+        
+		
+	    
+		return mav;
+	    
+	}
+	
 	
 }

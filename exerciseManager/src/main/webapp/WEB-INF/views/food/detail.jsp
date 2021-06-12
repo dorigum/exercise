@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/css/main.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-<title>식품 상세보기</title>
+<title>:: AI Personal Trainer :: 칼로리 사전 상세보기::</title>
 </head>
 <style>
 	h2 {
@@ -21,15 +21,16 @@
 		font-weight:bold;
 		color:#000000;
 	}
-  table { width: 100%;}
-  textarea { width: 100%;}
+  table { width: 80%;}
+  textarea { width: 80%;}
  	#outter {
 		display: block;
-		width: 30%;
+		width: 40%;
 		margin: auto;
 	}
 </style>
 <body>
+<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
 <br><br>
 <h2><img src="/images/dictionary.png" width="40" height="40"/> 상세보기</h2>
 <br>

@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/css/main.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-<title>칼로리 사전</title>
+<title>:: AI Personal Trainer :: 칼로리 사전 ::</title>
 </head>
 <style>
 	h2 {
@@ -48,15 +48,16 @@ function list(page){
 <body class="is-preload">
 <div id="main">
 	<div class="inner">
-	<header id="header">
-		<center>
+	<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
+	<center>
+			<br><br>
 			<h2><img src="/images/dictionary.png" width="40" height="40"/> 칼로리 사전</h2>
-	</header>
+	
 	</div>
 </div>
 
 <div id="outter">
-	<br><br>
+	
 	<!-- 검색  -->
 	<div style="float: left;">
 		<form name="form1" method="post" action="foodList">
