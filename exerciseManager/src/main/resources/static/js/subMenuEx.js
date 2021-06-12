@@ -43,8 +43,8 @@ $(document).ready(function() {
 							exVo.exName+"</a></td>"+
 							"<td>" + exVo.exWeight + "</td>" +
 							"<td>" + exVo.exCount  + "</td>" + 
-							"<td>" + exVo.exTime + "</td>" + 
 							"<td>" + exVo.exMeter + "</td>" + 
+							"<td>" + exVo.exTime + "</td>" + 
 						"</tr>";
 				}
 				htmlStr += "</table>";
