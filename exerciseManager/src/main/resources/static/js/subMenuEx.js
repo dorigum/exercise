@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	$(document).on('click', '.flip-card', function(){
-
+		
 		var tempStrYYYYMM = $("#yearmonth").text();
 		var tempStrMMDD = $(this).find('.front').text();
 		
@@ -13,53 +13,51 @@ $(document).ready(function() {
 		conditionData['condYear'] = currYear;
 		conditionData['condMonth'] = currMonth;
 		conditionData['condDate'] = currDate;
-		
+		$('#year').val(currYear);
+		$('#month').val(currMonth);
+		$('#exdate').val(currDate);
 		$("#byexerciseTable").empty();
-		alert("나누기1");
 		$.ajax({
 			type: "post",
 			data: conditionData,
-			url: "byExerciseList",
+			url: "/byExerciseList",
 /*			processData:false,  // 필수
 			contentType:false,  // 필수*/
-			
-			success:function(arrayListOfdayExerciseVO){
-				alert("나누기2");
+			success:function(arrayListOfExerciseVO){
+				$("#byExerciseTable").empty();
 				var htmlStr = 
-					"<table border='1'>" +		            	
+					"<table border='1'>" +	            	
 						"<tr>" +
-		            		"<th>시간</th>" +
-	            			"<th>운동이름</th>" +
-		            		"<th>운동무게(ml/g)</th>" +
-		            		"<th>횟수(Kcal)</th>" +
+		            		"<th>운동이름</th>" +
+	            			"<th>운동무게(kg)</th>" +
+		            		"<th>횟수(개)</th>" +
+		            		"<th>거리(Km)</th>" +
+		            		"<th>시간(분)</th>" +
 		            	"</tr>";
-					            	
-				htmlStr += "<tr>";
-				for (var i=0; i<arrayListOfdayExerciseVO.length; i++){
-					var exVo = arrayListOfdayExerciseVO[i];
+				for (var i=0; i<arrayListOfExerciseVO.length; i++){
+					var exVo = arrayListOfExerciseVO[i];
 					htmlStr += 
 						"<tr>" +
-							"<td>" + exVo.eTime + "</td>" + 
-							"<td>" + exVo.foodVO.fName + "</td>" +
-							"<td>" + exVo.eAmt + "</td>" + 
-							"<td>" + 
-								(exVo.eAmt * exVo.foodVO.kcal / exVo.foodVO.servings).toFixed(2) + 
-								/*사용자의 섭취량에 따른 칼로리, doubleObj.toFixed(n) -> n자리까지 표현 */
-							"</td>" + 
+							"<td>" + exVo.exName + "</td>" + 
+							"<td>" + exVo.exWeight + "</td>" +
+							"<td>" + exVo.exMeter + "</td>" + 
+							"<td>" + exVo.exTime + "</td>" + 
+							"<td>" + exVo.exCount + "</td>" + 
 						"</tr>";
-						
 				}
 				htmlStr += "</table>";
-				$("#byDateDietTable").append(htmlStr);
+				$("#byExerciseTable").append(htmlStr);
 			},
 			error:function(e) {
 				alert("subMenuEx.js에서 오류 발생 :<\n" + "e");
 			} 
+			
+			
 		});
 		
 		event.preventDefault();
 		
-		monthday.innerHTML = currMonth + " 월 " + currDate + " 일  운동";
+		monthday.innerHTML =currYear+". "+ currMonth + ". " + currDate;
 		clickDay1.innerHTML = currMonth + " 월  " + currDate + " 일";
 		clickDay2.innerHTML = currMonth + " 월  " + currDate + " 일";
 		

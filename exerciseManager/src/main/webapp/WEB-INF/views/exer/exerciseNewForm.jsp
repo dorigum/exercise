@@ -29,6 +29,7 @@
 
 	<div class="main">
 		<jsp:include page="/WEB-INF/views/top.jsp" flush="true" />
+		<div id="greetings"></div>
 		<table style="margin-left: auto; margin-right: auto;" id="calendar">
 			<tr>
 				<td colspan="2"><font size=1%; color="#B3B6B3"> <label
@@ -56,27 +57,15 @@
 			<nav id="menu">
 				<!-- "메뉴목록 표시" -->
 				<h3 align="center" id="monthday" style="font-size: 25px;"></h3>
-				<p>운동 입력</p>
+				<div id="byExerciseTable"></div><br>
+				<p><b>운동 입력란</b></p>
 				<form method="post" action="/exer/insert">
-
+				<input type="hidden" name="id" value="${loginId }"
+								readonly>
+				<input type="hidden" id="year" name="year" required>
+				<input type="hidden" id="month" name="month" required>
+				<input type="hidden" id="exdate" name="exdate" required>	
 					<table>
-						<tr>
-							<th>아이디</th>
-							<td><input type="text" name="id" value="${loginId }"
-								readonly></td>
-						</tr>
-						<tr>
-							<th>년</th>
-							<td><input type="text" name="year" required></td>
-						</tr>
-						<tr>
-							<th>월</th>
-							<td><input type="text" name="month" required></td>
-						</tr>
-						<tr>
-							<th>일</th>
-							<td><input type="text" name="exdate" required></td>
-						</tr>
 						<tr>
 							<th>운동명</th>
 							<td><input type="text" name="exName" required></td>

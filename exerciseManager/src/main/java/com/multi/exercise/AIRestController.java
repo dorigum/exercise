@@ -110,11 +110,4 @@ public class AIRestController {
 		System.out.println(exerList);
 		return exerList;
 	}
-	@RequestMapping("/byExerciseList1")
-	public void viewExerciseListByDate1(HttpServletRequest request,
-			HttpSession session,
-		    @RequestParam Map<String, Object> map) {
-		System.out.println("1");
-		
-	}
 }

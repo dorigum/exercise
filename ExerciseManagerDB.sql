@@ -22,7 +22,7 @@ CREATE TABLE DayExercise (
     year NUMBER(5),
     month NUMBER(5),
     exdate NUMBER(5),
-    exName VARCHAR2(10),
+    exName VARCHAR2(50),
     exWeight NUMBER(10),
     exMeter NUMBER(10),
     exTime NUMBER(10),

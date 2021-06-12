@@ -1,7 +1,7 @@
 /**
  * 
  */
- 
+ 	
     var today = new Date(); // 오늘 날짜
     var date = new Date();
  
@@ -16,6 +16,9 @@
     }
     
     function build() {
+		var greetingsStr ="운동 테이블입니다.<br>오늘도 힘찬 하루되세요.";
+		$('#greetings').append(greetingsStr);
+		
         var nMonth = new Date(today.getFullYear(), today.getMonth(), 1); //현재달의 첫째 날
         var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); //현재 달의 마지막 날
         var tbcal = document.getElementById("calendar"); // 테이블 달력을 만들 테이블
@@ -65,16 +68,15 @@
 						        "</h2> \
 						        <div class= 'cal' id='cal" + i + 
 						        "' style='font-size:25px; text-align:center;'></div>" 
-						         + "<p id='kcal" + i + "' style='font-size:15px;'>운동</p>" + 
+						         + "<p id='kcal" + i + "' style='font-size:15px;'></p>" + 
 						    "</div> \
 						    <div class='flip-card-back'> \
 						        <h2 style='color:white;'>" +
 						        mon + "." + dat + 
 						        "</h2> \
 						        <div class= 'cal' id='backUserCal" + i + 
-						        "' style='font-size:12.5px; text-align:center;'></div>" +
-						        "<div class= 'cal' id='backRecommCal" + i + 
-						        "' style='font-size:12.5px; text-align:center;'></div>" 
+						        "' style='font-size:25px; text-align:center;'></div>" 
+						         + "<p id='kcal" + i + "' style='font-size:15px;'></p>" +
 						    "</div> \
 						</div> \
 					</div> \
@@ -102,65 +104,30 @@
 				url: "/byExerciseList",  // AIRestController에서 받을 주소
 				async: false,  // 설정 안하면 셀(플립카드)에 나타나지 않음
 				success:function(arrayListOfExerciseVO){
-					var totalCalPerDay = 0;
-					var secOperand = recommendCal * 2 / 7;
+					var exRecordPerDay = 0;
 					for (var idx=0; idx<arrayListOfExerciseVO.length; idx++) {
 						var exVo = arrayListOfExerciseVO[idx];
-						var singleDietCal =exVo.
-						calVo.eAmt * calVo.foodVO.kcal / calVo.foodVO.servings;
-						totalCalPerDay += singleDietCal;
+						exRecordPerDay ++;
 					}
-					resultCalories = (totalCalPerDay - recommendCal).toFixed(0);
-					var backrecommCalStr = "권장: " + recommendCal.toFixed(0) + " Kcal";
-					var backuserCalStr = "섭취: " + totalCalPerDay.toFixed(0) + " Kcal";
-					
-					$('#backUserCal' + i).append(backrecommCalStr);
-					$('#backRecommCal' + i).append(backuserCalStr);
-					if (resultCalories >= 0) $('#cal' + i).append("+");
-					
-					if (resultCalories > (recommendCal - secOperand)) {
-						$('#cal' + i).css({"color":"#E84F81"});
-						$('#kcal' + i).css({"color":"#E84F81"}); 
-						
-					} else if ((recommendCal - secOperand) >= resultCalories && 
-							   (recommendCal - 2 * secOperand) <= resultCalories) {
-						$('#cal' + i).css({"color":"#CE6192"});
-						$('#kcal' + i).css({"color":"#CE6192"});  
-						
-					} else if ((recommendCal - 2 *secOperand) >= resultCalories && 
-							   (recommendCal - 3 * secOperand) <= resultCalories) {
-						$('#cal' + i).css({"color":"#B574A3"});
-						$('#kcal' + i).css({"color":"#B574A3"});  
-						
-					} else if ((recommendCal - 3 * secOperand) >= resultCalories && 
-							   (recommendCal - 4 * secOperand) <= resultCalories) {
-						$('#cal' + i).css({"color":"#9B87B4"});
-						$('#kcal' + i).css({"color":"#9B87B4"}); 
-						 
-					} else if ((recommendCal - 4 * secOperand) >= resultCalories && 
-							   (recommendCal - 5 * secOperand) <= resultCalories) {
-						$('#cal' + i).css({"color":"#8299C5"});
-						$('#kcal' + i).css({"color":"#8299C5"});  
-						
-					} else if ((recommendCal - 5 * secOperand) >= resultCalories && 
-							   (recommendCal - 6 * secOperand) <= resultCalories) {
-						$('#cal' + i).css({"color":"#68ACD6"});
-						$('#kcal' + i).css({"color":"#68ACD6"});  
-						
+					if(exRecordPerDay!=0){
+						$('#backUserCal' + i).append(exRecordPerDay);
+					}
+					if(exRecordPerDay!=0){
+						$('#cal' + i).append(exRecordPerDay);
+					}
+					if (exRecordPerDay > 1) {
+						$('#cal' + i).css({"color":"black"});
+						$('#kcal' + i).css({"color":"black"}); 
 					} else {
-						$('#cal' + i).css({"color":"#4FBFE8"});
-						$('#kcal' + i).css({"color":"#4FBFE8"});  
+						$('#cal' + i).css({"color":"red"});
+						$('#kcal' + i).css({"color":"red"});  
 					}
-					$('#cal' + i).append(resultCalories);
-					// 운동을 했느냐로 셀의 색상을 바꾸고 싶을 때는 ln.122 ~ 129 대신
-					
-/*					if (운동횟수변수 > 5) {
-						$('#flip-card-front' + i).css({"background-color":"green"});
-					} else if (운동횟수변수 > 2) {
+				
+					if (exRecordPerDay > 0) {
 						$('#flip-card-front' + i).css({"background-color":"blue"});
 					} else {
-						$('#flip-card-front' + i).css({"background-color":"red"});
-					} */
+						$('#flip-card-front' + i).css({"background-color":"white"});
+					} 
 					
 					
 				},
