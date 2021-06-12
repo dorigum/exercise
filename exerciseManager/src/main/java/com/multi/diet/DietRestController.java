@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.multi.member.MemberService;
 import com.multi.member.MemberVO;
@@ -127,7 +126,6 @@ public class DietRestController {
 		CalendarVO calVo = new CalendarVO();
 		
 		calVo.setCalCode((String)map.get("condCalCode"));
-		System.out.println(calVo.getCalCode());
 		calVo.setId((String)session.getAttribute("loginId"));
 		calVo.setfCode((String)map.get("condFCode"));
 		calVo.seteYear((String)map.get("condEYear"));
@@ -151,35 +149,22 @@ public class DietRestController {
 				e.printStackTrace();
 			}
 		}
-		
+	
 	}
 	
-	@RequestMapping("bySearchList")
-	public ModelAndView searchFoodList(//RequestParam으로 옵션, 키워드, 페이지의 기본값을 각각 설정해준다.
-			@RequestParam Map<String, Object> map,
-    		@RequestParam(defaultValue="fCode") String search_option,
-            @RequestParam(defaultValue="") String keyword) throws Exception{
-
-	    ArrayList<FoodVO> list = null;
-	    ModelAndView mav = new ModelAndView();
-	    
-        
+	@RequestMapping("/SearchWithText")
+	public ArrayList<FoodVO> viewSearchResult(@RequestParam(value="keyword") String keyword, HttpSession session, HttpServletRequest request) {
+		ArrayList<FoodVO> foodList = new ArrayList<FoodVO>();
 		
-		list = (ArrayList<FoodVO>) calendarService.bySearchList(search_option, keyword);
+		try {
+			foodList = calendarService.viewSearchResult(keyword);
+		} catch (Exception e) {
+			System.out.println("DB 불러오기 실패 :( - AIRestController.SearchWithText -");
+		}
 		
-        
-        map.put("list", list);                         //map에 list(식품 목록)을 list라는 이름의 변수로 자료를 저장함.
-        
-        map.put("search_option", search_option);
-        map.put("keyword", keyword);
-        mav.addObject("map", map);                    //modelandview에 map를 저장
-        mav.setViewName("dietMain");  
-        
-		
-	    
-		return mav;
-	    
+		return foodList;
 	}
+	
 	
 	
 }

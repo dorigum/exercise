@@ -18,7 +18,7 @@
 	       		<div class="container">
 					<hr>
 	           		<h3>음식 정보 입력</h3><br>
-					<form id="insertFoodVOForm" method="post" enctype="multipart/form-data">
+					<form id="insertFoodVOForm" method="post">
 							<span style="font-size:17px;">음식 분류:</span>
 							<select name="foodCate" id="foodCateg" size="10">
 								<option value="농산가공식품류">농산가공식품류</option>

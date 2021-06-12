@@ -213,29 +213,29 @@ input#submit {
 
 input#totalAmount {
 	width: 75px;
-	margin: 0 auto;
+	margin: 5px auto;
 	display: inline;
 }
 input#unitAmount {
 	width: 75px;
-	margin: 0 auto;
+	margin: 5px auto;
 	display: inline;
 }
 input#unitCalories {
 	width: 75px;
-	margin: 0 auto;
+	margin: 5px auto;
 	display: inline;
 	
 }
 input#prodName {
 	width: 150px;
-	margin: 0 auto;
+	margin: 5px auto;
 	display: inline;
 	
 }
 input#intake {
 	width: 150px;
-	margin: 0 auto;
+	margin: 5px auto;
 	display: inline;
 	
 }

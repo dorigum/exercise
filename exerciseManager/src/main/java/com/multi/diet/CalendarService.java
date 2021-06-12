@@ -1,7 +1,7 @@
 package com.multi.diet;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -41,10 +41,16 @@ public class CalendarService implements ICalendarService {
     }
     
     @Override
-	public List<FoodVO> bySearchList(String search_option, String keyword) throws Exception {
-	
-	 return dao.bySearchList(search_option, keyword); 
-	}
+    public ArrayList<FoodVO>viewSearchResult(String keyword) {
+    	return dao.viewSearchResult(keyword);
+    }
+    
+	/*
+	 * @Override public List<FoodVO> searchListFood(String search_option, String
+	 * keyword) throws Exception {
+	 * 
+	 * return dao.searchListFood(search_option, keyword); }
+	 */
 	  
 }
  

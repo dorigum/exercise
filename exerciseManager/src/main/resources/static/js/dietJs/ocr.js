@@ -68,7 +68,7 @@ $(document).ready(function(){
 				
 		var calendarConditionData = {};
 		// id 는 session 으로 받아온다
-		calendarConditionData['condCalCode'] = "" + randNum2;
+		calendarConditionData['condCalCode'] = "C" + randNum2;
 		calendarConditionData['condFCode'] = "O" + randNum1;
 		calendarConditionData['condEYear'] = currYear.trim();
 		calendarConditionData['condEMonth'] = currMonth.trim();

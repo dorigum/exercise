@@ -22,8 +22,17 @@
 			<result property="kcal" column="kcal" />
 			<result property="kcal_per_100" column="kcal_per_100" />
 		</association> 
-		
 	</resultMap> 
+	
+	<resultMap id="foodResult" type="com.multi.diet.FoodVO">
+		<result property="fCode" column="fCode" />
+		<result property="fName" column="fName" />
+		<result property="f_category" column="f_category" />
+		<result property="servings" column="servings" />
+		<result property="kcal" column="kcal" />
+		<result property="kcal_per_100" column="kcal_per_100" />
+	</resultMap> 
+	
 	
 	<!-- 첫 번째 서브메뉴에서 테이블 조회 -->
  	<select id="byDateDietList" resultMap="calendarResult">	  	  	
@@ -74,38 +83,12 @@
 		DELETE FROM calendar WHERE calCode=#{calCode}
 	</delete>
 	
-	<!-- 텍스트 검색 -->            
-	<select id="bySearchList" resultType="com.multi.diet.FoodVO">
-	<!-- 쿼리의 결과를 출력시키기 위해서 dto 타입으로 반환한다.-->
-	  
-           select *         
-           from food
-         
-
-       <include refid="search" />
-           order by fCode
-	        
-	 </select>
-	    
-	    
-	    
-	<sql id="search">
-			<choose>
-	          <!--식품코드 , 식품명, 분류로 각각 검색할 수 있게끔 한다.-->
-	            <when test="search_option == 'all' ">
-	                where  
-	                      fCode like '%'||#{keyword}||'%'
-	                      or fName like '%' || #{keyword}||'%'
-	                      or f_category like '%'||#{keyword}||'%'   
-	            </when>
-	            <otherwise>
-	             
-	             <!--  식품코드 + 식품명 + 분류를 포함한 항목을 검색할 수 있게끔 한다. -->
-	                where ${search_option} like '%'||#{keyword}||'%'
-	            </otherwise>
-	        </choose>
-    </sql>
-	
+	<!-- 검색 결과 반환 -->
+	<select id="viewSearchResult" resultMap="foodResult">
+		SELECT *
+			FROM food
+			WHERE fName LIKE '%'||#{keyword}||'%'
+	</select>
 
 </mapper>
  

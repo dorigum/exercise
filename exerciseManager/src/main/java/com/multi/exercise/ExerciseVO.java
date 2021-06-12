@@ -72,4 +72,13 @@ public class ExerciseVO {
 	public void setExCount(int exCount) {
 		this.exCount = exCount;
 	}
+	
+	@Override
+	public String toString() {
+		return "ExerciseVO [dayNo=" + dayNo + ", id=" + id + ", year=" + year + ", month=" + month + ", exdate="
+				+ exdate + ", exName=" + exName + ", exWeight=" + exWeight + ", exMeter=" + exMeter + ", exTime="
+				+ exTime + ", exCount=" + exCount + "]";
+	}
+	
+	
 }

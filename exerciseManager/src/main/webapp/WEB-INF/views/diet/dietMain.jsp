@@ -11,6 +11,7 @@
 
 	    <link href="<c:url value='css/simpleCalendar.css'/>" rel='stylesheet' />
         <link href="<c:url value='css/ocr.css'/>" rel="stylesheet" >
+        <link href="<c:url value='css/text.css'/>" rel="stylesheet" >  
         <link href="<c:url value='css/subMenu.css'/>" rel="stylesheet" >
         <link href="<c:url value='css/selectTimeBtn.css'/>" rel="stylesheet" >
         
@@ -18,6 +19,7 @@
         
         <script src="<c:url value='js/dietJs/selectTimeBtn.js'/>"></script>
         <script src="<c:url value='js/dietJs/ocr.js'/>"></script>
+     	<script src="<c:url value='js/dietJs/text.js'/>"></script>
     	<script src="<c:url value='js/dietJs/subMenu.js'/>"></script>
         <script src="<c:url value='js/dietJs/OCRImagePreview.js'/>"></script>
 		<script src="<c:url value='js/dietJs/simpleCalendar.js'/>"></script>

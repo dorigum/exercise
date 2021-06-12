@@ -1,7 +1,6 @@
 package com.multi.diet;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public interface ICalendarDAO {
 	public ArrayList<CalendarVO> byDateDietList(String condId, String condYear, String condMonth, String condDate);
@@ -9,7 +8,11 @@ public interface ICalendarDAO {
 	public void insertFoodVO(FoodVO foodVo);
 	public void insertCalendarVO(CalendarVO calVo);
 	public void deleteCalendarVO(String calCode);
+	public ArrayList<FoodVO> viewSearchResult(String keyword);
 
-	public List<FoodVO> bySearchList(String search_option, String keyword) throws Exception;
-	
+
+	/*
+	 * public List<FoodVO> searchListFood(String search_option, String keyword)
+	 * throws Exception;
+	 */
 }

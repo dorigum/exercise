@@ -51,17 +51,17 @@
 						<h3>영양 성분표 분석 결과</h3><br>
 				
 						
-						<form id="ocrResultForm" method="post" enctype="multipart/form-data">
+						<form id="ocrResultForm" method="post">
 								<span>총 내용량:</span> &nbsp;&nbsp;
-								<input id="totalAmount" type="text" size=10 readonly>&nbsp; <span class="amountUnit"></span><br><br>
+									<input id="totalAmount" type="text" size=10 readonly>&nbsp; <span class="amountUnit"></span><br>
 								<span>1회 제공량:</span> &nbsp;&nbsp;
-								<input id="unitAmount" type="text" size=10 readonly>&nbsp; <span class="amountUnit"></span> <br><br>
+									<input id="unitAmount" type="text" size=10 readonly>&nbsp; <span class="amountUnit"></span> <br>
 								<span>1회 칼로리:</span> &nbsp;&nbsp;
-								<input id="unitCalories" type="text" size=10 readonly>&nbsp; <span>Kcal</span> <br><br>
+									<input id="unitCalories" type="text" size=10 readonly>&nbsp; <span>Kcal</span> <br>
 								<span>상품명:</span> &nbsp;&nbsp;
-								<input id="prodName" type="text" size=18 placeholder="상품명 입력"> <br><br>
+									<input id="prodName" type="text" size=18 placeholder="상품명 입력"> <br>
 								<span>섭취량:</span> &nbsp;&nbsp;
-								<input id="intake" type="text" size=10 placeholder="섭취량 입력">&nbsp; <span class="amountUnit"></span> <br><br><br>
+									<input id="intake" type="text" size=10 placeholder="섭취량 입력">&nbsp; <span class="amountUnit"></span> <br><br>
 							
 								<input id="insertDietOCR" type="submit" value="식단표에 입력하기"><br><br>
 						<!-- nutriFactor VO 만들어서 입력 받기 (탄단지 까지만) -->

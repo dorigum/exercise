@@ -9,11 +9,12 @@ public interface ICalendarService {
 	public void insertFoodVO(FoodVO foodVo);
 	public void insertCalendarVO(CalendarVO calVo);
 	public void deleteCalendarVO(String calCode);
-/* public void inserCalendar(CalendarVO intakeEvent); */
-	
-	public List<FoodVO> bySearchList(String search_option, String keyword) throws Exception;
-	
-	
+	public ArrayList<FoodVO> viewSearchResult(String keyword);
+	/* public void inserCalendar(CalendarVO intakeEvent); */
+	/*
+	 * public List<FoodVO> searchListFood(String search_option, String keyword)
+	 * throws Exception;
+	 */
 
 }
 
