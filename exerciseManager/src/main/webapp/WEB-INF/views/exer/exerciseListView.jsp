@@ -113,11 +113,11 @@
 						<div class="inner">
 
 							<!-- Search --> <!-- 메뉴 위 검색창 -->
-								<!-- <section id="search" class="alt">
-									<form method="post" action="#">
+								<section id="search" class="alt">
+									<!-- <form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section> -->
+									</form> -->
+								</section>
 
 							<!-- Menu -->
 								<nav id="menu">
