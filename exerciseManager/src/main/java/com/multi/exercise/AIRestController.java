@@ -51,8 +51,7 @@ public class AIRestController {
 	}
 
 	// --------------------------------------------
-	// 음성 메시지를 텍스트로 변환
-	// 음성 DB 저장 테스트!!!!!!!!!!!!!!!!
+	// voiceRecord 음성 녹음 DB 저장
 	@RequestMapping("/ExerSTT")
 	   public ExerciseVO STT2(@RequestParam("uploadFile") MultipartFile file, HttpSession session) {
 	      String result = "";
@@ -76,7 +75,6 @@ public class AIRestController {
 	           exerVO = sttService.clovaSpeechToText2(filePathName, session);
 	           System.out.println(result);
 	           System.out.println(originalFileName);
-	           //System.out.println(filePathName);
 	           
 	      }catch (IOException e) {
 	         // TODO Auto-generated catch block

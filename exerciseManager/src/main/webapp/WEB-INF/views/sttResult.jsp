@@ -14,7 +14,7 @@
 	String uid = "exercise";
 	String pwd = "1234";
 	String url = "jdbc:oracle:thin:@localhost:1521:XE";
-	String sql = "select * from test where id='bbb'";%>
+	String sql = "";%>
 	
 <!DOCTYPE html>
 <html>
@@ -99,7 +99,7 @@
 												<option value="Chn">중국어</option>
 											</select><br>
 										
-										<input type="submit" value="결과 확인">
+										<input type="submit" value="운동 기록하기">
 										
 									</form><br>
 										
@@ -195,6 +195,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>

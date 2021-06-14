@@ -75,7 +75,7 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Voice Record TEST PAGE~!~!~!</h1>
+										<h1>Voice Record</h1>
 									</header>
 									
 									<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span> -->

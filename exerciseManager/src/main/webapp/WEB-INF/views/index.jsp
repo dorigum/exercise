@@ -81,11 +81,11 @@
 				<section>
 					<header class="major">
 						<!-- 날짜 및 요일 -->
-									<font size=4px>
-										<%= cal.get(Calendar.YEAR) %>년
-										<%= cal.get(Calendar.MONTH)+1 %>월
-										<%= cal.get(Calendar.DATE) %>일
-										<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>의 운동</font><br><br>
+						<font size=4px>
+							<%= cal.get(Calendar.YEAR) %>년
+							<%= cal.get(Calendar.MONTH)+1 %>월
+							<%= cal.get(Calendar.DATE) %>일
+							<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %></font><br><br>
 					</header>
 					<div class="posts">
 						<article>
@@ -147,7 +147,6 @@
 											<ul>
 												<li><a href="exer/exerciseListView">Exercise Record List</a></li>
 												<li><a href="voiceRecord">Voice Record</a></li>
-												<li><a href="voiceRecord2">Voice Record TEST!!!!!!!!!!</a></li> <!-- 음성 DB 테스트용 -->
 												<li><a href="stt">Voice Record File Upload</a></li>
 												<li><a href="exer/exerciseNewForm">Exercise Calender</a></li>
 											</ul>

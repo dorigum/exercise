@@ -90,16 +90,17 @@ $(function() {
 	function fileUpload(blob, clipName){
 		// 파일 업로드 부분 추가
 		$('#resultMsg').empty();
-		var formData = new FormData();
+		var formData = new FormData($('#sttForm')[0]);
 		formData.append('uploadFile', blob, clipName+".mp3");
 		
 		$.ajax({
 			type:"post",
+			enctype:"multipart/form-data",
 			url:"ExerSTT",
 			data: formData, // 폼 데이터 전송
 			processData:false, // 필수
 			contentType:false, // 필수
-			success:function(exerVO){				 
+			success:function(exerVO){		 
 				$("#exName").val(exerVO.exName); // 운동명
 				$("#exWeight").val(exerVO.exWeight); // 무게
 				$("#exCount").val(exerVO.exCount); // 횟수

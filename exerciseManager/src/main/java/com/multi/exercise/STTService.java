@@ -135,9 +135,10 @@ public class STTService {
 	            br.close();
 	            System.out.println(response.toString()); // 결과 출력 (JSON 형식의 문자열)
 	            result = jsonToString(response.toString());
-	            // resultToFileSave(result);
-	            //resultToFileSave2(result);
-	            exerVO = resultToDB(result, session);
+	            
+	            System.out.println("녹음 기록을 데이터베이스에 저장했어요:)");
+	            exerVO = resultToDB(result, session);				
+				resultToFileSave2(result);
 	            
 	         } else {
 	            System.out.println("error !!!");
