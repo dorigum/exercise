@@ -87,12 +87,9 @@ $(function() {
 	/* 서버에 업로드 */
 	/* 음성을 텍스트로 변환한 결과가 콘솔에 출력됨 */
 	function fileUpload(blob, clipName){
-		$('#recForm').on('submit', function(event){
-			event.preventDefault();
-			var formData = new FormData($('#recForm')[0]);
+		event.preventDefault();
+		var formData = new FormData($('#recForm')[0]);
 		
-		// 파일 업로드 부분 추가
-		$('#resultMsg').empty();
 		formData.append('uploadFile', blob, clipName+".mp3");
 		
 		$.ajax({
@@ -112,7 +109,52 @@ $(function() {
 			error:function(e){
 				alert("에러 발생" + e);
 			}
-			});
 		});
 	}
+	
+	$('#recForm').on('submit', function(event){	
+		event.preventDefault();
+		var today = new Date();
+		var exYear = today.getFullYear();
+		var exMonth = today.getMonth() + 1;
+		var exDate = today.getDate();
+		
+/*		private int dayNo; 시퀀스로 생성
+		private String id; AIRestController에서 Session으로 받아옴
+*/
+		exerciseData = {};
+		exerciseData['year'] = exYear;
+		exerciseData['month'] = exMonth;
+		exerciseData['exdate'] = exDate;
+		exerciseData['exName'] = $("#exName").val();
+		exerciseData['exWeight'] = $("#exWeight").val();
+		exerciseData['exCount'] = $("#exCount").val();
+		exerciseData['exMeter'] = $("#exMeter").val();
+		exerciseData['exTime'] = $("#exTime").val();
+		alert(exerciseData['year'] + "/" +
+			  exerciseData['month']+ "/" +
+			  exerciseData['exdate']+ "/" +
+			  exerciseData['exName']+ "/" +
+			  exerciseData['exWeight']+ "/" +
+			  exerciseData['exCount']+ "/" +
+			  exerciseData['exMeter']+ "/" +
+			  exerciseData['exTime'] 
+			  );
+		$.ajax({
+			type:"post",
+			url:"insertExerciseVO",
+			data: exerciseData, // 폼 데이터 전송
+/*			processData:false, // 필수
+			contentType:false, // 필수*/
+			success:function(result){		 
+				alert("운동 데이터를 성공적으로 저장했습니다 :) ");
+			},
+			error:function(e){
+				alert("운동 데이터를 저장하지 못했습니다 :(" + e);
+			}
+			});
+		
+	});
+
+	
 }); // $(function()) 끝

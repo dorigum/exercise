@@ -106,4 +106,25 @@ public class AIRestController {
 		}
 		return exerList;
 	}
+	
+	@RequestMapping("/insertExerciseVO")
+	public void insertExercise(HttpServletRequest request,
+							   HttpSession session,
+							   @RequestParam Map<String, Object> map) {
+		
+		ExerciseVO exerVo = new ExerciseVO();	
+		
+		exerVo.setId((String)session.getAttribute("loginId"));
+		exerVo.setYear(Integer.parseInt((String)map.get("year")));
+		exerVo.setMonth(Integer.parseInt((String)map.get("month")));
+		exerVo.setExdate(Integer.parseInt((String)map.get("exdate")));
+		exerVo.setExName((String)map.get("exName"));
+		exerVo.setExWeight(Integer.parseInt((String)map.get("exWeight")));
+		exerVo.setExCount(Integer.parseInt((String)map.get("exCount")));
+		exerVo.setExMeter(Integer.parseInt((String)map.get("exMeter")));
+		exerVo.setExTime(Integer.parseInt((String)map.get("exTime")));
+		 
+		service.insertExercise(exerVo);
+	}
+	
 }
