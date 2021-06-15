@@ -83,14 +83,16 @@ $(function() {
          console.log('The following error occurred: ' + err)
         })
 	}
-	
 	//-------------------------------------------------------------	
 	/* 서버에 업로드 */
 	/* 음성을 텍스트로 변환한 결과가 콘솔에 출력됨 */
 	function fileUpload(blob, clipName){
+		$('#recForm').on('submit', function(event){
+			event.preventDefault();
+			var formData = new FormData($('#recForm')[0]);
+		
 		// 파일 업로드 부분 추가
 		$('#resultMsg').empty();
-		var formData = new FormData($('#sttForm')[0]);
 		formData.append('uploadFile', blob, clipName+".mp3");
 		
 		$.ajax({
@@ -110,6 +112,7 @@ $(function() {
 			error:function(e){
 				alert("에러 발생" + e);
 			}
+			});
 		});
 	}
 }); // $(function()) 끝

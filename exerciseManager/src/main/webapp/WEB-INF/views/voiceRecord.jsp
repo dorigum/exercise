@@ -122,9 +122,9 @@
 
 							<!-- Search -->
 								<section id="search" class="alt">
-									<form method="post" action="#">
+									<!-- <form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
+									</form> -->
 								</section>
 
 							<!-- Menu -->
@@ -134,7 +134,7 @@
 									</header>
 									<ul>
 										<li><a href="/">Mainpage</a></li>
-										<li><a href="exerMain">Exercise Management Main</a></li>
+										<!-- <li><a href="exerMain">Exercise Management Main</a></li> -->
 										<li>
 											<span class="opener">Exercise Management</span>
 											<ul>
@@ -145,19 +145,19 @@
 											</ul>
 										</li>
 										<li>
-											<span class="opener">Food Management</span>
+											<span class="opener">Diet Management</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li><a href="foodList">Calorie Dictionary</a></li>
+												<li><a href="dietMain">Diet Calender</a></li>
+												<!-- <li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li> -->
 											</ul>
 										</li>
 									</ul>
 								</nav>
 	 	
 							<!-- Menu -->
-								<nav id="menu">
+								<!-- <nav id="menu">
 									<header class="major">
 										<h2>Record / File Upload</h2>
 									</header>
@@ -168,7 +168,7 @@
 										<li><a href="stt">Voice Record File Upload</a></li>
 										<li><a href="exer/exerciseNewForm">Text record</a></li>
 									</ul>
-								</nav>
+								</nav> -->
 
 							<!-- Section -->
 								<section>
@@ -185,9 +185,9 @@
 								</section>
 
 							<!-- Footer -->
-								<footer id="footer">
+								<!-- <footer id="footer">
 									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+								</footer> -->
 
 						</div>
 					</div>

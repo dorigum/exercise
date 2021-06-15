@@ -44,5 +44,4 @@ public class ExerciseService implements IExerciseService {
     public ArrayList<ExerciseVO> byExerciseList(String loginId, int condYear, int condMonth, int condDate) { 
 	    return dao.byExerciseList(loginId, condYear, condMonth, condDate); 
     }
-
 }
