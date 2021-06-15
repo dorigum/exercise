@@ -252,7 +252,7 @@ public class STTService {
 		}
 		//아이디 담기
 		exvo.setId((String) session.getAttribute("loginId"));
-		exvo.setDayNo(10);
+		exvo.setDayNo(100); //null 값만 아니면 아무거나 가능. insert 기능에서 자동으로 auto로 넣기 때문
 		//exvo.setExTime(0);
 		//exvo.setExMeter(0);
 		

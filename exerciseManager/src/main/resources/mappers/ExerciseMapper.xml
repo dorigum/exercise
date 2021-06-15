@@ -24,8 +24,8 @@
   	
 	<!-- 운동 정보 등록 -->
   	<insert id="insertExercise" parameterType="com.multi.exercise.ExerciseVO">
-  		INSERT INTO DayExercise (dayNo, id, year, month, exdate, exName, exWeight, exMeter, exTime, exCount)
-  		VALUES (SEQ_DayExercise_dayNo.NEXTVAL, #{id}, #{year}, #{month}, #{exdate}, #{exName}, #{exWeight}, #{exMeter}, #{exTime}, #{exCount})
+  		INSERT INTO DayExercise ( id, year, month, exdate, exName, exWeight, exMeter, exTime, exCount)
+  		VALUES (#{id}, #{year}, #{month}, #{exdate}, #{exName}, #{exWeight}, #{exMeter}, #{exTime}, #{exCount})
   	</insert>
   	
   	<!-- 운동 상세 기록 조회 -->
