@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.multi.member.MemberService;
 import com.multi.member.MemberVO;
@@ -34,12 +35,13 @@ public class DietRestController {
 	
 	
 	@RequestMapping("/dietOCR")
-	public NutriFactVO dietOCR(@RequestParam("uploadFile") MultipartFile file) {
+	public NutriFactVO dietOCR(MultipartHttpServletRequest request, @RequestParam("uploadFile") MultipartFile file) {
 		/* String result = ""; */
 		NutriFactVO nfvo = new NutriFactVO();		
 		
 		  try {
-			  String uploadPath =  "c:/ai/";
+			  String uploadPath = request.getSession().getServletContext().getRealPath("/fileresources/");
+					  /*"c:/ai/";*/
 			  
 			  String originalFileName = file.getOriginalFilename();  
 			  

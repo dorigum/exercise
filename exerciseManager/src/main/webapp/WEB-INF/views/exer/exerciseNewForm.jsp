@@ -7,7 +7,12 @@
 <head>
 <script src="https://kit.fontawesome.com/8f2ec3fbbc.js"
 	crossorigin="anonymous">
-	
+</script>
+<script type="text/javascript">
+
+     if (document.location.protocol == 'http:') {
+          document.location.href = document.location.href.replace('http:', 'https:');
+     }
 </script>
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 
