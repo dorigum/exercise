@@ -82,10 +82,10 @@
 					<header class="major">
 						<!-- 날짜 및 요일 -->
 						<font size=4px>
-							<%= cal.get(Calendar.YEAR) %>년
+							[<%= cal.get(Calendar.YEAR) %>년
 							<%= cal.get(Calendar.MONTH)+1 %>월
 							<%= cal.get(Calendar.DATE) %>일
-							<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %></font><br><br>
+							<%= getDay(cal.get(Calendar.DAY_OF_WEEK)) %>] 오늘도 건강한 하루 보내세요 :D</font><br><br>
 					</header>
 					<div class="posts">
 						<article>

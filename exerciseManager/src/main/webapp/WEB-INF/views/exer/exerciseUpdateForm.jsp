@@ -92,10 +92,10 @@
 										<tr><td>월</td><td><input type="text" name="month" value="${DayExercise.month }"></td></tr>
 										<tr><td>일</td><td><input type="text" name="exdate" value="${DayExercise.exdate }"></td></tr>
 										<tr><td>운동명</td><td><input type="text" name="exName" value="${DayExercise.exName }"></td></tr>
-										<tr><td>무게</td><td><input type="text" name="exWeight" value="${DayExercise.exWeight }"></td></tr>
-										<tr><td>횟수</td><td><input type="text" name="exCount" value="${DayExercise.exCount }"></td></tr>
-										<tr><td>거리</td><td><input type="text" name="exMeter" value="${DayExercise.exMeter }"></td></tr>
-										<tr><td>시간</td><td><input type="text" name="exTime" value="${DayExercise.exTime }"></td></tr>
+										<tr><td>무게(kg)</td><td><input type="text" name="exWeight" value="${DayExercise.exWeight }"></td></tr>
+										<tr><td>횟수(개)</td><td><input type="text" name="exCount" value="${DayExercise.exCount }"></td></tr>
+										<tr><td>거리(km)</td><td><input type="text" name="exMeter" value="${DayExercise.exMeter }"></td></tr>
+										<tr><td>시간(분)</td><td><input type="text" name="exTime" value="${DayExercise.exTime }"></td></tr>
 										<tr><td colspan="2"><input type="submit" value="완료">
 															<input type="reset" value="취소"></td></tr>
 									</table>		
