@@ -101,6 +101,7 @@ public class AIRestController {
 		 
 		try {
 			exerList = service.byExerciseList(loginId, condYear, condMonth, condDate);
+			
 		} catch (Exception e) {
 			System.out.println("DB 불러오기 실패 :( - AIRestController.byDateDietList -");
 		}

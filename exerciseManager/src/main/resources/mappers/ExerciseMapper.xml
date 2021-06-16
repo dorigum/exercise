@@ -49,7 +49,7 @@
   		<!-- 첫 번째 서브메뉴에서 테이블 조회 -->
  	<select id="byExerciseList" resultMap="exerciseResult">	  	  	
 		SELECT *
-		  FROM dayExercise
+		  FROM DayExercise
     	  WHERE id=#{loginId} 
 		  	AND year=#{condYear} 
 		  	AND month=#{condMonth} 
