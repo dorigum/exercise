@@ -42,7 +42,6 @@ public class ExerciseService implements IExerciseService {
 	
 	@Override 
     public ArrayList<ExerciseVO> byExerciseList(String loginId, int condYear, int condMonth, int condDate) { 
-		System.out.println("exerciseservice");
 	    return dao.byExerciseList(loginId, condYear, condMonth, condDate); 
     }
 }

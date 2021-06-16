@@ -202,7 +202,7 @@ public class STTService {
 		Calendar cal = Calendar.getInstance();
 		ExerciseVO exvo= new ExerciseVO();
 		String[] result;
-		String[] indexString = { "개", "번", "분", "시간", "키로", "회" }; // kg, km 구분해놓기!!
+		String[] indexString = { "개", "번", "분", "시간", "키로", "회", "kg" }; // kg, km 구분해놓기!!
 		StringBuffer sb = new StringBuffer();
 		String str = message; // 입력 String 문자
 		String str2 = str.replaceAll("\\s+", ""); // 모든 공백 제거
@@ -235,20 +235,24 @@ public class STTService {
 			exvo.setExWeight(Integer.parseInt(result[1]));
 		} else if (result[2].equals(indexString[5])) {
 			exvo.setExCount(Integer.parseInt(result[1]));
+		}else if (result[2].equals(indexString[6])) {
+			exvo.setExWeight(Integer.parseInt(result[1]));
 		}
 
 		if (result[4].equals(indexString[0])) {
-			exvo.setExCount(Integer.parseInt(result[1]));
+			exvo.setExCount(Integer.parseInt(result[3]));
 		} else if (result[4].equals(indexString[1])) {
-			exvo.setExCount(Integer.parseInt(result[1]));
+			exvo.setExCount(Integer.parseInt(result[3]));
 		} else if (result[4].equals(indexString[2])) {
-			exvo.setExTime(Integer.parseInt(result[1]));
+			exvo.setExTime(Integer.parseInt(result[3]));
 		} else if (result[4].equals(indexString[3])) {
-			exvo.setExTime(Integer.parseInt(result[1]));
+			exvo.setExTime(Integer.parseInt(result[3]));
 		} else if (result[4].equals(indexString[4])) {
-			exvo.setExWeight(Integer.parseInt(result[1]));
+			exvo.setExWeight(Integer.parseInt(result[3]));
 		} else if (result[4].equals(indexString[5])) {
-			exvo.setExCount(Integer.parseInt(result[1]));
+			exvo.setExCount(Integer.parseInt(result[3]));
+		}else if (result[2].equals(indexString[6])) {
+			exvo.setExWeight(Integer.parseInt(result[3]));
 		}
 		//아이디 담기
 		exvo.setId((String) session.getAttribute("loginId"));
