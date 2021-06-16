@@ -100,3 +100,10 @@ INSERT INTO calendar VALUES ('9339586057', 'rang', 'D000070', '2021', '6', '10',
 
 commit; 
 
+
+SHOW TABLES;
+SELECT * FROM springdb.member;
+SELECT * FROM springdb.DayExercise;
+SELECT * FROM springdb.food;
+
+SELECT * FROM springdb.calendar;
