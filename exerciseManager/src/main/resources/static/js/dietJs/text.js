@@ -90,18 +90,21 @@ $(document).ready(function(){
 		condCalenDate['condEMonth'] = currMonth.trim();
 		condCalenDate['condEDate'] = currDate.trim();
 		condCalenDate['condEAmt'] = document.getElementById('tFoodAmt').value.trim();
-		condCalenDate['condETime'] = $("#clickTime2").text().trim();
-
+		if ($("#clickTime2").text().trim().length >= 5){
+			condCalenDate['condETime'] = "미정";
+		} else {
+			condCalenDate['condETime'] = $("#clickTime2").text().trim();
+		}
 		$.ajax({
 			type:"post",
 			async: false, // 이거 설정 안해주면 calendar 데이터가 먼저 들어가서 fCode 없다고 난리침
 			data: condCalenDate,
 			url: "insertCalendarData",
 			success:function() {
-				alert("식단 데이터를 성공적으로 저장했습니다리링 :>");
+				alert("식단 데이터를 성공적으로 저장했습니다 :>");
 			},
 			error:function(e) {
-				alert("식단 데이터를 저장하지 못했습니다리링 :<\n" + e);
+				alert("식단 데이터를 저장하지 못했습니다 :<\n" + e);
 			}
 		});
 		

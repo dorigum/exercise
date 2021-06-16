@@ -74,8 +74,13 @@ $(document).ready(function(){
 		calendarConditionData['condEMonth'] = currMonth.trim();
 		calendarConditionData['condEDate'] = currDate.trim();
 		calendarConditionData['condEAmt'] = document.getElementById('intake').value.trim();
-		calendarConditionData['condETime'] = $("#clickTime2").text().trim();
-
+		
+		if ($("#clickTime2").text().trim().length >= 5){
+			calendarConditionData['condETime'] = "미정";
+		} else {
+			calendarConditionData['condETime'] = $("#clickTime2").text().trim();
+		}
+		
 		// food 부터 넣자 
 		$.ajax({
 			type:"post",
