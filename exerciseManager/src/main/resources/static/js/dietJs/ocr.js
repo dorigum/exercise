@@ -80,6 +80,7 @@ $(document).ready(function(){
 		} else {
 			calendarConditionData['condETime'] = $("#clickTime2").text().trim();
 		}
+		
 		// food 부터 넣자 
 		$.ajax({
 			type:"post",
