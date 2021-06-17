@@ -131,15 +131,7 @@ $(function() {
 		exerciseData['exCount'] = $("#exCount").val();
 		exerciseData['exMeter'] = $("#exMeter").val();
 		exerciseData['exTime'] = $("#exTime").val();
-		alert(exerciseData['year'] + "/" +
-			  exerciseData['month']+ "/" +
-			  exerciseData['exdate']+ "/" +
-			  exerciseData['exName']+ "/" +
-			  exerciseData['exWeight']+ "/" +
-			  exerciseData['exCount']+ "/" +
-			  exerciseData['exMeter']+ "/" +
-			  exerciseData['exTime'] 
-			  );
+
 		$.ajax({
 			type:"post",
 			url:"insertExerciseVO",
