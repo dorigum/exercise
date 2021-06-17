@@ -40,9 +40,9 @@ public class DietRestController {
 		NutriFactVO nfvo = new NutriFactVO();		
 		
 		  try {
-			  String uploadPath = request.getSession().getServletContext().getRealPath("/fileresources/");
+			  String uploadPath = getUploadPath(request);
 					  /*"c:/ai/";*/
-			  
+			  System.out.println(uploadPath);
 			  String originalFileName = file.getOriginalFilename();  
 			  
 			  String filePathName = uploadPath + originalFileName;
@@ -165,6 +165,10 @@ public class DietRestController {
 		}
 		
 		return foodList;
+	}
+	public String getUploadPath(MultipartHttpServletRequest request) {
+		String uploadPath = request.getSession().getServletContext().getRealPath("/fileresources/");
+		return uploadPath;
 	}
 	
 	
