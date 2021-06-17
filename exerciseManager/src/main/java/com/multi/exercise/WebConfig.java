@@ -8,8 +8,8 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/fileresources/**")
-                .addResourceLocations("file:///C:/springWorkspace/exerciseManagerFinal/src/main/webapp/fileresources/");
+        registry.addResourceHandler("/ai/**")
+                .addResourceLocations("file:///c:/ai/");
     }
 }
 

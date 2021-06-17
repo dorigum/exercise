@@ -40,7 +40,8 @@ public class DietRestController {
 		NutriFactVO nfvo = new NutriFactVO();		
 		
 		  try {
-			  String uploadPath = getUploadPath(request);
+			  String uploadPath =  "c:/ai/";
+				/* String uploadPath = getUploadPath(request); */
 			  
  			  String originalFileName = file.getOriginalFilename();  
 			  
