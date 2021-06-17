@@ -4,7 +4,7 @@ $(document).ready(function(){
 			$('#imageIndicator').css({'cursor': 'pointer'}); 
 			$('#OCRImage').show();
 			var src = $('#uploadFile').val().split("\\").pop();
-			$('#OCRImage').prop("src", '/ai/'+ src);
+			$('#OCRImage').prop("src", '/fileresources/' + src);
 		}); 
 		$('#imageIndicator').on('mouseout', function(){
 			$('#OCRImage').hide();

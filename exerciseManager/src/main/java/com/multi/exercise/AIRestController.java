@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @RestController
 public class AIRestController {
@@ -23,13 +24,13 @@ public class AIRestController {
 	private STTService sttService;
 	
 	@RequestMapping("/clovaSTT")
-	public void STT(@RequestParam("uploadFile") MultipartFile file,
+	public void STT(@RequestParam("uploadFile") MultipartFile file, MultipartHttpServletRequest request,
 					  @RequestParam("language") String language, HttpSession session) {
 		ExerciseVO result = new ExerciseVO();
 
 		try {
 			// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
-			String uploadPath = "c:/ai/";
+			  String uploadPath = getUploadPath(request);
 
 			// 2. 원본 파일 이름
 			String originalFileName = file.getOriginalFilename();
@@ -53,14 +54,14 @@ public class AIRestController {
 	// --------------------------------------------
 	// voiceRecord 음성 녹음 DB 저장
 	@RequestMapping("/ExerSTT")
-	   public ExerciseVO STT2(@RequestParam("uploadFile") MultipartFile file, HttpSession session) {
+	   public ExerciseVO STT2(@RequestParam("uploadFile") MultipartFile file, MultipartHttpServletRequest request, HttpSession session) {
 	      String result = "";
 	      
 	      ExerciseVO exerVO = new ExerciseVO();
 	      
 	      try {
 	         //1. 파일 저장 경로 설정 : 실제 서비스 되는 위치 (프로젝트 외부에 저장)
-	           String uploadPath =  "C:/ai/";
+			  String uploadPath = getUploadPath(request);
 	           
 	           //2.원본 파일 이름
 	           String originalFileName = file.getOriginalFilename();  
@@ -127,5 +128,12 @@ public class AIRestController {
 		 
 		service.insertExercise(exerVo);
 	}
+	
+	public String getUploadPath(MultipartHttpServletRequest request) { 
+		String uploadPath =
+	    request.getSession().getServletContext().getRealPath("/fileresources/");
+		return uploadPath; 
+	}
+	
 	
 }
