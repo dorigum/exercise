@@ -36,6 +36,18 @@ INCREMENT BY 1
 NOMAXVALUE
 NOCACHE;
 
+
+CREATE TABLE board(
+    idx int(100) NOT NULL Primary key,
+    title VARCHAR(100) NOT NULL,
+    writer VARCHAR(20) NOT NULL,
+    regdate varchar(20) NOT NULL,
+    count float(30),
+    content varchar(300) NOT NULL
+);
+ALTER TABLE board MODIFY idx int(100) AUTO_INCREMENT Not NUll ;
+
+
 CREATE TABLE food(
     fCode VARCHAR2(100) NOT NULL Primary key,
     fName VARCHAR2(100) NOT NULL,
