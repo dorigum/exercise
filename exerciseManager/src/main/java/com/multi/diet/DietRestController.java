@@ -35,12 +35,12 @@ public class DietRestController {
 	
 	
 	@RequestMapping("/dietOCR")
-	public NutriFactVO dietOCR(MultipartHttpServletRequest request, @RequestParam("uploadFile") MultipartFile file) {
+	public NutriFactVO dietOCR(MultipartHttpServletRequest request1, @RequestParam("uploadFile") MultipartFile file) {
 		/* String result = ""; */
 		NutriFactVO nfvo = new NutriFactVO();		
 		
 		  try {
-			  String uploadPath = getUploadPath(request);
+			  String uploadPath = request1.getSession().getServletContext().getRealPath("/fileresources/");
 					  /*"c:/ai/";*/
 			  System.out.println(uploadPath);
 			  String originalFileName = file.getOriginalFilename();  
@@ -166,10 +166,12 @@ public class DietRestController {
 		
 		return foodList;
 	}
-	public String getUploadPath(MultipartHttpServletRequest request) {
-		String uploadPath = request.getSession().getServletContext().getRealPath("/fileresources/");
-		return uploadPath;
-	}
+	/*
+	 * public String getUploadPath(MultipartHttpServletRequest request) { String
+	 * uploadPath =
+	 * request.getSession().getServletContext().getRealPath("/fileresources/");
+	 * return uploadPath; }
+	 */
 	
 	
 	
