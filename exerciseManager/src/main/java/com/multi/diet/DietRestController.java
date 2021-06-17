@@ -40,7 +40,7 @@ public class DietRestController {
 		NutriFactVO nfvo = new NutriFactVO();		
 		
 		  try {
-			  String uploadPath =  "/usr/local/tomcat9/webapps/ROOT/WEB-INF/classes/static/fileupload/";
+			  String uploadPath =  request.getSession().getServletContext().getRealPath("/fileresources/");
 				/* String uploadPath = getUploadPath(request); */
 			  
  			  String originalFileName = file.getOriginalFilename();  
